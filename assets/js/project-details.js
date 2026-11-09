@@ -1,119 +1,158 @@
 (() => {
-  const params = new URLSearchParams(location.search);
-  const id = params.get("project");
-  const project = [...(window.PROJECTS?.featured || []), ...(window.PROJECTS?.lab || [])].find(item => item.id === id);
+  const id = new URLSearchParams(window.location.search).get("project");
+  const projects = [...(window.PROJECTS?.featured || []), ...(window.PROJECTS?.lab || [])];
+  const project = projects.find(item => item.id === id);
   const root = document.getElementById("detailMain");
-  const switcher = document.getElementById("detailLanguage");
-  let lang = (() => { try { return localStorage.getItem("portfolio-language") === "es" ? "es" : "en"; } catch (_) { return "en"; } })();
-  const esc = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-  const data = {
+  const languageButton = document.getElementById("detailLanguage");
+  let language = (() => {
+    try { return localStorage.getItem("portfolio-language") === "es" ? "es" : "en"; }
+    catch (_) { return "en"; }
+  })();
+
+  const escapeHTML = value => String(value ?? "").replace(/[&<>"']/g, char => ({
+    "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;"
+  }[char]));
+
+  const dossiers = {
     "natural-soap": {
       role:["Independent website project","Proyecto web individual"],
-      summary:["A bilingual product website with catalogue and educational content. It helps a natural-soap brand explain its products and helps customers browse information clearly.","Sitio bilingüe con catálogo y contenido educativo. Ayuda a una marca de jabones naturales a explicar sus productos y facilita que los clientes consulten la información."],
-      summary:["A bilingual product and brand website built to present a catalogue and educational content through a responsive, static multi-page experience.","Sitio bilingüe de productos y marca, creado para presentar un catálogo y contenido educativo mediante una experiencia estática, adaptable y de varias páginas."],
       contribution:["Independent design and implementation of the website structure, responsive styling and language switching.","Diseño e implementación individual de la estructura web, estilos adaptables y selector de idioma."],
-      milestones:[["Project delivery","No independently verified public delivery date is recorded."],["Scope","Static multi-page product presentation; not an online store or order-management backend."]],
-      milestonesEs:[["Entrega del proyecto","No hay una fecha pública de entrega verificada de forma independiente."],["Alcance","Presentación estática de productos en varias páginas; no es una tienda en línea ni un backend de gestión de pedidos."]],
-      team:["Individual project","Proyecto individual"], languages:["HTML5","CSS3","JavaScript"], events:[]
+      team:["Individual project","Proyecto individual"],
+      technologies:["HTML5","CSS3","JavaScript","GitHub Pages"],
+      timeline:[["Project context","A bilingual product website created to help a small natural-soap brand communicate its catalogue and educational information."],["Delivery record","No independently verified public delivery date is recorded."],["Scope","Static multi-page presentation, not an online store or order-management backend."]],
+      timelineEs:[["Contexto","Sitio web bilingüe creado para ayudar a una pequeña marca de jabones naturales a comunicar su catálogo e información educativa."],["Registro de entrega","No hay una fecha pública de entrega verificada de forma independiente."],["Alcance","Presentación estática de varias páginas; no es una tienda en línea ni un backend de gestión de pedidos."]]
     },
     "parking-sv": {
       role:["Collaborative academic full-stack prototype","Prototipo full-stack académico y colaborativo"],
-      summary:["ParkingSV explores how drivers could discover parking options and how owners could present their spaces. I joined to learn from a team-based full-stack product challenge. The current experience uses demonstration data.","ParkingSV explora cómo los conductores podrían encontrar parqueos y cómo los propietarios podrían presentar sus espacios. Participé para aprender de un reto de producto full-stack en equipo. La experiencia actual utiliza datos demostrativos."],
-      summary:["A bilingual parking-discovery concept with customer and owner journeys, searchable listings and a Supabase-backed data layer. The deployed experience uses demonstration data and is not a live reservation marketplace.","Concepto bilingüe para descubrir parqueos, con recorridos de clientes y propietarios, publicaciones consultables y una capa de datos conectada a Supabase. La versión desplegada utiliza datos demostrativos y no es un marketplace de reservas activo."],
       contribution:["My work focused on the JavaScript / TypeScript workstream: Next.js implementation, frontend integration, Supabase connectivity and deployment validation. Jossybeth also worked in this stream. Four other students worked on a separate Python stream.","Mi trabajo se concentró en la línea JavaScript / TypeScript: implementación con Next.js, integración frontend, conexión con Supabase y validación del despliegue. Jossybeth también trabajó en esta línea. Otros cuatro estudiantes desarrollaron una línea Python separada."],
-      milestones:[["2025 · Expo de Logros ¡Supérate! ADOC","Presented in English as part of the student project exhibition; local press coverage was reported. The exact calendar date is not confirmed in the available project records."],["2026 · Expo Tech ¡Supérate! ADOC","The team qualified to participate and presented in English. The exact calendar date is not confirmed in the available project records. No award is claimed."],["Product status","Academic prototype. No commercial launch, real parking availability or confirmed reservations."]],
-      milestonesEs:[["2025 · Expo de Logros ¡Supérate! ADOC","Presentado en inglés como parte de la exposición de proyectos estudiantiles; se reportó cobertura de prensa local. La fecha exacta no está confirmada en los registros disponibles del proyecto."],["2026 · Expo Tech ¡Supérate! ADOC","El equipo clasificó para participar y presentó en inglés. La fecha exacta no está confirmada en los registros disponibles del proyecto. No se reclama ningún premio."],["Estado del producto","Prototipo académico. Sin lanzamiento comercial, disponibilidad real de parqueos ni reservas confirmadas."]],
-      team:["Six students across two technical workstreams","Seis estudiantes en dos líneas técnicas"], languages:["JavaScript","TypeScript","Next.js","React","Supabase","PostgreSQL","Tailwind CSS"], events:["Expo de Logros ADOC 2025","Expo Tech ADOC 2026"]
+      team:["Six students across two technical workstreams","Seis estudiantes en dos líneas técnicas"],
+      technologies:["Next.js","React","TypeScript","Supabase","PostgreSQL","Tailwind CSS","Vercel"],
+      timeline:[["2025 · Expo de Logros ¡Supérate! ADOC","Presented in English as part of the student project exhibition; local press coverage was reported. The exact calendar date is not confirmed in the available project records."],["2026 · Expo Tech ¡Supérate! ADOC","The team qualified to participate and presented in English. The exact calendar date is not confirmed in the available project records. No award is claimed."],["Product status","Academic prototype. No commercial launch, real parking availability or confirmed reservations."]],
+      timelineEs:[["2025 · Expo de Logros ¡Supérate! ADOC","Presentado en inglés como parte de la exposición de proyectos estudiantiles; se reportó cobertura de prensa local. La fecha exacta no está confirmada en los registros disponibles del proyecto."],["2026 · Expo Tech ¡Supérate! ADOC","El equipo clasificó para participar y presentó en inglés. La fecha exacta no está confirmada en los registros disponibles del proyecto. No se reclama ningún premio."],["Estado del producto","Prototipo académico. Sin lanzamiento comercial, disponibilidad real de parqueos ni reservas confirmadas."]]
     },
     "radio-transmission": {
       role:["Web audio and infrastructure demonstration","Demostración de audio web e infraestructura"],
-      summary:["The web player gives listeners access to a public radio stream. The separate dashboard concept explores how operators might review service health. I worked on it to understand how interfaces depend on streaming and server infrastructure; metrics are simulated.","El reproductor web permite a los oyentes acceder a una señal pública de radio. El panel separado explora cómo los operadores podrían revisar el estado del servicio. Lo trabajé para entender cómo las interfaces dependen del streaming y la infraestructura; las métricas son simuladas."],
-      summary:["A public-stream web player and a separate monitoring-dashboard demonstration. The dashboard intentionally uses simulated metrics and is not connected to production telemetry.","Reproductor web conectado a una señal pública y una demostración independiente de panel de monitoreo. El panel utiliza métricas simuladas y no está conectado a telemetría de producción."],
       contribution:["Work covered the browser player and technical exploration around Linux server administration, remote access, reverse proxy configuration and streaming software.","El trabajo abarcó el reproductor web y exploración técnica de administración de servidores Linux, acceso remoto, configuración de proxy inverso y software de streaming."],
-      milestones:[["Public demo","The monitoring demo is a sanitized static presentation with simulated data."],["Infrastructure scope","Ubuntu, SSH, Nginx, DuckDNS and Omnia were part of the broader technical environment."],["Operational boundary","No production server address, credentials, private telemetry or sensitive configuration is published here."]],
-      milestonesEs:[["Demo pública","La demo de monitoreo es una presentación estática saneada con datos simulados."],["Alcance de infraestructura","Ubuntu, SSH, Nginx, DuckDNS y Omnia formaron parte del entorno técnico general."],["Límite operativo","Aquí no se publica dirección de servidor de producción, credenciales, telemetría privada ni configuración sensible."]],
-      team:["Individual web demo; wider operational context involved external systems","Demo web individual; el contexto operativo amplio involucró sistemas externos"], languages:["HTML5","CSS3","JavaScript","Ubuntu","SSH","Nginx","Omnia"], events:[]
+      team:["Individual web demo; wider operational context involved external systems","Demo web individual; el contexto operativo amplio involucró sistemas externos"],
+      technologies:["HTML5","CSS3","JavaScript","Ubuntu","SSH","Nginx","DuckDNS","Omnia"],
+      timeline:[["Public player","The public player connects visitors to a radio stream."],["Monitoring demo","The separate monitoring demo is a sanitized static presentation with simulated data."],["Operational boundary","No production server address, credentials, private telemetry or sensitive configuration is published here."]],
+      timelineEs:[["Reproductor público","El reproductor público conecta a los visitantes con una señal de radio."],["Demo de monitoreo","La demo de monitoreo separada es una presentación estática saneada con datos simulados."],["Límite operativo","Aquí no se publica dirección de servidor de producción, credenciales, telemetría privada ni configuración sensible."]]
     },
     "discomovil": {
       role:["Independent promotional website","Sitio promocional individual"],
-      summary:["A web presence for a family-run DJ and event-services business. It helps potential customers understand the service offer and find a contact path. I chose it because real small-business needs make design decisions tangible.","Presencia web para un negocio familiar de DJ y servicios para eventos. Ayuda a clientes potenciales a entender los servicios y encontrar cómo contactar. Lo elegí porque las necesidades reales de una pequeña empresa vuelven concretas las decisiones de diseño."],
-      summary:["A responsive promotional website for a family-owned DJ and event-services business, designed to communicate services and create a distinctive visual identity.","Sitio promocional adaptable para un negocio familiar de DJ y servicios para eventos, diseñado para comunicar servicios y construir una identidad visual distintiva."],
       contribution:["Independent website design and implementation, including responsive sections and visual effects adapted to different screens.","Diseño e implementación individual del sitio, incluidas secciones adaptables y efectos visuales ajustados a distintas pantallas."],
-      milestones:[["Project context","Built for a real family business; no independently confirmed launch or event date is published in this portfolio."],["Scope","Promotional website. It is not an event-booking or payment platform."]],
-      milestonesEs:[["Contexto","Desarrollado para un negocio familiar real; este portafolio no publica una fecha de lanzamiento o evento confirmada de forma independiente."],["Alcance","Sitio promocional. No es una plataforma de reservas ni de pagos para eventos."]],
-      team:["Individual project","Proyecto individual"], languages:["HTML5","CSS3","JavaScript","Intersection Observer"], events:[]
+      team:["Individual project","Proyecto individual"],
+      technologies:["HTML5","CSS3","JavaScript","Intersection Observer"],
+      timeline:[["Project context","Built for a real family business; no independently confirmed launch or event date is published in this portfolio."],["Scope","Promotional website. It is not an event-booking or payment platform."]],
+      timelineEs:[["Contexto","Desarrollado para un negocio familiar real; este portafolio no publica una fecha de lanzamiento o evento confirmada de forma independiente."],["Alcance","Sitio promocional. No es una plataforma de reservas ni de pagos para eventos."]]
     },
     "identify": {
       role:["Collaborative educational AI prototype","Prototipo educativo colaborativo de IA"],
-      summary:["An educational image-classification prototype for learners exploring computer vision in the browser. I joined to understand model integration and its limits. It does not verify identity or control access.","Prototipo educativo de clasificación de imágenes para estudiantes que exploran visión por computadora en el navegador. Participé para comprender la integración de modelos y sus límites. No verifica identidades ni controla accesos."],
-      summary:["An educational image-classification experiment combining a Teachable Machine model and TensorFlow.js to compare camera frames with trained classes.","Experimento educativo de clasificación de imágenes que combina un modelo de Teachable Machine y TensorFlow.js para comparar fotogramas de cámara con clases entrenadas."],
       contribution:["Collaborative frontend and model-integration work. The project is presented as a learning prototype, not a dependable identity-verification or access-control product.","Trabajo colaborativo de frontend e integración del modelo. El proyecto se presenta como prototipo de aprendizaje, no como producto fiable de verificación de identidad o control de acceso."],
-      milestones:[["Prototype scope","Browser camera access and client-side model inference are used for demonstration."],["Safety and accuracy boundary","Classification output is not proof of identity and must not be used for access decisions."],["Team and date","The portfolio does not currently hold a verified roster of contributors or a confirmed presentation date."]],
-      milestonesEs:[["Alcance del prototipo","Se utiliza acceso a la cámara del navegador e inferencia del modelo en el cliente con fines demostrativos."],["Límite de seguridad y precisión","El resultado de clasificación no demuestra identidad y no debe utilizarse para decisiones de acceso."],["Equipo y fecha","El portafolio no dispone actualmente de una lista verificada de colaboradores ni de una fecha confirmada de presentación."]],
-      team:["Collaborative academic prototype; contributor roster not verified here","Prototipo académico colaborativo; lista de integrantes no verificada aquí"], languages:["JavaScript","TensorFlow.js","Teachable Machine","Camera API"], events:[]
+      team:["Collaborative academic prototype; contributor roster not verified here","Prototipo académico colaborativo; lista de integrantes no verificada aquí"],
+      technologies:["JavaScript","TensorFlow.js","Teachable Machine","Camera API"],
+      timeline:[["Prototype scope","Browser camera access and client-side model inference are used for demonstration."],["Safety and accuracy boundary","Classification output is not proof of identity and must not be used for access decisions."],["Team and date","The portfolio does not currently hold a verified roster of contributors or a confirmed presentation date."]],
+      timelineEs:[["Alcance del prototipo","Se utiliza acceso a la cámara del navegador e inferencia del modelo en el cliente con fines demostrativos."],["Límite de seguridad y precisión","El resultado de clasificación no demuestra identidad y no debe utilizarse para decisiones de acceso."],["Equipo y fecha","El portafolio no dispone actualmente de una lista verificada de colaboradores ni de una fecha confirmada de presentación."]]
     },
     "arch-keyboard-virtual-mouse": {
       role:["Linux accessibility and input utility","Utilidad Linux de accesibilidad y entrada"],
-      summary:["A keyboard-driven pointer utility for Linux users who need or prefer an alternative input workflow. I built it to solve a practical desktop interaction need and explore Linux input devices.","Utilidad para controlar el puntero desde el teclado, dirigida a usuarios Linux que necesitan o prefieren un flujo de entrada alternativo. La desarrollé para resolver una necesidad práctica del escritorio y explorar dispositivos de entrada Linux."],
-      summary:["A Linux utility that maps keyboard input to pointer movement, clicks and scrolling. It explores lower-level input handling through evdev and uinput, with keyd and systemd integration.","Utilidad para Linux que asigna entradas del teclado al movimiento del puntero, clics y desplazamiento. Explora manejo de entrada de bajo nivel mediante evdev y uinput, con integración de keyd y systemd."],
       contribution:["Individual technical utility: implementation, Linux integration and repository documentation.","Utilidad técnica individual: implementación, integración con Linux y documentación del repositorio."],
-      milestones:[["Project status","Public source repository. No confirmed public release date or external event is recorded."],["Technical scope","Keyboard input mapping, virtual input devices and service-level integration."]],
-      milestonesEs:[["Estado","Repositorio de código público. No se registra una fecha de lanzamiento público ni un evento externo confirmado."],["Alcance técnico","Asignación de entradas del teclado, dispositivos de entrada virtuales e integración a nivel de servicio."]],
-      team:["Individual project","Proyecto individual"],languages:["Python","Linux","evdev","uinput","keyd","systemd"],events:[]
+      team:["Individual project","Proyecto individual"],
+      technologies:["Python","Linux","evdev","uinput","keyd","systemd"],
+      timeline:[["Project status","Public source repository. No confirmed public release date or external event is recorded."],["Technical scope","Keyboard input mapping, virtual input devices and service-level integration."]],
+      timelineEs:[["Estado","Repositorio de código público. No se registra una fecha de lanzamiento público ni un evento externo confirmado."],["Alcance técnico","Asignación de entradas del teclado, dispositivos de entrada virtuales e integración a nivel de servicio."]]
     },
     "warp-toggle-masque": {
       role:["Linux desktop utility","Utilidad para escritorio Linux"],
-      summary:["A KDE control layer that makes connecting, disconnecting and checking the official WARP client more deliberate. I built it to streamline a repeated desktop workflow and practice predictable shell automation.","Capa de control para KDE que hace más explícitas las acciones de conectar, desconectar y revisar el cliente oficial de WARP. La desarrollé para simplificar un flujo repetitivo y practicar automatización shell predecible."],
-      summary:["A KDE control layer for the official Cloudflare WARP client. The utility focuses on explicit connect and disconnect actions, status checks and connectivity verification.","Capa de control para KDE sobre el cliente oficial de Cloudflare WARP. La utilidad se enfoca en acciones explícitas de conexión y desconexión, comprobación de estado y verificación de conectividad."],
       contribution:["Individual implementation of shell automation and desktop integration, with emphasis on predictable state changes and safe restoration of network settings.","Implementación individual de automatización shell e integración con el escritorio, con énfasis en cambios de estado predecibles y restauración segura de ajustes de red."],
-      milestones:[["Project status","Public utility repository. No confirmed release date or public event is recorded."],["Operational boundary","This is a local control utility, not a VPN service or a replacement for the official WARP client."]],
-      milestonesEs:[["Estado","Repositorio público de utilidad. No se registra una fecha de lanzamiento ni un evento público confirmado."],["Límite operativo","Es una utilidad de control local, no un servicio VPN ni un reemplazo del cliente oficial de WARP."]],
-      team:["Individual project","Proyecto individual"],languages:["Bash","KDE Plasma","WARP CLI","MASQUE"],events:[]
+      team:["Individual project","Proyecto individual"],
+      technologies:["Bash","KDE Plasma","WARP CLI","MASQUE"],
+      timeline:[["Project status","Public utility repository. No confirmed release date or public event is recorded."],["Operational boundary","This is a local control utility, not a VPN service or a replacement for the official WARP client."]],
+      timelineEs:[["Estado","Repositorio público de utilidad. No se registra una fecha de lanzamiento ni un evento público confirmado."],["Límite operativo","Es una utilidad de control local, no un servicio VPN ni un reemplazo del cliente oficial de WARP."]]
     },
     "car-dashboard": {
       role:["Collaborative academic frontend exercise","Ejercicio frontend académico y colaborativo"],
-      summary:["A collaborative F1 information layout for people who want to scan team profiles quickly. I worked on it to practice responsive content and reusable visual structure; the figures are illustrative.","Diseño colaborativo de información de F1 para consultar rápidamente perfiles de equipos. Lo trabajé para practicar contenido adaptable y estructura visual reutilizable; las cifras son ilustrativas."],
-      summary:["A classroom interface exercise that explores how a driver-facing display could group vehicle information. I worked on it to practice turning a real-world layout into an interface; it is not connected to a vehicle.","Ejercicio de interfaz de clase que explora cómo una pantalla para conductores podría agrupar información del vehículo. Lo trabajé para practicar cómo convertir una distribución real en interfaz; no está conectado a un vehículo."],
-      summary:["A simplified vehicle dashboard exercise built to practice HTML structure, CSS presentation and JavaScript-driven DOM interactions.","Ejercicio de tablero de vehículo simplificado, desarrollado para practicar estructura HTML, presentación CSS e interacciones DOM con JavaScript."],
       contribution:["Collaborative classroom exercise. The portfolio does not claim sole authorship or a production-ready automotive interface.","Ejercicio colaborativo de clase. El portafolio no reclama autoría exclusiva ni presenta la interfaz como producto automotriz listo para producción."],
-      milestones:[["Project status","Academic exercise. No confirmed public event or exact delivery date is recorded."],["Scope","A learning interface simulation; not connected to a vehicle or real telemetry."]],
-      milestonesEs:[["Estado","Ejercicio académico. No se registra un evento público ni una fecha exacta de entrega confirmados."],["Alcance","Simulación de interfaz de aprendizaje; no está conectada a un vehículo ni a telemetría real."]],
-      team:["Collaborative classroom project; full contributor roster not confirmed","Proyecto colaborativo de clase; lista completa de integrantes no confirmada"],languages:["HTML","CSS","JavaScript","DOM"],events:[]
+      team:["Collaborative classroom project; full contributor roster not confirmed","Proyecto colaborativo de clase; lista completa de integrantes no confirmada"],
+      technologies:["HTML","CSS","JavaScript","DOM"],
+      timeline:[["Project status","Academic exercise. No confirmed public event or exact delivery date is recorded."],["Scope","A learning interface simulation; not connected to a vehicle or real telemetry."]],
+      timelineEs:[["Estado","Ejercicio académico. No se registra un evento público ni una fecha exacta de entrega confirmados."],["Alcance","Simulación de interfaz de aprendizaje; no está conectada a un vehículo ni a telemetría real."]]
     },
     "f1-team-profiles": {
       role:["Collaborative academic frontend exercise","Ejercicio frontend académico y colaborativo"],
-      summary:["A frontend exercise presenting Formula 1 team profile cards, responsive layout and sample statistics. It focuses on organizing content into reusable visual components.","Ejercicio frontend que presenta tarjetas de perfiles de equipos de Fórmula 1, diseño adaptable y estadísticas de ejemplo. Se enfoca en organizar contenido mediante componentes visuales reutilizables."],
       contribution:["Collaborative classroom frontend work. Team authorship is retained; this portfolio does not claim the project as an individual product.","Trabajo frontend colaborativo de clase. Se reconoce la autoría del equipo; este portafolio no presenta el proyecto como producto individual."],
-      milestones:[["Project status","Academic exercise. Statistics are sample content, not a live sports data feed."],["Dates and team","No confirmed exact delivery date or complete contributor roster is recorded here."]],
-      milestonesEs:[["Estado","Ejercicio académico. Las estadísticas son contenido de ejemplo, no un feed de datos deportivos en vivo."],["Fechas y equipo","Aquí no se registra una fecha exacta de entrega ni una lista completa de integrantes confirmadas."]],
-      team:["Collaborative classroom project; full contributor roster not confirmed","Proyecto colaborativo de clase; lista completa de integrantes no confirmada"],languages:["HTML","CSS","JavaScript"],events:[]
-    },
+      team:["Collaborative classroom project; full contributor roster not confirmed","Proyecto colaborativo de clase; lista completa de integrantes no confirmada"],
+      technologies:["HTML","CSS","JavaScript"],
+      timeline:[["Project status","Academic exercise. Statistics are sample content, not a live sports data feed."],["Dates and team","No confirmed exact delivery date or complete contributor roster is recorded here."]],
+      timelineEs:[["Estado","Ejercicio académico. Las estadísticas son contenido de ejemplo, no un feed de datos deportivos en vivo."],["Fechas y equipo","Aquí no se registra una fecha exacta de entrega ni una lista completa de integrantes confirmadas."]]
+    }
   };
-  const copy = data[id];
+
+  const dossier = dossiers[id];
+
   function render() {
-    if (!project || !copy) {
+    if (!project || !dossier) {
       root.innerHTML = '<p class="section-index">PROJECT NOT FOUND</p><h1>Project dossier unavailable.</h1><a class="button button-primary" href="index.html#work">Back to projects ↗</a>';
       return;
     }
-    const es = lang === "es";
-    const milestones = es ? copy.milestonesEs : copy.milestones;\n    const audience = es ? project.audienceEs : project.audienceEn;\n    const motivation = es ? project.motivationEs : project.motivationEn;
-    const labels = es ? {back:"← Volver a proyectos",overview:"Resumen",role:"Tipo de proyecto",work:"Mi contribución",team:"Equipo",audience:"A quién ayuda",motivation:"Por qué lo trabajé",stack:"Tecnologías utilizadas",timeline:"Hitos y fechas",links:"Explorar el proyecto",demo:"Abrir demostración",repo:"Ver repositorio",other:"Reproductor público",limit:"Alcance y transparencia"} : {back:"← Back to projects",overview:"Overview",role:"Project type",work:"My contribution",team:"Team",audience:"Who it helps",motivation:"Why I worked on it",stack:"Technologies used",timeline:"Milestones & dates",links:"Explore the project",demo:"Open live demo",repo:"View source repository",other:"Public player",limit:"Scope & transparency"};
-    const demo = project.demo ? '<a class="button button-primary" href="'+esc(project.demo)+'" target="_blank" rel="noopener noreferrer">'+labels.demo+' ↗</a>' : "";
-    const repo = project.repo ? '<a class="button button-ghost" href="'+esc(project.repo)+'" target="_blank" rel="noopener noreferrer">'+labels.repo+' ↗</a>' : "";
-    const extra = project.extra ? '<a class="detail-text-link" href="'+esc(project.extra)+'" target="_blank" rel="noopener noreferrer">'+labels.other+' ↗</a>' : "";
-    root.innerHTML = '<a class="detail-back" href="index.html#work">'+labels.back+'</a><div class="detail-hero"><div><p class="detail-kicker">'+esc(project.category || (lang === "es" ? "LABORATORIO TÉCNICO" : "TECHNICAL LAB"))+' / CASE '+String(([...(window.PROJECTS.featured || []), ...(window.PROJECTS.lab || [])].indexOf(project)+1)).padStart(2,"0")+'</p><h1>'+esc(project.title)+'</h1><p class="detail-role">'+esc(copy.role[lang==="es"?1:0])+'</p><p class="detail-lead">'+esc(copy.summary[lang==="es"?1:0])+'</p><div class="detail-actions">'+demo+repo+'</div>'+extra+'</div><div class="detail-art visual-'+esc(project.visual || "lab")+'"><img class="detail-preview" src="assets/images/projects/'+esc(project.id)+'.svg" alt="" decoding="async"><span class="detail-art-code">DOSSIER / '+esc(id.toUpperCase())+'</span></div></div><section class="detail-section"><p class="section-index">01 / '+labels.overview.toUpperCase()+'</p><div class="detail-story-grid"><article><span class="detail-story-icon">◎</span><h2>'+labels.audience+'</h2><p>'+esc(audience)+'</p></article><article><span class="detail-story-icon">✳</span><h2>'+labels.motivation+'</h2><p>'+esc(motivation)+'</p></article><article><span class="detail-story-icon">⌁</span><h2>'+labels.work+'</h2><p>'+esc(copy.contribution[lang==="es"?1:0])+'</p></article><article><span class="detail-story-icon">◈</span><h2>'+labels.team+'</h2><p>'+esc(copy.team[lang==="es"?1:0])+'</p></article></div></section><section class="detail-section"><p class="section-index">02 / '+labels.stack.toUpperCase()+'</p><div class="detail-stack">'+copy.languages.map((x,i)=>'<span><b>'+String(i+1).padStart(2,"0")+'</b>'+esc(x)+'</span>').join("")+'</div></section><section class="detail-section"><p class="section-index">03 / '+labels.timeline.toUpperCase()+'</p><div class="detail-timeline">'+milestones.map((m,i)=>'<article><span>'+String(i+1).padStart(2,"0")+'</span><div><h3>'+esc(m[0])+'</h3><p>'+esc(m[1])+'</p></div></article>').join("")+'</div></section><p class="detail-disclaimer"><strong>'+labels.limit+':</strong> '+esc(project[lang==="es"?"es":"en"])+'</p>';
+    const es = language === "es";
+    const get = (en, esValue) => es ? esValue : en;
+    const audience = get(project.audienceEn || "People who may benefit from this project.", project.audienceEs || "Personas que pueden beneficiarse de este proyecto.");
+    const purpose = get(project.motivationEn || "I worked on this project to explore a practical problem.", project.motivationEs || "Trabajé en este proyecto para explorar un problema práctico.");
+    const timeline = es ? dossier.timelineEs : dossier.timeline;
+    const labels = es ? {
+      back:"← Volver a proyectos",overview:"Contexto",audience:"A quién ayuda",purpose:"Por qué lo trabajé",contribution:"Mi contribución",team:"Equipo",
+      stack:"Tecnologías utilizadas",timelineTitle:"Hitos y fechas",demo:"Abrir demostración",repo:"Ver repositorio",extra:"Reproductor público",scope:"Alcance y transparencia",
+      contact:"Contactarme"
+    } : {
+      back:"← Back to projects",overview:"Context",audience:"Who it helps",purpose:"Why I worked on it",contribution:"My contribution",team:"Team",
+      stack:"Technologies used",timelineTitle:"Milestones & dates",demo:"Open live demo",repo:"View source repository",extra:"Public player",scope:"Scope & transparency",
+      contact:"Contact me"
+    };
+
+    const demo = project.demo ? '<a class="button button-primary" href="'+escapeHTML(project.demo)+'" target="_blank" rel="noopener noreferrer">'+labels.demo+' ↗</a>' : "";
+    const repo = project.repo ? '<a class="button button-ghost" href="'+escapeHTML(project.repo)+'" target="_blank" rel="noopener noreferrer">'+labels.repo+' ↗</a>' : "";
+    const extra = project.extra ? '<a class="project-action action-demo" href="'+escapeHTML(project.extra)+'" target="_blank" rel="noopener noreferrer">'+labels.extra+' ↗</a>' : "";
+    const number = String(projects.indexOf(project)+1).padStart(2,"0");
+
+    root.innerHTML =
+      '<a class="detail-back" href="index.html#work">'+labels.back+'</a>'+
+      '<div class="detail-hero"><div>'+
+        '<p class="detail-kicker">'+escapeHTML(project.category || (es ? "LABORATORIO TÉCNICO" : "TECHNICAL LAB"))+' / CASE '+number+'</p>'+
+        '<h1>'+escapeHTML(project.title)+'</h1>'+
+        '<p class="detail-role">'+escapeHTML(dossier.role[es ? 1 : 0])+'</p>'+
+        '<p class="detail-lead">'+escapeHTML(project[es ? "es" : "en"])+'</p>'+
+        '<div class="detail-actions">'+demo+repo+'</div>'+extra+
+      '</div>'+
+      '<div class="detail-art visual-'+escapeHTML(project.visual || "lab")+'"><img class="detail-preview" src="assets/images/projects/'+escapeHTML(project.id)+'.svg" alt="" decoding="async"><span class="detail-art-code">DOSSIER / '+escapeHTML(id.toUpperCase())+'</span></div></div>'+
+      '<section class="detail-section"><p class="section-index">01 / '+labels.overview.toUpperCase()+'</p>'+
+        '<div class="detail-story-grid">'+
+          '<article><span class="detail-story-icon">◎</span><h2>'+labels.audience+'</h2><p>'+escapeHTML(audience)+'</p></article>'+
+          '<article><span class="detail-story-icon">✳</span><h2>'+labels.purpose+'</h2><p>'+escapeHTML(purpose)+'</p></article>'+
+          '<article><span class="detail-story-icon">⌁</span><h2>'+labels.contribution+'</h2><p>'+escapeHTML(dossier.contribution[es ? 1 : 0])+'</p></article>'+
+          '<article><span class="detail-story-icon">◈</span><h2>'+labels.team+'</h2><p>'+escapeHTML(dossier.team[es ? 1 : 0])+'</p></article>'+
+        '</div>'+
+      '</section>'+
+      '<section class="detail-section"><p class="section-index">02 / '+labels.stack.toUpperCase()+'</p><div class="detail-stack">'+dossier.technologies.map((tech,i)=>'<span><b>'+String(i+1).padStart(2,"0")+'</b>'+escapeHTML(tech)+'</span>').join("")+'</div></section>'+
+      '<section class="detail-section"><p class="section-index">03 / '+labels.timelineTitle.toUpperCase()+'</p><div class="detail-timeline">'+timeline.map((entry,i)=>'<article><span>'+String(i+1).padStart(2,"0")+'</span><div><h3>'+escapeHTML(entry[0])+'</h3><p>'+escapeHTML(entry[1])+'</p></div></article>').join("")+'</div></section>'+
+      '<p class="detail-disclaimer"><strong>'+labels.scope+':</strong> '+escapeHTML(project[es ? "es" : "en"])+'</p>';
+
     document.title = project.title + " — Jeremy Torres";
-    document.documentElement.lang = lang;
-    switcher?.querySelectorAll(".lang-option").forEach(el => el.classList.toggle("active",el.dataset.lang===lang));
+    document.documentElement.lang = language;
+    languageButton?.querySelectorAll(".lang-option").forEach(option => option.classList.toggle("active", option.dataset.lang === language));
+    if (languageButton) languageButton.setAttribute("aria-label", es ? "Cambiar idioma" : "Change language");
     const backLink = document.querySelector("[data-detail-i18n=backProjects]");
     if (backLink) backLink.textContent = labels.back.replace("← ","");
-    if (switcher) switcher.setAttribute("aria-label",es ? "Cambiar idioma" : "Change language");
-    const footerNote = document.querySelector(".footer-inner > p");
-    if (footerNote) footerNote.textContent = es ? "Hecho con intención. Diseñado para ser ligero." : "Built with intent. Kept lightweight.";
+    const footerCopy = document.querySelector(".footer-inner > p");
+    if (footerCopy) footerCopy.textContent = es ? "Hecho con intención. Diseñado para ser ligero." : "Built with intent. Kept lightweight.";
     const privacyLink = document.querySelector(".footer-links a");
     if (privacyLink) privacyLink.textContent = es ? "Privacidad y rendimiento" : "Privacy & performance";
-    root.querySelectorAll(".detail-section, .detail-hero").forEach(el => el.classList.add("reveal","is-visible"));
   }
-  switcher?.addEventListener("click",()=>{lang=lang==="en"?"es":"en";try{localStorage.setItem("portfolio-language",lang)}catch(_){}render()});
+
+  languageButton?.addEventListener("click", () => {
+    language = language === "en" ? "es" : "en";
+    try { localStorage.setItem("portfolio-language", language); } catch (_) {}
+    render();
+  });
   render();
 })();

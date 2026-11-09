@@ -21,11 +21,14 @@
   <script defer src="assets/js/translations.js"></script>
   <script defer src="assets/js/projects.js"></script>
   <script defer src="assets/js/main.js"></script>
+  <script defer src="assets/js/particle-field.js"></script>
+  <script defer src="assets/js/contact-menu.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="noise" aria-hidden="true"></div>
   <div class="liquid-aura" aria-hidden="true"></div>
+  <canvas class="particle-field" id="particleField" aria-hidden="true"></canvas>
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
   <header class="site-header">
@@ -92,8 +95,10 @@
 
     <section class="section-shell intro-section" id="about">
       <div class="section-heading">
-        <p class="section-index">01 / <span data-i18n="aboutIndex">PROFILE</span></p>
-        <h2 data-i18n="aboutTitle">A practical mindset.<br><em>Curiosity with direction.</em></h2>
+        <div>
+          <p class="section-index">01 / <span data-i18n="aboutIndex">PROFILE</span></p>
+          <h2 data-i18n="aboutTitle">A practical mindset.<br><em>Curiosity with direction.</em></h2>
+        </div>
       </div>
       <div class="intro-content">
         <p data-i18n="aboutP1">I am a student and developer in training based in El Salvador. I enjoy building web interfaces, solving technical problems and understanding how software interacts with operating systems, networks and hardware.</p>
@@ -207,18 +212,28 @@
     </section>
   </main>
 
-  <aside class="floating-contact" id="floatingContact" aria-label="Quick contact">
-    <a class="floating-contact-main" href="https://wa.me/50361429731?text=Hola%20Jeremy%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20conversar%20sobre%20una%20oportunidad." target="_blank" rel="noopener noreferrer">
-      <span class="contact-orbit" aria-hidden="true"></span><span class="floating-contact-symbol">↗</span><span data-i18n="floatingContact">Contact me</span>
-    </a>
-    <div class="floating-contact-links">
-      <a href="tel:+50361429731" aria-label="Call Jeremy">TEL</a>
-      <a href="https://wa.me/50361429731?text=Hola%20Jeremy%2C%20vi%20tu%20portafolio." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">WA</a>
-      <a href="mailto:jeremy.torres.1.2026@gmail.com?subject=Portfolio%20inquiry" aria-label="Email">✉</a>
-      <a href="https://github.com/Jeremy-MegaJS" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GH</a>
+  <aside class="floating-contact" id="floatingContact">
+    <div class="floating-contact-menu" id="floatingContactMenu" hidden inert>
+      <a href="https://wa.me/50361429731?text=Hola%20Jeremy%2C%20vi%20tu%20portafolio%20y%20quisiera%20conversar%20sobre%20un%20proyecto." target="_blank" rel="noopener noreferrer" data-contact-aria-en="Open WhatsApp chat" data-contact-aria-es="Abrir chat de WhatsApp">
+        <span class="contact-menu-icon" aria-hidden="true">◉</span><span data-contact-en="WhatsApp" data-contact-es="WhatsApp">WhatsApp</span><span class="contact-menu-hint">↗</span>
+      </a>
+      <a href="tel:+50361429731" data-contact-aria-en="Call Jeremy" data-contact-aria-es="Llamar a Jeremy">
+        <span class="contact-menu-icon" aria-hidden="true">⌕</span><span data-contact-en="Call · +503 6142 9731" data-contact-es="Llamar · +503 6142 9731">Call · +503 6142 9731</span><span class="contact-menu-hint">↗</span>
+      </a>
+      <a href="mailto:jeremy.torres.1.2026@gmail.com?subject=Portfolio%20inquiry" data-contact-aria-en="Send an email" data-contact-aria-es="Enviar un correo">
+        <span class="contact-menu-icon" aria-hidden="true">✉</span><span data-contact-en="Email" data-contact-es="Correo">Email</span><span class="contact-menu-hint">↗</span>
+      </a>
+      <a href="https://github.com/Jeremy-MegaJS" target="_blank" rel="noopener noreferrer" data-contact-aria-en="Open GitHub profile" data-contact-aria-es="Abrir perfil de GitHub">
+        <span class="contact-menu-icon" aria-hidden="true">⌘</span><span data-contact-en="GitHub" data-contact-es="GitHub">GitHub</span><span class="contact-menu-hint">↗</span>
+      </a>
     </div>
-  </aside>
-  <footer class="site-footer">
+    <button class="floating-contact-main" id="floatingContactToggle" type="button" aria-controls="floatingContactMenu" aria-expanded="false">
+      <span class="contact-orbit" aria-hidden="true"></span>
+      <span class="floating-contact-symbol" aria-hidden="true">↗</span>
+      <span data-contact-label data-i18n="floatingContact">Contact me</span>
+      <span class="contact-chevron" aria-hidden="true">⌃</span>
+    </button>
+  </aside>  <footer class="site-footer">
     <div class="section-shell footer-inner">
       <a class="brand" href="#home"><span class="brand-mark">J<span>.</span></span><span class="brand-name">JEREMY<span>/</span>TORRES</span></a>
       <p data-i18n="footerLine">Built with intent. Kept lightweight.</p>

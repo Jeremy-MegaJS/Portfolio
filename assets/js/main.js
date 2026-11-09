@@ -74,6 +74,15 @@
     const labGrid = document.getElementById("labGrid");
     if (projectGrid) projectGrid.innerHTML = projects.featured.map(projectCard).join("");
     if (labGrid) labGrid.innerHTML = projects.lab.map(labCard).join("");
+    const activeSkill = document.querySelector(".skill-chip.is-active");
+    if (activeSkill) {
+      const skillTitle = document.getElementById("skillDetailTitle");
+      const skillDescription = document.getElementById("skillDetailText");
+      const skillKicker = document.querySelector(".skill-detail-kicker");
+      if (skillTitle) skillTitle.textContent = activeSkill.dataset.skill || activeSkill.textContent.trim();
+      if (skillDescription) skillDescription.textContent = activeSkill.dataset[language] || "";
+      if (skillKicker) skillKicker.textContent = `${language === "es" ? "HERRAMIENTA SELECCIONADA" : "SELECTED TOOL"} / 01`;
+    }
     try { localStorage.setItem("portfolio-language", language); } catch (_) {}
     observeReveals();
   }

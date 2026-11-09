@@ -125,7 +125,18 @@
     }, {passive:true});
   }
 
-  document.querySelectorAll(".skill-chip").forEach((chip, index) => chip.addEventListener("click", () => {\n    document.querySelectorAll(".skill-chip").forEach(item => item.classList.remove("is-active"));\n    chip.classList.add("is-active");\n    const title = document.getElementById("skillDetailTitle");\n    const description = document.getElementById("skillDetailText");\n    const kicker = document.querySelector(".skill-detail-kicker");\n    if (title) title.textContent = chip.dataset.skill || chip.textContent.trim();\n    if (description) description.textContent = chip.dataset[language] || "";\n    if (kicker) kicker.textContent = `${language === "es" ? "HERRAMIENTA SELECCIONADA" : "SELECTED TOOL"} / ${String(index + 1).padStart(2,"0")}`;\n  }));\n\n  const year = document.getElementById("year");
+  document.querySelectorAll(".skill-chip").forEach((chip, index) => chip.addEventListener("click", () => {
+    document.querySelectorAll(".skill-chip").forEach(item => item.classList.remove("is-active"));
+    chip.classList.add("is-active");
+    const title = document.getElementById("skillDetailTitle");
+    const description = document.getElementById("skillDetailText");
+    const kicker = document.querySelector(".skill-detail-kicker");
+    if (title) title.textContent = chip.dataset.skill || chip.textContent.trim();
+    if (description) description.textContent = chip.dataset[language] || "";
+    if (kicker) kicker.textContent = `${language === "es" ? "HERRAMIENTA SELECCIONADA" : "SELECTED TOOL"} / ${String(index + 1).padStart(2,"0")}`;
+  }));
+
+  const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
   applyLanguage(language);
 })();

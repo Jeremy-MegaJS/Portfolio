@@ -292,3 +292,7 @@ body::before{content:"";position:fixed;inset:-25%;z-index:0;pointer-events:none;
 .visual-label,.visual-code{z-index:2;text-shadow:0 2px 12px #000}
 .detail-art{background-position:center}
 @media(max-width:680px){.hero-kicker-row{gap:12px;margin-top:29px}.ascii-sigil{font-size:8px;padding-left:8px}.hero-kicker{font-size:9px}}
+
+
+.noise::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.2;background-image:radial-gradient(circle at 8% 18%,rgba(255,229,174,.9) 0 1px,transparent 1.8px),radial-gradient(circle at 78% 22%,rgba(255,228,170,.8) 0 1px,transparent 2px),radial-gradient(circle at 91% 72%,rgba(255,211,129,.75) 0 1px,transparent 2px),radial-gradient(circle at 34% 82%,rgba(255,222,165,.55) 0 1px,transparent 2px),radial-gradient(circle at 62% 54%,rgba(255,75,95,.65) 0 1px,transparent 2px);background-size:100% 100%;animation:goldDust 12s ease-in-out infinite alternate}
+@keyframes goldDust{0%{opacity:.1;transform:translateY(0)}100%{opacity:.34;transform:translateY(-7px)}}

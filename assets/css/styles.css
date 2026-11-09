@@ -893,3 +893,5 @@ body::before{
 @media(prefers-reduced-motion:reduce){
   .floating-contact-menu,.contact-chevron,.floating-contact-main,.button-primary,.button-ghost{animation:none!important;transition:none!important}
 }
+
+.contact-menu-icon svg{display:block;width:16px;height:16px}

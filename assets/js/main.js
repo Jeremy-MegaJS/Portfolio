@@ -34,7 +34,8 @@
     {name:"TensorFlow.js",icon:"ai",group:"applied",description:["Used for browser-side inference in an academic prototype.","Utilizado para inferencia en navegador en un prototipo académico."]},
     {name:"Teachable Machine",icon:"ai",group:"applied",description:["Used to train image classes for a learning prototype.","Utilizado para entrenar clases de imágenes en un prototipo."]},
     {name:"WARP CLI / MASQUE",icon:"cloud",group:"applied",description:["Applied in a specific desktop connection-control utility.","Aplicado en una utilidad específica de control de conexión."]},
-    {name:"Omnia",icon:"cloud",group:"applied",description:["Part of the wider Radio FE streaming environment.","Parte del entorno de streaming de Radio FE."]
+    {name:"Omnia",icon:"cloud",group:"applied",description:["Part of the wider Radio FE streaming environment.","Parte del entorno de streaming de Radio FE."]}
+  ];
   const techMatches = {
     "HTML5":["natural-soap","radio-transmission","discomovil","car-dashboard","f1-team-profiles"],
     "CSS3":["natural-soap","radio-transmission","discomovil","car-dashboard","f1-team-profiles"],

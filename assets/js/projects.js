@@ -56,28 +56,28 @@ window.PROJECTS = {
   ],
   lab: [
     {
-      title:"Arch Keyboard Virtual Mouse",
+      id:"arch-keyboard-virtual-mouse", title:"Arch Keyboard Virtual Mouse",
       en:"A Linux utility that turns keyboard input into pointer movement, clicks and scrolling, using Python, evdev, uinput, keyd and systemd.",
       es:"Utilidad para Linux que convierte entradas del teclado en movimiento del puntero, clics y desplazamiento mediante Python, evdev, uinput, keyd y systemd.",
       stack:["Python","Linux","systemd"],
       repo:"https://github.com/Jeremy-MegaJS/arch-keyboard-virtual-mouse"
     },
     {
-      title:"WARP Toggle — MASQUE",
+      id:"warp-toggle-masque", title:"WARP Toggle — MASQUE",
       en:"A small KDE control layer for the official Cloudflare WARP client, with connection-state checks and connectivity verification.",
       es:"Pequeña capa de control para KDE sobre el cliente oficial de Cloudflare WARP, con comprobación del estado de conexión y verificación de conectividad.",
       stack:["Bash","KDE","WARP CLI","MASQUE"],
       repo:"https://github.com/Jeremy-MegaJS/warp-toggle-masque"
     },
     {
-      title:"Car Dashboard",
+      id:"car-dashboard", title:"Car Dashboard",
       en:"A collaborative HTML, CSS and JavaScript exercise simulating a simplified vehicle dashboard and DOM interactions.",
       es:"Ejercicio colaborativo de HTML, CSS y JavaScript que simula un tablero de vehículo simplificado e interacciones con el DOM.",
       stack:["HTML","CSS","JavaScript"],
       repo:"https://github.com/Jeremy-torres2026-web/proyecto1-tablero"
     },
     {
-      title:"F1 Team Profiles",
+      id:"f1-team-profiles", title:"F1 Team Profiles",
       en:"A collaborative frontend exercise with Formula 1 profile cards, responsive layout and sample statistics.",
       es:"Ejercicio frontend colaborativo con tarjetas de perfiles de Fórmula 1, diseño adaptable y estadísticas de ejemplo.",
       stack:["HTML","CSS","JavaScript"],

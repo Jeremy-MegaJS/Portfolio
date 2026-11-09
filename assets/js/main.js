@@ -44,6 +44,7 @@
       <h4>${escapeHtml(project.title)}</h4>
       <p>${escapeHtml(project[language])}</p>
       <div class="project-tags">${project.stack.map(tag => `<span>${escapeHtml(tag)}</span>`).join("")}</div>
+      <a href="project.html?project=${encodeURIComponent(project.id)}">${escapeHtml(translations[language].details)} <span>↗</span></a>
       <a href="${escapeHtml(project.repo)}" target="_blank" rel="noopener noreferrer">${escapeHtml(translations[language].source)} <span>↗</span></a>
     </article>`;
   }

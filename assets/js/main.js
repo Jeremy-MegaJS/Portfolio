@@ -40,6 +40,7 @@
 
   function labCard(project, index) {
     return `<article class="lab-card reveal" style="--card-index:${index}">
+      <div class="lab-preview"><img src="assets/images/projects/${escapeHtml(project.id)}.svg" alt="" loading="lazy" decoding="async"></div>
       <span class="lab-card-index mono">LAB_${String(index + 1).padStart(2,"0")}</span>
       <h4>${escapeHtml(project.title)}</h4>
       <p>${escapeHtml(project[language])}</p>

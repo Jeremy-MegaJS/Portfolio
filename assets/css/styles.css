@@ -296,3 +296,7 @@ body::before{content:"";position:fixed;inset:-25%;z-index:0;pointer-events:none;
 
 .noise::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.2;background-image:radial-gradient(circle at 8% 18%,rgba(255,229,174,.9) 0 1px,transparent 1.8px),radial-gradient(circle at 78% 22%,rgba(255,228,170,.8) 0 1px,transparent 2px),radial-gradient(circle at 91% 72%,rgba(255,211,129,.75) 0 1px,transparent 2px),radial-gradient(circle at 34% 82%,rgba(255,222,165,.55) 0 1px,transparent 2px),radial-gradient(circle at 62% 54%,rgba(255,75,95,.65) 0 1px,transparent 2px);background-size:100% 100%;animation:goldDust 12s ease-in-out infinite alternate}
 @keyframes goldDust{0%{opacity:.1;transform:translateY(0)}100%{opacity:.34;transform:translateY(-7px)}}
+
+.detail-preview{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.88}
+.detail-art-code{z-index:2;padding:7px 10px;background:rgba(5,5,7,.65);border:1px solid rgba(255,255,255,.12);border-radius:3px}
+@media(max-width:680px){.detail-nav{display:flex;position:static;flex-direction:row;gap:12px;align-items:center;padding:0;border:0;background:transparent}.detail-nav>a{font-size:11px}.detail-nav .language-switch{align-self:center}}

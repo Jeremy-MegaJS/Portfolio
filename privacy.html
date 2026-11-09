@@ -13,11 +13,14 @@
   <link rel="stylesheet" href="assets/css/styles.css">
   <script defer src="assets/js/translations.js"></script>
   <script defer src="assets/js/main.js"></script>
+  <script defer src="assets/js/particle-field.js"></script>
+  <script defer src="assets/js/contact-menu.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="noise" aria-hidden="true"></div>
   <div class="liquid-aura" aria-hidden="true"></div>
+  <canvas class="particle-field" id="particleField" aria-hidden="true"></canvas>
   <header class="site-header">
     <a class="brand" href="index.html"><span class="brand-mark">J<span>.</span></span><span class="brand-name">JEREMY<span>/</span>TORRES</span></a>
     <nav class="main-nav privacy-nav">
@@ -37,6 +40,15 @@
     <section class="legal-block"><h2 data-i18n="legalContactTitle">Contact</h2><p><a href="mailto:jeremy.torres.1.2026@gmail.com">jeremy.torres.1.2026@gmail.com</a></p></section>
     <a class="button button-ghost legal-back" href="index.html" data-i18n="legalBack">← Back to portfolio</a>
   </main>
+  <aside class="floating-contact" id="floatingContact">
+    <div class="floating-contact-menu" id="floatingContactMenu" hidden inert>
+      <a href="https://wa.me/50361429731?text=Hola%20Jeremy%2C%20vi%20tu%20portafolio%20y%20quisiera%20conversar%20sobre%20un%20proyecto." target="_blank" rel="noopener noreferrer" data-contact-aria-en="Open WhatsApp chat" data-contact-aria-es="Abrir chat de WhatsApp"><span class="contact-menu-icon" aria-hidden="true">◉</span><span data-contact-en="WhatsApp" data-contact-es="WhatsApp">WhatsApp</span><span class="contact-menu-hint">↗</span></a>
+      <a href="tel:+50361429731" data-contact-aria-en="Call Jeremy" data-contact-aria-es="Llamar a Jeremy"><span class="contact-menu-icon" aria-hidden="true">⌕</span><span data-contact-en="Call · +503 6142 9731" data-contact-es="Llamar · +503 6142 9731">Call · +503 6142 9731</span><span class="contact-menu-hint">↗</span></a>
+      <a href="mailto:jeremy.torres.1.2026@gmail.com?subject=Portfolio%20inquiry" data-contact-aria-en="Send an email" data-contact-aria-es="Enviar un correo"><span class="contact-menu-icon" aria-hidden="true">✉</span><span data-contact-en="Email" data-contact-es="Correo">Email</span><span class="contact-menu-hint">↗</span></a>
+      <a href="https://github.com/Jeremy-MegaJS" target="_blank" rel="noopener noreferrer" data-contact-aria-en="Open GitHub profile" data-contact-aria-es="Abrir perfil de GitHub"><span class="contact-menu-icon" aria-hidden="true">⌘</span><span data-contact-en="GitHub" data-contact-es="GitHub">GitHub</span><span class="contact-menu-hint">↗</span></a>
+    </div>
+    <button class="floating-contact-main" id="floatingContactToggle" type="button" aria-controls="floatingContactMenu" aria-expanded="false"><span class="contact-orbit" aria-hidden="true"></span><span class="floating-contact-symbol" aria-hidden="true">↗</span><span data-contact-label>Contact me</span><span class="contact-chevron" aria-hidden="true">⌃</span></button>
+  </aside>
   <footer class="site-footer"><div class="section-shell footer-inner"><a class="brand" href="index.html"><span class="brand-mark">J<span>.</span></span><span class="brand-name">JEREMY<span>/</span>TORRES</span></a><p data-i18n="footerLine">Built with intent. Kept lightweight.</p><span>© <span id="year"></span> J. Torres</span></div></footer>
 </body>
 </html>

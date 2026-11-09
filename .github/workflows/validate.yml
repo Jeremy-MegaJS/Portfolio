@@ -1,0 +1,27 @@
+name: Validate portfolio source
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  javascript-syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate JavaScript syntax
+        run: |
+          node --check assets/js/main.js
+          node --check assets/js/project-details.js
+          node --check assets/js/projects.js
+          node --check assets/js/translations.js

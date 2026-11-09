@@ -24,11 +24,11 @@ Open `http://localhost:8000`.
 
 ## Publish with GitHub Pages
 
-1. Push the project files to the root of the `main` branch.
+1. Push the project files to the `main` branch.
 2. Open **Settings → Pages** in the repository.
-3. Under **Build and deployment**, select **Deploy from a branch**.
-4. Select `main` and `/ (root)`, then save.
-5. Wait for the Pages deployment workflow to finish.
+3. Under **Build and deployment → Source**, select **GitHub Actions**.
+4. The workflow in `.github/workflows/deploy-pages.yml` deploys the repository root automatically on every push to `main`.
+5. Check the **Actions** tab for the deployment result.
 
 The existing profile portrait is expected at:
 
@@ -71,11 +71,11 @@ Abre `http://localhost:8000`.
 
 ### Publicación con GitHub Pages
 
-1. Sube los archivos del proyecto a la raíz de la rama `main`.
+1. Sube los archivos del proyecto a la rama `main`.
 2. Abre **Settings → Pages** en el repositorio.
-3. En **Build and deployment**, selecciona **Deploy from a branch**.
-4. Selecciona `main` y `/ (root)`, luego guarda.
-5. Espera a que finalice el despliegue de Pages.
+3. En **Build and deployment → Source**, selecciona **GitHub Actions**.
+4. El flujo de trabajo en `.github/workflows/deploy-pages.yml` publica automáticamente la raíz del repositorio con cada push a `main`.
+5. Comprueba el resultado del despliegue en la pestaña **Actions**.
 
 La fotografía de perfil existente debe permanecer en:
 

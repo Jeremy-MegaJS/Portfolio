@@ -9,9 +9,9 @@
   <meta property="og:description" content="Software, systems and hardware. Selected projects, technical work and contact.">
   <meta property="og:type" content="website">
   <title data-i18n="documentTitle">Jeremy Torres — Developer Portfolio</title>
-  <link rel="icon" href="assets/favicon-v2.svg?v=2" type="image/svg+xml" sizes="any">
-  <link rel="icon" href="assets/favicon-16.svg?v=2" type="image/svg+xml" sizes="16x16">
-  <link rel="shortcut icon" href="assets/favicon-v2.svg?v=2" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-final.svg?v=3" type="image/svg+xml" sizes="any">
+  <link rel="icon" href="assets/favicon-final-16.svg?v=3" type="image/svg+xml" sizes="16x16">
+  <link rel="shortcut icon" href="assets/favicon-final.svg?v=3" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -25,6 +25,7 @@
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="noise" aria-hidden="true"></div>
+  <div class="liquid-aura" aria-hidden="true"></div>
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
   <header class="site-header">
@@ -52,7 +53,13 @@
     <section class="hero section-shell" id="home">
       <div class="hero-copy">
         <div class="eyebrow"><span class="pulse-dot"></span><span data-i18n="heroEyebrow">STUDENT · DEVELOPER IN TRAINING · EL SALVADOR</span></div>
-        <div class="hero-kicker-row"><p class="hero-kicker" data-i18n="heroKicker">BUILD / TEST / IMPROVE</p><pre class="ascii-sigil" aria-hidden="true">┌─── J ───┐\n│  /|     │\n│   |     │\n└───┴─────┘</pre></div>
+        <div class="hero-kicker-row"><p class="hero-kicker" data-i18n="heroKicker">BUILD / TEST / IMPROVE</p><pre class="ascii-sigil" aria-hidden="true">┌────────┐
+│  ╲     │
+│   ╲    │
+│    ╲   │
+│     ╲  │
+│  ═══╯  │
+└────────┘</pre></div>
         <h1><span data-i18n="heroTitleA">I build useful things</span><br><span class="gradient-text" data-i18n="heroTitleB">across software, systems</span><br><span data-i18n="heroTitleC">and hardware.</span></h1>
         <p class="hero-description" data-i18n="heroDescription">I turn ideas into practical digital projects — from responsive web experiences to Linux automation and connected hardware.</p>
         <div class="hero-actions">
@@ -150,21 +157,23 @@
       </div>
       <div class="capability-layout">
         <div class="capability-intro">
-          <p data-i18n="stackNote">Project counts indicate where a technology appears in this portfolio. They are evidence of use, not a claim of mastery.</p>
-          <div class="capability-legend"><span><i class="legend-dot core"></i><span data-i18n="stackCore">CORE PRACTICE</span></span><span><i class="legend-dot applied"></i><span data-i18n="stackApplied">APPLIED IN PROJECTS</span></span></div>
+          <p data-i18n="stackNote">Counts show in how many portfolio projects each tool appears. They indicate practical exposure, not automatic mastery.</p>
+          <div class="capability-legend">
+            <span><i class="legend-dot core"></i><span data-i18n="stackCore">CORE PRACTICE</span></span>
+            <span><i class="legend-dot applied"></i><span data-i18n="stackApplied">APPLIED IN PROJECTS</span></span>
+          </div>
         </div>
         <div class="capability-groups">
           <section class="capability-group">
-            <div class="capability-heading"><span class="capability-index">A / 01</span><h3 data-i18n="stackCore">Core practice</h3><p data-i18n="coreNote">Tools I use repeatedly to build and refine web experiences.</p></div>
+            <div class="capability-heading"><span class="capability-index">A / 01</span><h3 data-i18n="stackCore">Core practice</h3><p data-i18n="coreNote">My most repeated tools for structuring, styling and building web experiences.</p></div>
             <div class="capability-grid" id="coreCapabilities"></div>
           </section>
           <section class="capability-group">
-            <div class="capability-heading"><span class="capability-index">B / 02</span><h3 data-i18n="stackApplied">Applied in projects</h3><p data-i18n="appliedNote">Tools and technologies I have used to solve a specific project problem.</p></div>
+            <div class="capability-heading"><span class="capability-index">B / 02</span><h3 data-i18n="stackApplied">Applied in projects</h3><p data-i18n="appliedNote">Technologies I have applied in a specific project context. Each card shows where.</p></div>
             <div class="capability-grid" id="appliedCapabilities"></div>
           </section>
         </div>
-      </div>
-    </section>
+      </div>   </section>
 
     <section class="section-shell education-section">
       <div class="section-heading">
@@ -186,7 +195,10 @@
         <h2 data-i18n="contactTitle">Let's build<br><em>something useful.</em></h2>
         <p class="contact-copy" data-i18n="contactCopy">Open to learning opportunities, internships and collaborations where I can contribute, grow and solve real problems.</p>
         <div class="contact-actions">
-          <a class="button button-primary" href="mailto:jeremy.torres.1.2026@gmail.com?subject=Portfolio%20inquiry&body=Hi%20Jeremy%2C%0A%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project%20or%20opportunity.%0A%0AContext%3A%20">Email Jeremy <span aria-hidden="true">↗</span></a>
+          <a class="button button-primary contact-tool" href="mailto:jeremy.torres.1.2026@gmail.com?subject=Web%20development%20project&body=Hi%20Jeremy%2C%0A%0AI%20would%20like%20to%20discuss%20a%20web%20development%20project.%0A%0AProject%3A%0AGoal%3A%0ATimeline%3A%0A%0AThanks.">Web development <span aria-hidden="true">↗</span></a>
+          <a class="button button-primary contact-tool" href="mailto:jeremy.torres.1.2026@gmail.com?subject=Linux%20and%20automation%20task&body=Hi%20Jeremy%2C%0A%0AI%20would%20like%20to%20discuss%20a%20Linux%20or%20automation%20task.%0A%0AEnvironment%3A%0AProblem%3A%0AExpected%20result%3A%0A%0AThanks.">Linux & automation <span aria-hidden="true">↗</span></a>
+          <a class="button button-primary contact-tool" href="mailto:jeremy.torres.1.2026@gmail.com?subject=Arduino%20and%20hardware%20project&body=Hi%20Jeremy%2C%0A%0AI%20would%20like%20to%20discuss%20an%20Arduino%20or%20hardware%20project.%0A%0AComponents%3A%0AGoal%3A%0AConstraints%3A%0A%0AThanks.">Arduino & hardware <span aria-hidden="true">↗</span></a>
+          <a class="button button-primary contact-tool" href="mailto:jeremy.torres.1.2026@gmail.com?subject=Technical%20collaboration&body=Hi%20Jeremy%2C%0A%0AI%20would%20like%20to%20discuss%20a%20technical%20collaboration.%0A%0AContext%3A%0AWhat%20I%20need%3A%0A%0AThanks.">Technical collaboration <span aria-hidden="true">↗</span></a>
           <a class="button button-ghost" href="https://wa.me/50361429731?text=Hola%20Jeremy%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20conversar%20sobre%20un%20proyecto%20u%20oportunidad." target="_blank" rel="noopener noreferrer">WhatsApp <span aria-hidden="true">↗</span></a>
           <a class="button button-ghost" href="tel:+50361429731">+503 6142 9731</a>
           <a class="button button-ghost" href="https://github.com/Jeremy-MegaJS" target="_blank" rel="noopener noreferrer">GitHub ↗</a>

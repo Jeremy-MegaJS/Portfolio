@@ -15,8 +15,8 @@
       circuit:'<rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4m12-6h4m-4 6h4"/>',
       ai:'<path d="M12 3 14 9l6 3-6 2-2 7-2-7-6-2 6-3z"/><path d="m19 3 .6 2.4L22 6l-2.4.6L19 9l-.6-2.4L16 6l2.4-.6z"/>'
     };
-    }
-  ];
+    return '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">'+(paths[name]||paths.code)+'</svg>';
+  };
   const capabilityCatalog = [
     {name:"HTML5",icon:"html",group:"core",description:["Semantic structure for all web projects.","Estructura semántica para proyectos web."]},
     {name:"CSS3",icon:"css",group:"core",description:["Responsive styling, visual systems and motion.","Estilos adaptables, sistemas visuales y movimiento."]},

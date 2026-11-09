@@ -55,7 +55,19 @@
       const value = translations[language][element.dataset.i18n];
       if (value !== undefined) element.innerHTML = value;
     });
-    document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {\n      const value = translations[language][element.dataset.i18nAriaLabel];\n      if (value !== undefined) element.setAttribute("aria-label", value);\n    });\n    document.querySelectorAll("[data-i18n-alt]").forEach((element) => {\n      const value = translations[language][element.dataset.i18nAlt];\n      if (value !== undefined) element.setAttribute("alt", value);\n    });\n    document.querySelectorAll("[data-i18n-content]").forEach((element) => {\n      const value = translations[language][element.dataset.i18nContent];\n      if (value !== undefined) element.setAttribute("content", value);\n    });\n    document.querySelectorAll(".lang-option").forEach((element) => {
+    document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
+      const value = translations[language][element.dataset.i18nAriaLabel];
+      if (value !== undefined) element.setAttribute("aria-label", value);
+    });
+    document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+      const value = translations[language][element.dataset.i18nAlt];
+      if (value !== undefined) element.setAttribute("alt", value);
+    });
+    document.querySelectorAll("[data-i18n-content]").forEach((element) => {
+      const value = translations[language][element.dataset.i18nContent];
+      if (value !== undefined) element.setAttribute("content", value);
+    });
+    document.querySelectorAll(".lang-option").forEach((element) => {
       element.classList.toggle("active", element.dataset.lang === language);
     });
     const projectGrid = document.getElementById("projectGrid");

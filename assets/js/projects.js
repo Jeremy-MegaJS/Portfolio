@@ -80,7 +80,7 @@ window.PROJECTS = {
       en:"Addresses a practical accessibility and input-control need: using keyboard shortcuts to operate pointer actions when a mouse is inconvenient. I built it to explore Linux input devices and create a utility that fits my own desktop workflow.",
       es:"Resuelve una necesidad práctica de accesibilidad y control de entrada: operar el puntero mediante atajos de teclado cuando usar un ratón resulta incómodo. La desarrollé para explorar dispositivos de entrada de Linux y crear una utilidad que encaje con mi propio flujo de escritorio.",
       stack:["Python","Linux","systemd"],
-      repo:"https://github.com/Jeremy-MegaJS/arch-keyboard-virtual-mouse"
+      repo:"https://github.com/Jeremy-MegaJS/arch-keyboard-virtual-mouse",
       audienceEn:"Linux desktop users who benefit from keyboard-driven pointer controls or want a customizable input workflow.",
       audienceEs:"Usuarios de escritorio Linux que se benefician del control del puntero mediante teclado o desean un flujo de entrada personalizable.",
       motivationEn:"I wanted a utility that solved a practical desktop interaction problem while teaching me more about Linux input devices.",
@@ -91,7 +91,7 @@ window.PROJECTS = {
       en:"Reduces friction in controlling the official WARP client from a KDE desktop by making connect, disconnect and status checks more deliberate. I built it to solve a recurring desktop workflow problem and to practice safer shell automation.",
       es:"Reduce la fricción al controlar el cliente oficial de WARP desde KDE, haciendo más explícitas las acciones de conexión, desconexión y verificación de estado. La desarrollé para resolver un problema recurrente de mi flujo de escritorio y practicar automatización shell más segura.",
       stack:["Bash","KDE","WARP CLI","MASQUE"],
-      repo:"https://github.com/Jeremy-MegaJS/warp-toggle-masque"
+      repo:"https://github.com/Jeremy-MegaJS/warp-toggle-masque",
       audienceEn:"Linux KDE users who want explicit control and status feedback for the official WARP client.",
       audienceEs:"Usuarios de KDE en Linux que desean control explícito y retroalimentación de estado del cliente oficial de WARP.",
       motivationEn:"I built it to streamline a repeated connection workflow and practice making shell automation safer and more predictable.",
@@ -102,7 +102,7 @@ window.PROJECTS = {
       en:"A small interface exercise for practicing how a driver-facing dashboard groups key vehicle information. I worked on it as a collaborative learning task, not as a connected automotive system.",
       es:"Ejercicio de interfaz para practicar cómo un tablero orientado al conductor agrupa información importante del vehículo. Lo desarrollé como actividad colaborativa de aprendizaje, no como sistema automotriz conectado.",
       stack:["HTML","CSS","JavaScript"],
-      repo:"https://github.com/Jeremy-torres2026-web/proyecto1-tablero"
+      repo:"https://github.com/Jeremy-torres2026-web/proyecto1-tablero",
       audienceEn:"Learners exploring how driver-facing interfaces organize vehicle information; it is not connected to a real vehicle.",
       audienceEs:"Estudiantes que exploran cómo las interfaces para conductores organizan información del vehículo; no está conectado a un vehículo real.",
       motivationEn:"It was a collaborative class exercise to practice turning a real-world information layout into a browser interface.",
@@ -113,7 +113,7 @@ window.PROJECTS = {
       en:"Makes Formula 1 team information easier to scan through a card-based layout. I worked on it as a collaborative frontend exercise to practice structuring content and responsive presentation; its statistics are illustrative, not live sports data.",
       es:"Facilita la consulta de información de equipos de Fórmula 1 mediante tarjetas visuales. Lo trabajé como ejercicio frontend colaborativo para practicar la estructura de contenido y su presentación adaptable; sus estadísticas son ilustrativas, no datos deportivos en vivo.",
       stack:["HTML","CSS","JavaScript"],
-      repo:"https://github.com/Jeremy-torres2026-web/proyecto3-perfil"
+      repo:"https://github.com/Jeremy-torres2026-web/proyecto3-perfil",
       audienceEn:"Formula 1 fans or learners who want team information presented in a scannable format; statistics are illustrative.",
       audienceEs:"Aficionados de Fórmula 1 o estudiantes que desean información de equipos en un formato fácil de consultar; las estadísticas son ilustrativas.",
       motivationEn:"I worked on it as a team exercise to practice responsive content presentation and reusable frontend layout patterns.",

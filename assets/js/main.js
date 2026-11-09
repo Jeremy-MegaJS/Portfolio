@@ -26,7 +26,7 @@
       <div class="project-visual visual-${escapeHtml(project.visual)}">
         <span class="visual-label mono">${escapeHtml(project.category)}</span>
         <span class="visual-code mono">${String(index + 1).padStart(2,"0")} / 05</span>
-        <div class="visual-art" aria-hidden="true"><span></span><span></span><span></span></div>
+        <img class="project-preview" src="assets/images/projects/${escapeHtml(project.id)}.svg" alt="" loading="lazy" decoding="async">
       </div>
       <div class="project-body">
         <div class="project-title-row"><h3>${escapeHtml(project.title)}</h3><span class="project-kind">${escapeHtml(project.kind === "academic" ? t.academic : t.individual)}</span></div>

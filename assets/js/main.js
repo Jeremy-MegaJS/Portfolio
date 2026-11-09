@@ -18,23 +18,24 @@
     return '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">'+(paths[name]||paths.code)+'</svg>';
   };
   const capabilityCatalog = [
-    {name:"HTML5",icon:"html",group:"core",description:["Markup and semantic structure across my web work.","Estructura y marcado semántico en mis proyectos web."]},
-    {name:"CSS3",icon:"css",group:"core",description:["Responsive layouts, visual systems and interaction styling.","Diseños adaptables, sistemas visuales y estilos de interacción."]},
-    {name:"JavaScript",icon:"js",group:"core",description:["Browser logic, DOM behavior and interactive interfaces.","Lógica del navegador, comportamiento DOM e interfaces interactivas."]},
-    {name:"Git & GitHub",icon:"git",group:"core",description:["Version control, repository workflows and project collaboration.","Control de versiones, flujos de repositorios y colaboración."]},
-    {name:"Linux",icon:"linux",group:"core",description:["Daily development environment and practical system work.","Entorno habitual de desarrollo y trabajo práctico con sistemas."]},
-    {name:"Arduino",icon:"circuit",group:"core",description:["Microcontroller programming and hands-on hardware exploration.","Programación de microcontroladores y experimentación con hardware."]},
-    {name:"React",icon:"react",group:"applied",description:["Component-based UI in collaborative web application work.","Interfaces por componentes en proyectos web colaborativos."]},
-    {name:"Next.js",icon:"next",group:"applied",description:["App Router and full-stack web application work in ParkingSV.","App Router y trabajo de aplicaciones web full-stack en ParkingSV."]},
-    {name:"TypeScript",icon:"ts",group:"applied",description:["Typed application code in the ParkingSV JavaScript workstream.","Código tipado en la línea JavaScript de ParkingSV."]},
-    {name:"Supabase / PostgreSQL",icon:"db",group:"applied",description:["Authentication and relational data integration in ParkingSV.","Integración de autenticación y datos relacionales en ParkingSV."]},
-    {name:"Bash",icon:"code",group:"applied",description:["Shell automation in a focused Linux desktop utility.","Automatización shell en una utilidad específica para escritorio Linux."]},
-    {name:"Python",icon:"code",group:"applied",description:["A focused input-control utility and technical exercises.","Una utilidad específica de control de entrada y ejercicios técnicos."]},
-    {name:"Nginx / SSH",icon:"cloud",group:"applied",description:["Infrastructure exploration for a public streaming environment.","Exploración de infraestructura para un entorno público de streaming."]},
-    {name:"TensorFlow.js",icon:"ai",group:"applied",description:["Browser-side model inference in the IDentify prototype.","Inferencia de modelos en navegador en el prototipo IDentify."]},
-    {name:"Teachable Machine",icon:"ai",group:"applied",description:["Training image classes for an educational prototype.","Entrenamiento de clases de imágenes para un prototipo educativo."]},
-    {name:"WARP CLI / MASQUE",icon:"cloud",group:"applied",description:["A focused control utility using the official client.","Una utilidad de control específica que utiliza el cliente oficial."]},
-    {name:"Omnia",icon:"cloud",group:"applied",description:["Streaming software within the wider Radio FE environment.","Software de streaming en el entorno más amplio de Radio FE."]}
+    {name:"HTML5",icon:"html",group:"core",description:["Semantic structure for all web projects.","Estructura semántica para proyectos web."]},
+    {name:"CSS3",icon:"css",group:"core",description:["Responsive styling, visual systems and motion.","Estilos adaptables, sistemas visuales y movimiento."]},
+    {name:"JavaScript",icon:"js",group:"core",description:["Interactive browser behavior and DOM-based interfaces.","Interactividad en navegador e interfaces basadas en DOM."]},
+    {name:"Git & GitHub",icon:"git",group:"core",description:["Version control, repository management and collaboration.","Control de versiones, gestión de repositorios y colaboración."]},
+    {name:"Linux",icon:"linux",group:"core",description:["Daily development environment and hands-on system work.","Entorno habitual de desarrollo y trabajo práctico con sistemas."]},
+    {name:"Arduino",icon:"circuit",group:"core",description:["Microcontroller programming and electronics practice.","Programación de microcontroladores y práctica de electrónica."]},
+    {name:"React",icon:"react",group:"applied",description:["Applied in a collaborative full-stack web project.","Aplicado en un proyecto web full-stack colaborativo."]},
+    {name:"Next.js",icon:"next",group:"applied",description:["App Router and web application development.","App Router y desarrollo de aplicaciones web."]},
+    {name:"TypeScript",icon:"ts",group:"applied",description:["Typed code in the ParkingSV workstream.","Código tipado en la línea de trabajo de ParkingSV."]},
+    {name:"Supabase / PostgreSQL",icon:"db",group:"applied",description:["Authentication and relational data in ParkingSV.","Autenticación y datos relacionales en ParkingSV."]},
+    {name:"Bash",icon:"code",group:"applied",description:["Applied in one Linux utility; not a general mastery claim.","Aplicado en una utilidad Linux; no implica dominio general."]},
+    {name:"Python",icon:"code",group:"applied",description:["Applied in a focused Linux input-control utility.","Aplicado en una utilidad específica de control de entrada Linux."]},
+    {name:"Nginx / SSH",icon:"cloud",group:"applied",description:["Infrastructure exploration around a streaming environment.","Exploración de infraestructura en un entorno de streaming."]},
+    {name:"TensorFlow.js",icon:"ai",group:"applied",description:["Used for browser-side inference in an academic prototype.","Utilizado para inferencia en navegador en un prototipo académico."]},
+    {name:"Teachable Machine",icon:"ai",group:"applied",description:["Used to train image classes for a learning prototype.","Utilizado para entrenar clases de imágenes en un prototipo."]},
+    {name:"WARP CLI / MASQUE",icon:"cloud",group:"applied",description:["Applied in a specific desktop connection-control utility.","Aplicado en una utilidad específica de control de conexión."]},
+    {name:"Omnia",icon:"cloud",group:"applied",description:["Part of the wider Radio FE streaming environment.","Parte del entorno de streaming de Radio FE."]
+    }
   ];
   const techMatches = {
     "HTML5":["natural-soap","radio-transmission","discomovil","car-dashboard","f1-team-profiles"],
@@ -52,11 +53,14 @@
   function renderCapabilities(){
     const core=document.getElementById("coreCapabilities"), applied=document.getElementById("appliedCapabilities");
     if(!core||!applied)return;
-    const groups={core,applied};
+    const targets={core,applied};
+    const projectTitles=new Map(allProjects.map(project=>[project.id,project.title]));
     for(const item of capabilityCatalog){
-      const count=(techMatches[item.name]||[]).length;
+      const used=techMatches[item.name]||[];
+      const count=used.length;
       const label=count===1?(language==="es"?"1 proyecto":"1 project"):(language==="es"?count+" proyectos":count+" projects");
-      groups[item.group].insertAdjacentHTML("beforeend",'<article class="capability-card reveal"><div class="capability-card-top"><span class="capability-icon">'+icon(item.icon)+'</span><span class="capability-count">'+label+'</span></div><h4>'+escapeHtml(item.name)+'</h4><p>'+escapeHtml(item.description[language==="es"?1:0])+'</p><div class="capability-proof"><span style="--proof:'+Math.max(8,count/9*100)+'%"></span></div></article>');
+      const evidence=used.map(id=>projectTitles.get(id)).filter(Boolean).join(" · ") || (language==="es"?"Formación o exploración puntual":"Training or focused exploration");
+      targets[item.group].insertAdjacentHTML("beforeend",'<article class="capability-card reveal"><div class="capability-card-top"><span class="capability-icon">'+icon(item.icon)+'</span><span class="capability-count">'+label+'</span></div><h4>'+escapeHtml(item.name)+'</h4><p>'+escapeHtml(item.description[language==="es"?1:0])+'</p><div class="capability-proof"><span style="--proof:'+Math.max(8,count/9*100)+'%"></span></div><small class="capability-projects">'+(language==="es"?"EVIDENCIA: ":"PROJECT EVIDENCE: ")+escapeHtml(evidence)+'</small></article>');
     }
   }
   function projectCard(project, index) {
@@ -95,10 +99,12 @@
     document.querySelectorAll(".lang-option").forEach(el=>el.classList.toggle("active",el.dataset.lang===language));
     const projectGrid=document.getElementById("projectGrid"),labGrid=document.getElementById("labGrid");
     if(projectGrid)projectGrid.innerHTML=projects.featured.map(projectCard).join("");
-    if(labGrid)labGrid.innerHTML=projects.lab.map(labCard).join("");
-    const core=document.getElementById("coreCapabilities"),applied=document.getElementById("appliedCapabilities");
-    if(core)core.innerHTML="";if(applied)applied.innerHTML="";
+    const langCore=document.getElementById("coreCapabilities"),langApplied=document.getElementById("appliedCapabilities");
+    if(langCore)langCore.innerHTML="";
+    if(langApplied)langApplied.innerHTML="";
     renderCapabilities();
+    if(labGrid)labGrid.innerHTML=projects.lab.map(labCard).join("");
+
     try{localStorage.setItem("portfolio-language",language)}catch(_){}
     observeReveals();
   }

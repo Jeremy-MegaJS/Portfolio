@@ -1,7 +1,7 @@
 (() => {
   const params = new URLSearchParams(location.search);
   const id = params.get("project");
-  const project = (window.PROJECTS?.featured || []).find(item => item.id === id);
+  const project = [...(window.PROJECTS?.featured || []), ...(window.PROJECTS?.lab || [])].find(item => item.id === id);
   const root = document.getElementById("detailMain");
   const switcher = document.getElementById("detailLanguage");
   let lang = (() => { try { return localStorage.getItem("portfolio-language") === "es" ? "es" : "en"; } catch (_) { return "en"; } })();
@@ -47,6 +47,39 @@
       milestonesEs:[["Alcance del prototipo","Se utiliza acceso a la cámara del navegador e inferencia del modelo en el cliente con fines demostrativos."],["Límite de seguridad y precisión","El resultado de clasificación no demuestra identidad y no debe utilizarse para decisiones de acceso."],["Equipo y fecha","El portafolio no dispone actualmente de una lista verificada de colaboradores ni de una fecha confirmada de presentación."]],
       team:["Collaborative academic prototype; contributor roster not verified here","Prototipo académico colaborativo; lista de integrantes no verificada aquí"], languages:["JavaScript","TensorFlow.js","Teachable Machine","Camera API"], events:[]
     }
+
+    "arch-keyboard-virtual-mouse": {
+      role:["Linux accessibility and input utility","Utilidad Linux de accesibilidad y entrada"],
+      summary:["A Linux utility that maps keyboard input to pointer movement, clicks and scrolling. It explores lower-level input handling through evdev and uinput, with keyd and systemd integration.","Utilidad para Linux que asigna entradas del teclado al movimiento del puntero, clics y desplazamiento. Explora manejo de entrada de bajo nivel mediante evdev y uinput, con integración de keyd y systemd."],
+      contribution:["Individual technical utility: implementation, Linux integration and repository documentation.","Utilidad técnica individual: implementación, integración con Linux y documentación del repositorio."],
+      milestones:[["Project status","Public source repository. No confirmed public release date or external event is recorded."],["Technical scope","Keyboard input mapping, virtual input devices and service-level integration."]],
+      milestonesEs:[["Estado","Repositorio de código público. No se registra una fecha de lanzamiento público ni un evento externo confirmado."],["Alcance técnico","Asignación de entradas del teclado, dispositivos de entrada virtuales e integración a nivel de servicio."]],
+      team:["Individual project","Proyecto individual"],languages:["Python","Linux","evdev","uinput","keyd","systemd"],events:[]
+    },
+    "warp-toggle-masque": {
+      role:["Linux desktop utility","Utilidad para escritorio Linux"],
+      summary:["A KDE control layer for the official Cloudflare WARP client. The utility focuses on explicit connect and disconnect actions, status checks and connectivity verification.","Capa de control para KDE sobre el cliente oficial de Cloudflare WARP. La utilidad se enfoca en acciones explícitas de conexión y desconexión, comprobación de estado y verificación de conectividad."],
+      contribution:["Individual implementation of shell automation and desktop integration, with emphasis on predictable state changes and safe restoration of network settings.","Implementación individual de automatización shell e integración con el escritorio, con énfasis en cambios de estado predecibles y restauración segura de ajustes de red."],
+      milestones:[["Project status","Public utility repository. No confirmed release date or public event is recorded."],["Operational boundary","This is a local control utility, not a VPN service or a replacement for the official WARP client."]],
+      milestonesEs:[["Estado","Repositorio público de utilidad. No se registra una fecha de lanzamiento ni un evento público confirmado."],["Límite operativo","Es una utilidad de control local, no un servicio VPN ni un reemplazo del cliente oficial de WARP."]],
+      team:["Individual project","Proyecto individual"],languages:["Bash","KDE Plasma","WARP CLI","MASQUE"],events:[]
+    },
+    "car-dashboard": {
+      role:["Collaborative academic frontend exercise","Ejercicio frontend académico y colaborativo"],
+      summary:["A simplified vehicle dashboard exercise built to practice HTML structure, CSS presentation and JavaScript-driven DOM interactions.","Ejercicio de tablero de vehículo simplificado, desarrollado para practicar estructura HTML, presentación CSS e interacciones DOM con JavaScript."],
+      contribution:["Collaborative classroom exercise. The portfolio does not claim sole authorship or a production-ready automotive interface.","Ejercicio colaborativo de clase. El portafolio no reclama autoría exclusiva ni presenta la interfaz como producto automotriz listo para producción."],
+      milestones:[["Project status","Academic exercise. No confirmed public event or exact delivery date is recorded."],["Scope","A learning interface simulation; not connected to a vehicle or real telemetry."]],
+      milestonesEs:[["Estado","Ejercicio académico. No se registra un evento público ni una fecha exacta de entrega confirmados."],["Alcance","Simulación de interfaz de aprendizaje; no está conectada a un vehículo ni a telemetría real."]],
+      team:["Collaborative classroom project; full contributor roster not confirmed","Proyecto colaborativo de clase; lista completa de integrantes no confirmada"],languages:["HTML","CSS","JavaScript","DOM"],events:[]
+    },
+    "f1-team-profiles": {
+      role:["Collaborative academic frontend exercise","Ejercicio frontend académico y colaborativo"],
+      summary:["A frontend exercise presenting Formula 1 team profile cards, responsive layout and sample statistics. It focuses on organizing content into reusable visual components.","Ejercicio frontend que presenta tarjetas de perfiles de equipos de Fórmula 1, diseño adaptable y estadísticas de ejemplo. Se enfoca en organizar contenido mediante componentes visuales reutilizables."],
+      contribution:["Collaborative classroom frontend work. Team authorship is retained; this portfolio does not claim the project as an individual product.","Trabajo frontend colaborativo de clase. Se reconoce la autoría del equipo; este portafolio no presenta el proyecto como producto individual."],
+      milestones:[["Project status","Academic exercise. Statistics are sample content, not a live sports data feed."],["Dates and team","No confirmed exact delivery date or complete contributor roster is recorded here."]],
+      milestonesEs:[["Estado","Ejercicio académico. Las estadísticas son contenido de ejemplo, no un feed de datos deportivos en vivo."],["Fechas y equipo","Aquí no se registra una fecha exacta de entrega ni una lista completa de integrantes confirmadas."]],
+      team:["Collaborative classroom project; full contributor roster not confirmed","Proyecto colaborativo de clase; lista completa de integrantes no confirmada"],languages:["HTML","CSS","JavaScript"],events:[]
+    },
   };
   const copy = data[id];
   function render() {
@@ -60,7 +93,7 @@
     const demo = project.demo ? '<a class="button button-primary" href="'+esc(project.demo)+'" target="_blank" rel="noopener noreferrer">'+labels.demo+' ↗</a>' : "";
     const repo = project.repo ? '<a class="button button-ghost" href="'+esc(project.repo)+'" target="_blank" rel="noopener noreferrer">'+labels.repo+' ↗</a>' : "";
     const extra = project.extra ? '<a class="detail-text-link" href="'+esc(project.extra)+'" target="_blank" rel="noopener noreferrer">'+labels.other+' ↗</a>' : "";
-    root.innerHTML = '<a class="detail-back" href="index.html#work">'+labels.back+'</a><div class="detail-hero"><div><p class="detail-kicker">'+esc(project.category)+' / CASE '+String((window.PROJECTS.featured.indexOf(project)+1)).padStart(2,"0")+'</p><h1>'+esc(project.title)+'</h1><p class="detail-role">'+esc(copy.role[lang==="es"?1:0])+'</p><p class="detail-lead">'+esc(copy.summary[lang==="es"?1:0])+'</p><div class="detail-actions">'+demo+repo+'</div>'+extra+'</div><div class="detail-art visual-'+esc(project.visual)+'"><img class="detail-preview" src="assets/images/projects/'+esc(project.id)+'.svg" alt="" decoding="async"><span class="detail-art-code">DOSSIER / '+esc(id.toUpperCase())+'</span></div></div><section class="detail-section"><p class="section-index">01 / '+labels.overview.toUpperCase()+'</p><div class="detail-two-col"><div><h2>'+labels.work+'</h2><p>'+esc(copy.contribution[lang==="es"?1:0])+'</p></div><div><h2>'+labels.team+'</h2><p>'+esc(copy.team[lang==="es"?1:0])+'</p></div></div></section><section class="detail-section"><p class="section-index">02 / '+labels.stack.toUpperCase()+'</p><div class="detail-stack">'+copy.languages.map((x,i)=>'<span><b>'+String(i+1).padStart(2,"0")+'</b>'+esc(x)+'</span>').join("")+'</div></section><section class="detail-section"><p class="section-index">03 / '+labels.timeline.toUpperCase()+'</p><div class="detail-timeline">'+milestones.map((m,i)=>'<article><span>'+String(i+1).padStart(2,"0")+'</span><div><h3>'+esc(m[0])+'</h3><p>'+esc(m[1])+'</p></div></article>').join("")+'</div></section><p class="detail-disclaimer"><strong>'+labels.limit+':</strong> '+esc(project[lang==="es"?"es":"en"])+'</p>';
+    root.innerHTML = '<a class="detail-back" href="index.html#work">'+labels.back+'</a><div class="detail-hero"><div><p class="detail-kicker">'+esc(project.category)+' / CASE '+String(([...(window.PROJECTS.featured || []), ...(window.PROJECTS.lab || [])].indexOf(project)+1)).padStart(2,"0")+'</p><h1>'+esc(project.title)+'</h1><p class="detail-role">'+esc(copy.role[lang==="es"?1:0])+'</p><p class="detail-lead">'+esc(copy.summary[lang==="es"?1:0])+'</p><div class="detail-actions">'+demo+repo+'</div>'+extra+'</div><div class="detail-art visual-'+esc(project.visual)+'"><img class="detail-preview" src="assets/images/projects/'+esc(project.id)+'.svg" alt="" decoding="async"><span class="detail-art-code">DOSSIER / '+esc(id.toUpperCase())+'</span></div></div><section class="detail-section"><p class="section-index">01 / '+labels.overview.toUpperCase()+'</p><div class="detail-two-col"><div><h2>'+labels.work+'</h2><p>'+esc(copy.contribution[lang==="es"?1:0])+'</p></div><div><h2>'+labels.team+'</h2><p>'+esc(copy.team[lang==="es"?1:0])+'</p></div></div></section><section class="detail-section"><p class="section-index">02 / '+labels.stack.toUpperCase()+'</p><div class="detail-stack">'+copy.languages.map((x,i)=>'<span><b>'+String(i+1).padStart(2,"0")+'</b>'+esc(x)+'</span>').join("")+'</div></section><section class="detail-section"><p class="section-index">03 / '+labels.timeline.toUpperCase()+'</p><div class="detail-timeline">'+milestones.map((m,i)=>'<article><span>'+String(i+1).padStart(2,"0")+'</span><div><h3>'+esc(m[0])+'</h3><p>'+esc(m[1])+'</p></div></article>').join("")+'</div></section><p class="detail-disclaimer"><strong>'+labels.limit+':</strong> '+esc(project[lang==="es"?"es":"en"])+'</p>';
     document.title = project.title + " — Jeremy Torres";
     document.documentElement.lang = lang;
     switcher?.querySelectorAll(".lang-option").forEach(el => el.classList.toggle("active",el.dataset.lang===lang));

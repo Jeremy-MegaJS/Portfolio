@@ -1,3 +1,17 @@
+(() => {
+  const translations = window.TRANSLATIONS || {};
+  const projects = window.PROJECTS || {featured:[],lab:[]};
+  const languageSwitch = document.getElementById("languageSwitch");
+  const menuToggle = document.getElementById("menuToggle");
+  const nav = document.getElementById("mainNav");
+  const savedLanguage = (() => {
+    try { return localStorage.getItem("portfolio-language"); } catch (_) { return null; }
+  })();
+  let language = savedLanguage === "es" ? "es" : "en";
+  const escapeHtml = value => String(value ?? "").replace(/[&<>"']/g, char => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  })[char]);
+
   const allProjects = [...projects.featured, ...projects.lab];
   const icon = (name) => {
     const paths = {

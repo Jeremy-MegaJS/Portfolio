@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09090b">
+  <meta name="description" content="Jeremy Torres — software developer in training. Web development, Linux automation, systems and hardware projects.">
+  <meta property="og:title" content="Jeremy Torres — Developer Portfolio">
+  <meta property="og:description" content="Software, systems and hardware. Selected projects, technical work and contact.">
+  <meta property="og:type" content="website">
+  <title>Jeremy Torres — Developer Portfolio</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/translations.js"></script>
+  <script defer src="assets/js/projects.js"></script>
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Jeremy Torres home">
+      <span class="brand-mark">J<span>.</span></span>
+      <span class="brand-name">JEREMY<span>/</span>TORRES</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#about" data-i18n="navAbout">About</a>
+      <a href="#work" data-i18n="navWork">Projects</a>
+      <a href="#stack" data-i18n="navStack">Stack</a>
+      <a href="#contact" data-i18n="navContact">Contact</a>
+      <button class="language-switch" id="languageSwitch" type="button" aria-label="Change language">
+        <span class="lang-option active" data-lang="en">EN</span>
+        <span class="lang-divider">/</span>
+        <span class="lang-option" data-lang="es">ES</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-shell" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse-dot"></span><span data-i18n="heroEyebrow">STUDENT · DEVELOPER IN TRAINING · EL SALVADOR</span></div>
+        <p class="hero-kicker" data-i18n="heroKicker">BUILD / TEST / IMPROVE</p>
+        <h1><span data-i18n="heroTitleA">I build useful things</span><br><span class="gradient-text" data-i18n="heroTitleB">across software, systems</span><br><span data-i18n="heroTitleC">and hardware.</span></h1>
+        <p class="hero-description" data-i18n="heroDescription">I turn ideas into practical digital projects — from responsive web experiences to Linux automation and connected hardware.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#work"><span data-i18n="heroProjects">Explore projects</span><span aria-hidden="true">↘</span></a>
+          <a class="button button-ghost" href="#contact" data-i18n="heroContact">Get in touch</a>
+        </div>
+        <div class="hero-meta">
+          <span><span class="meta-line"></span><span data-i18n="heroMeta">Curious by design. Practical by execution.</span></span>
+          <span class="mono">SV / 2026</span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="visual-orbit orbit-one"></div>
+        <div class="visual-orbit orbit-two"></div>
+        <div class="portrait-frame">
+          <div class="portrait-topline"><span>PROFILE_001</span><span class="mono">ACTIVE</span></div>
+          <img src="assets/images/profile/yoprofesionalhappyfondonegro.jpg" alt="Professional portrait of Jeremy Torres" class="portrait">
+          <div class="portrait-caption">
+            <div><strong>JEREMY TORRES</strong><span data-i18n="portraitRole">Software & technology</span></div>
+            <span class="portrait-index">01 / 01</span>
+          </div>
+        </div>
+        <div class="floating-chip chip-code"><span class="chip-dot red"></span> <span>CODE</span></div>
+        <div class="floating-chip chip-systems"><span class="chip-dot gold"></span> <span>SYSTEMS</span></div>
+        <div class="hero-coordinate mono">13°41' N<br>89°11' W</div>
+      </div>
+      <div class="hero-bottom-rule"><span></span><span data-i18n="scrollHint">SCROLL TO EXPLORE</span><span></span></div>
+    </section>
+
+    <section class="section-shell intro-section" id="about">
+      <div class="section-heading">
+        <p class="section-index">01 / <span data-i18n="aboutIndex">PROFILE</span></p>
+        <h2 data-i18n="aboutTitle">A practical mindset.<br><em>Curiosity with direction.</em></h2>
+      </div>
+      <div class="intro-content">
+        <p data-i18n="aboutP1">I am a student and developer in training based in El Salvador. I enjoy building web interfaces, solving technical problems and understanding how software interacts with operating systems, networks and hardware.</p>
+        <p data-i18n="aboutP2">My work ranges from websites and collaborative prototypes to Linux utilities, streaming interfaces and Arduino experiments. I care about making projects understandable, maintainable and useful — not just visually impressive.</p>
+        <p data-i18n="aboutP3">I learn new tools as projects require them and use AI as a development aid, while keeping responsibility for reviewing, testing and validating the result. I value clear communication, teamwork and steady improvement.</p>
+        <div class="credential-strip">
+          <div class="credential"><strong>855</strong><span data-i18n="credentialToeic">TOEIC · Listening & Reading</span></div>
+          <div class="credential"><strong>9.875<span class="small-unit">/10</span></strong><span data-i18n="credentialGrade">High school average</span></div>
+          <div class="credential"><strong>980 / 945</strong><span data-i18n="credentialExcel">Excel Specialist / Expert scores</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell work-section" id="work">
+      <div class="section-heading work-heading">
+        <div>
+          <p class="section-index">02 / <span data-i18n="workIndex">SELECTED WORK</span></p>
+          <h2 data-i18n="workTitle">Projects with a<br><em>purpose behind them.</em></h2>
+        </div>
+        <p class="section-aside" data-i18n="workAside">A selection of completed work, prototypes and technical experiments. Each project is presented with its real scope and limitations.</p>
+      </div>
+      <div class="project-grid" id="projectGrid"></div>
+      <div class="lab-heading">
+        <div>
+          <p class="section-index">03 / <span data-i18n="labIndex">TECHNICAL LAB</span></p>
+          <h3 data-i18n="labTitle">Tools, experiments<br><em>& learning projects.</em></h3>
+        </div>
+        <p data-i18n="labAside">Smaller utilities and academic exercises that show how I explore technologies and build practical skills.</p>
+      </div>
+      <div class="lab-grid" id="labGrid"></div>
+    </section>
+
+    <section class="section-shell stack-section" id="stack">
+      <div class="section-heading">
+        <p class="section-index">04 / <span data-i18n="stackIndex">TOOLKIT</span></p>
+        <h2 data-i18n="stackTitle">A flexible<br><em>technical toolkit.</em></h2>
+      </div>
+      <div class="stack-content">
+        <div class="stack-group">
+          <span class="stack-label" data-i18n="stackFrontend">WEB & FRONTEND</span>
+          <div class="tag-list"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>TypeScript</span><span>React</span><span>Next.js</span></div>
+        </div>
+        <div class="stack-group">
+          <span class="stack-label" data-i18n="stackBackend">BACKEND & DATA</span>
+          <div class="tag-list"><span>Node.js</span><span>PHP</span><span>SQL</span><span>MySQL</span><span>MariaDB</span><span>PostgreSQL</span><span>Supabase</span></div>
+        </div>
+        <div class="stack-group">
+          <span class="stack-label" data-i18n="stackSystems">SYSTEMS & AUTOMATION</span>
+          <div class="tag-list"><span>Arch Linux</span><span>Ubuntu</span><span>Bash</span><span>SSH</span><span>Nginx</span><span>systemd</span><span>Git</span><span>GitHub</span></div>
+        </div>
+        <div class="stack-group">
+          <span class="stack-label" data-i18n="stackHardware">HARDWARE & EXPLORATION</span>
+          <div class="tag-list"><span>Arduino</span><span>Electronics</span><span>Python · beginner</span><span>TensorFlow.js</span><span>Teachable Machine</span></div>
+        </div>
+        <div class="stack-note"><span class="note-symbol">↗</span><p data-i18n="stackNote">Tools are not trophies. I choose them based on the problem, learn what I need and validate the implementation.</p></div>
+      </div>
+    </section>
+
+    <section class="section-shell education-section">
+      <div class="section-heading">
+        <p class="section-index">05 / <span data-i18n="educationIndex">LEARNING</span></p>
+        <h2 data-i18n="educationTitle">Learning that<br><em>moves into practice.</em></h2>
+      </div>
+      <div class="education-grid">
+        <article class="education-card"><span class="edu-number">01</span><div><h3 data-i18n="eduExcelTitle">Microsoft Excel</h3><p data-i18n="eduExcelDesc">Excel Specialist — 980. Excel Expert — 945.</p></div><span class="edu-type">CERTIFICATION SCORES</span></article>
+        <article class="education-card"><span class="edu-number">02</span><div><h3 data-i18n="eduEnglishTitle">English</h3><p data-i18n="eduEnglishDesc">TOEIC 855 in Listening and Reading. Continuing to develop advanced communication skills.</p></div><span class="edu-type">TOEIC</span></article>
+        <article class="education-card"><span class="edu-number">03</span><div><h3 data-i18n="eduArduinoTitle">Arduino & electronics</h3><p data-i18n="eduArduinoDesc">Arduino training diploma and hands-on exploration of microcontrollers and circuits.</p></div><span class="edu-type">TECHNICAL TRAINING</span></article>
+        <article class="education-card"><span class="edu-number">04</span><div><h3 data-i18n="eduSupTitle">Supérate</h3><p data-i18n="eduSupDesc">Academic development in English, technology and values.</p></div><span class="edu-type">ACADEMIC PROGRAM</span></article>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="section-shell contact-inner">
+        <p class="section-index">06 / <span data-i18n="contactIndex">NEXT STEP</span></p>
+        <p class="contact-overline" data-i18n="contactOverline">HAVE A PROJECT OR OPPORTUNITY?</p>
+        <h2 data-i18n="contactTitle">Let's build<br><em>something useful.</em></h2>
+        <p class="contact-copy" data-i18n="contactCopy">Open to learning opportunities, internships and collaborations where I can contribute, grow and solve real problems.</p>
+        <div class="contact-actions">
+          <a class="button button-primary" href="mailto:jeremy.torres.1.2026@gmail.com">jeremy.torres.1.2026@gmail.com <span aria-hidden="true">↗</span></a>
+          <a class="social-link" href="https://github.com/Jeremy-MegaJS" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-shell footer-inner">
+      <a class="brand" href="#home"><span class="brand-mark">J<span>.</span></span><span class="brand-name">JEREMY<span>/</span>TORRES</span></a>
+      <p data-i18n="footerLine">Built with intent. Kept lightweight.</p>
+      <div class="footer-links"><a href="privacy.html" data-i18n="privacyLink">Privacy & performance</a><span>© <span id="year"></span> J. Torres</span></div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -476,3 +476,39 @@ body::before{content:"";position:fixed;z-index:0;inset:-30%;pointer-events:none;
 @media(max-width:1000px){.capability-layout{grid-template-columns:1fr}.capability-intro{position:relative;top:auto;display:flex;gap:25px;align-items:center}.capability-intro>p{flex:1}.capability-legend{margin:0}}
 @media(max-width:760px){.capability-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.floating-contact{right:12px;top:auto;bottom:15px}.floating-contact-main{padding:11px 13px}.project-action{min-height:44px;font-size:11px}.detail-story-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){body,body::before,body::after,.gradient-text,.section-heading h2 em,.lab-heading h3 em,.contact-inner h2 em,.section-index,.detail-kicker,.detail-art-code,.ascii-sigil,.button-primary,.project-card,.lab-card,.project-preview,.floating-contact-main::before,.contact-orbit,.capability-card::before,.capability-card::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none;filter:none;transition:none}}
+
+
+/* Final layout pass: one integrated capability canvas and deliberate interactive motion */
+.liquid-aura{position:fixed;inset:-25%;z-index:0;pointer-events:none;opacity:.42;background:radial-gradient(ellipse at 20% 35%,rgba(255,12,47,.24),transparent 32%),radial-gradient(ellipse at 75% 28%,rgba(225,175,78,.17),transparent 28%),radial-gradient(ellipse at 60% 80%,rgba(102,4,27,.23),transparent 34%);filter:blur(55px);background-size:180% 180%;will-change:background-position,transform}
+.capability-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:25px;align-items:start}
+.capability-intro{position:relative;top:auto;display:flex;align-items:center;gap:32px;padding:18px 22px;background:linear-gradient(110deg,rgba(255,255,255,.05),rgba(12,7,10,.54),rgba(84,7,23,.12));border-color:rgba(255,219,153,.16)}
+.capability-intro>p{flex:1;margin:0;font-size:14px;line-height:1.75}
+.capability-legend{display:flex;align-items:center;gap:22px;margin:0;white-space:nowrap}
+.capability-groups{gap:38px}
+.capability-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.capability-card{min-height:186px}
+.capability-card p{font-size:12px;line-height:1.7}
+.capability-projects{max-height:34px;overflow:hidden}
+.contact-tool{font-size:11px;letter-spacing:.025em}
+.contact-actions{display:flex;flex-wrap:wrap}
+.contact-actions .button-primary{min-width:184px;justify-content:center}
+.ascii-sigil{white-space:pre;line-height:1.12;font-size:9px}
+.story-section{position:relative}
+.story-panel{transform-style:preserve-3d;will-change:transform,opacity}
+.story-panel h3,.story-panel p{position:relative;z-index:1}
+.story-ornament{position:relative;z-index:1}
+.project-card,.lab-card{will-change:transform}
+.project-visual{background-color:#0c090d;background-image:radial-gradient(ellipse at 18% 22%,rgba(255,32,64,.17),transparent 42%),radial-gradient(ellipse at 82% 82%,rgba(220,169,80,.1),transparent 38%),linear-gradient(145deg,rgba(255,255,255,.045),rgba(8,7,10,.88))}
+.project-preview{mix-blend-mode:screen;opacity:.88}
+.project-card:hover .project-preview{opacity:1}
+.button-primary{position:relative;isolation:isolate;overflow:hidden}
+.button-primary::after{content:"";position:absolute;top:-40%;bottom:-40%;left:-50%;width:28%;z-index:-1;background:linear-gradient(90deg,transparent,rgba(255,235,183,.5),transparent);transform:translateX(-150%) skewX(-20deg);transition:none}
+.button-primary:hover::after{animation:glintPass 1.4s ease-out}
+.action-demo{position:relative}
+.action-demo:hover{transform:translateY(-3px) scale(1.02)}
+.floating-contact-main{transition:transform .4s ease,box-shadow .8s ease,border-color .8s ease}
+.floating-contact-main:hover{transform:translateY(-3px);box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 42px rgba(255,18,48,.25)}
+@media(max-width:1000px){.capability-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.capability-intro{display:flex}.capability-legend{display:flex}}
+@media(max-width:760px){.capability-intro{display:grid;gap:14px}.capability-legend{flex-wrap:wrap;white-space:normal;gap:12px 18px}.capability-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.capability-card{min-height:190px}.contact-actions .button-primary{min-width:0;flex:1 1 46%}.floating-contact-main{font-size:10px}}
+@media(max-width:420px){.capability-grid{grid-template-columns:1fr}.capability-card{min-height:0}.contact-actions .button-primary{flex-basis:100%}}
+@media(prefers-reduced-motion:reduce){.liquid-aura,.story-panel,.project-card,.lab-card{will-change:auto;transform:none!important}}

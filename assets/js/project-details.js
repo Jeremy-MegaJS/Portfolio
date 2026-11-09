@@ -64,6 +64,13 @@
     document.title = project.title + " — Jeremy Torres";
     document.documentElement.lang = lang;
     switcher?.querySelectorAll(".lang-option").forEach(el => el.classList.toggle("active",el.dataset.lang===lang));
+    const backLink = document.querySelector("[data-detail-i18n=backProjects]");
+    if (backLink) backLink.textContent = labels.back.replace("← ","");
+    if (switcher) switcher.setAttribute("aria-label",es ? "Cambiar idioma" : "Change language");
+    const footerNote = document.querySelector(".footer-inner > p");
+    if (footerNote) footerNote.textContent = es ? "Hecho con intención. Diseñado para ser ligero." : "Built with intent. Kept lightweight.";
+    const privacyLink = document.querySelector(".footer-links a");
+    if (privacyLink) privacyLink.textContent = es ? "Privacidad y rendimiento" : "Privacy & performance";
     root.querySelectorAll(".detail-section, .detail-hero").forEach(el => el.classList.add("reveal","is-visible"));
   }
   switcher?.addEventListener("click",()=>{lang=lang==="en"?"es":"en";try{localStorage.setItem("portfolio-language",lang)}catch(_){}render()});

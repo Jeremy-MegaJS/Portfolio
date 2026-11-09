@@ -883,3 +883,13 @@ body::before{
   .particle-field{opacity:.26}
   .reveal{opacity:1;transform:none;filter:none;transition:none}
 }
+
+
+/* Consistent restrained metadata colors */
+.section-index,.capability-index,.visual-code,.project-kind,.edu-type,.detail-kicker,.detail-art-code,.detail-story-icon,.contact-overline,.stack-label,.small-unit{color:#a69b9e}
+.detail-kicker,.detail-art-code{background:none!important;color:#b9adb0!important}
+.capability-count{color:#c5b9bb}
+.floating-chip .chip-dot.gold{background:#a68e70;box-shadow:0 0 9px rgba(166,142,112,.18)}
+@media(prefers-reduced-motion:reduce){
+  .floating-contact-menu,.contact-chevron,.floating-contact-main,.button-primary,.button-ghost{animation:none!important;transition:none!important}
+}

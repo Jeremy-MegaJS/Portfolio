@@ -16,7 +16,7 @@ window.PROJECTS = {
       en:"A collaborative academic prototype for discovering parking options and exploring customer and owner flows. Presented in English at student achievement exhibitions. Demo data is used; it is not a live booking marketplace.",
       es:"Prototipo académico colaborativo para explorar opciones de estacionamiento y flujos de clientes y propietarios. Presentado en inglés en exposiciones de logros estudiantiles. Utiliza datos de demostración; no es un mercado de reservas activo.",
       stack:["Next.js","React","TypeScript","Supabase","PostgreSQL","Vercel"],
-      demo:"https://parkingsv-1a4sqliw6-parkingsv.vercel.app/",
+      demo:"https://parkingsv-web-git-main-parkingsv.vercel.app/",
       repo:"https://github.com/parkingSV26/parkingsv-web",
       kind:"academic"
     },

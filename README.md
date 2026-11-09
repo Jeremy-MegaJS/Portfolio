@@ -43,3 +43,50 @@ Project descriptions distinguish individual work from team projects and prototyp
 ## Contact
 
 `jeremy.torres.1.2026@gmail.com`
+
+
+## Español
+
+Este repositorio contiene el portafolio personal bilingüe de Jeremy Torres. Presenta proyectos seleccionados de desarrollo web, sistemas, automatización, prototipos académicos y experimentos con hardware.
+
+### Características
+
+- Diseño adaptable a computadoras, tabletas y teléfonos.
+- Selector de idioma inglés / español con preferencia guardada en el navegador.
+- Proyectos web, de sistemas, prototipos de IA y hardware.
+- Sección independiente para utilidades técnicas y ejercicios académicos.
+- Compatibilidad con la preferencia de movimiento reducido.
+- Animaciones ligeras y página de privacidad, servicios externos y rendimiento.
+- Sin framework frontend, proceso de compilación, formulario de contacto ni dependencia de analítica.
+
+### Ejecución local
+
+Desde la raíz del repositorio:
+
+```bash
+python -m http.server 8000
+```
+
+Abre `http://localhost:8000`.
+
+### Publicación con GitHub Pages
+
+1. Sube los archivos del proyecto a la raíz de la rama `main`.
+2. Abre **Settings → Pages** en el repositorio.
+3. En **Build and deployment**, selecciona **Deploy from a branch**.
+4. Selecciona `main` y `/ (root)`, luego guarda.
+5. Espera a que finalice el despliegue de Pages.
+
+La fotografía de perfil existente debe permanecer en:
+
+`assets/images/profile/yoprofesionalhappyfondonegro.jpg`
+
+No elimines ni muevas ese archivo al actualizar el portafolio.
+
+### Notas de precisión
+
+Las descripciones distinguen el trabajo individual de los proyectos en equipo y de los prototipos. ParkingSV e IDentify se presentan como prototipos académicos, y el panel de Transmission Monitor se identifica expresamente como una demostración con métricas simuladas. No se incluyen proyectos sin terminar ni configuraciones sensibles de producción.
+
+### Contacto
+
+`jeremy.torres.1.2026@gmail.com`

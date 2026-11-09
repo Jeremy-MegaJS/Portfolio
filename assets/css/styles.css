@@ -300,3 +300,9 @@ body::before{content:"";position:fixed;inset:-25%;z-index:0;pointer-events:none;
 .detail-preview{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.88}
 .detail-art-code{z-index:2;padding:7px 10px;background:rgba(5,5,7,.65);border:1px solid rgba(255,255,255,.12);border-radius:3px}
 @media(max-width:680px){.detail-nav{display:flex;position:static;flex-direction:row;gap:12px;align-items:center;padding:0;border:0;background:transparent}.detail-nav>a{font-size:11px}.detail-nav .language-switch{align-self:center}}
+
+.lab-card{overflow:hidden}
+.lab-preview{height:130px;margin:-23px -23px 20px;position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:#101014}
+.lab-preview img{width:100%;height:100%;object-fit:cover;transition:transform 1s ease,filter .8s;filter:saturate(.82)}
+.lab-card:hover .lab-preview img{transform:scale(1.06);filter:saturate(1.08)}
+.lab-card>a{margin-right:18px}

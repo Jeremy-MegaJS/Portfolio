@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09090b">
+  <meta name="description" content="Privacy, external services and performance notes for Jeremy Torres' portfolio website.">
+  <title>Privacy & Performance — Jeremy Torres</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/translations.js"></script>
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">J<span>.</span></span><span class="brand-name">JEREMY<span>/</span>TORRES</span></a>
+    <nav class="main-nav privacy-nav">
+      <a href="index.html#work" data-i18n="navWork">Projects</a>
+      <button class="language-switch" id="languageSwitch" type="button" aria-label="Change language"><span class="lang-option active" data-lang="en">EN</span><span class="lang-divider">/</span><span class="lang-option" data-lang="es">ES</span></button>
+    </nav>
+  </header>
+  <main class="section-shell legal-page">
+    <p class="section-index">INFO / <span data-i18n="legalIndex">SITE NOTES</span></p>
+    <h1 data-i18n="legalTitle">Privacy &<br><em>performance.</em></h1>
+    <p class="legal-updated" data-i18n="legalUpdated">Last reviewed: November 2026</p>
+    <section class="legal-block"><h2 data-i18n="legalDataTitle">Data collection</h2><p data-i18n="legalData">This portfolio does not include an account system, contact form, analytics platform or first-party advertising tracker. The site itself does not ask visitors to submit personal information. If you contact me by email, your email provider processes that communication.</p></section>
+    <section class="legal-block"><h2 data-i18n="legalThirdTitle">External services and links</h2><p data-i18n="legalThird">The site may load fonts from Google Fonts and links to third-party services such as GitHub, LinkedIn and project demos. Those services have their own privacy policies and may receive technical information when you visit them. External links open outside this portfolio.</p></section>
+    <section class="legal-block"><h2 data-i18n="legalCookiesTitle">Cookies and local storage</h2><p data-i18n="legalCookies">The portfolio uses browser local storage only to remember your language preference when available. It does not use that preference to identify you. You can clear it through your browser settings.</p></section>
+    <section class="legal-block"><h2 data-i18n="legalPerformanceTitle">Performance and accessibility</h2><p data-i18n="legalPerformance">The site uses lightweight HTML, CSS and JavaScript without a frontend framework. Decorative motion is reduced when your operating system requests reduced motion. Layouts adapt to smaller screens, and essential content remains available without animation.</p></section>
+    <section class="legal-block"><h2 data-i18n="legalProjectsTitle">Project demonstrations</h2><p data-i18n="legalProjects">Some linked projects are academic prototypes or demonstrations. Their descriptions identify relevant limitations; they should not be treated as production services, security products, identity verification systems or live operational dashboards unless explicitly stated.</p></section>
+    <section class="legal-block"><h2 data-i18n="legalContactTitle">Contact</h2><p><a href="mailto:jeremy.torres.1.2026@gmail.com">jeremy.torres.1.2026@gmail.com</a></p></section>
+    <a class="button button-ghost legal-back" href="index.html" data-i18n="legalBack">← Back to portfolio</a>
+  </main>
+  <footer class="site-footer"><div class="section-shell footer-inner"><a class="brand" href="index.html"><span class="brand-mark">J<span>.</span></span><span class="brand-name">JEREMY<span>/</span>TORRES</span></a><p data-i18n="footerLine">Built with intent. Kept lightweight.</p><span>© <span id="year"></span> J. Torres</span></div></footer>
+</body>
+</html>

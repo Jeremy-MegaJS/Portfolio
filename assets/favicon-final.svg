@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Jeremy Torres J monogram">
+<defs>
+  <linearGradient id="crimson" x1="0" y1="0" x2="0.9" y2="1">
+    <stop stop-color="#ff6578"/><stop offset=".48" stop-color="#f0193b"/><stop offset="1" stop-color="#8e0924"/>
+  </linearGradient>
+  <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0">
+    <stop stop-color="#ffe9b1"/><stop offset=".52" stop-color="#c99642"/><stop offset="1" stop-color="#fff0c4"/>
+  </linearGradient>
+</defs>
+<rect width="64" height="64" rx="15" fill="#08080b"/>
+<path d="M12 10H52V19H39V42C39 53 32 59 20 59H10V50H19C26 50 30 46 30 39V19H12Z" fill="url(#crimson)"/>
+<path d="M12 10H52" stroke="url(#shine)" stroke-width="1.4" stroke-linecap="round" opacity=".9"/>
+</svg>

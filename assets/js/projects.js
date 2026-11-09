@@ -8,6 +8,10 @@ window.PROJECTS = {
       stack:["HTML5","CSS3","JavaScript","GitHub Pages"],
       demo:"https://jeremy-megajs.github.io/natural-soap/",
       repo:"https://github.com/Jeremy-MegaJS/natural-soap",
+      audienceEn:"Small natural-soap brands and customers who need a clear catalogue and product information.",
+      audienceEs:"Pequeñas marcas de jabones naturales y clientes que necesitan un catálogo e información de productos claros.",
+      motivationEn:"I wanted to practice building a bilingual web presence around a real product context, with an emphasis on communicating information clearly.",
+      motivationEs:"Quería practicar cómo construir una presencia web bilingüe para un contexto real de productos, priorizando comunicar la información con claridad.",
       kind:"individual"
     },
     {
@@ -18,6 +22,10 @@ window.PROJECTS = {
       stack:["Next.js","React","TypeScript","Supabase","PostgreSQL","Vercel"],
       demo:"https://parkingsv-web-git-main-parkingsv.vercel.app/",
       repo:"https://github.com/parkingSV26/parkingsv-web",
+      audienceEn:"Drivers looking for parking options and owners who want to present their parking spaces.",
+      audienceEs:"Conductores que buscan opciones de parqueo y propietarios que desean presentar sus espacios.",
+      motivationEn:"I joined to experience a team-based, full-stack product challenge and understand how discovery, account flows and relational data fit together.",
+      motivationEs:"Me involucré para vivir un reto de producto full-stack en equipo y comprender cómo se relacionan el descubrimiento, las cuentas y los datos relacionales.",
       kind:"academic"
     },
     {
@@ -29,6 +37,10 @@ window.PROJECTS = {
       demo:"https://jeremy-megajs.github.io/monitoreo-transmission_demo/",
       extra:"https://giovannicastellon.github.io/radiofe990am/",
       repo:"https://github.com/Jeremy-MegaJS/monitoreo-transmission_demo",
+      audienceEn:"Radio listeners; the separate monitoring concept is aimed at people responsible for keeping a stream available.",
+      audienceEs:"Oyentes de radio; el concepto separado de monitoreo está dirigido a quienes deben mantener disponible una transmisión.",
+      motivationEn:"I worked on it to understand how a public-facing player depends on streaming and server infrastructure, not just frontend code.",
+      motivationEs:"Lo trabajé para comprender cómo un reproductor público depende del streaming y la infraestructura de servidores, no solo del código frontend.",
       kind:"individual",
       note:"simulated"
     },
@@ -40,6 +52,10 @@ window.PROJECTS = {
       stack:["HTML5","CSS3","JavaScript","Intersection Observer"],
       demo:"https://discomovilextremegalaxy.github.io/discomovilextremegalaxy.com/",
       repo:"https://github.com/discomovilextremegalaxy/discomovilextremegalaxy.com",
+      audienceEn:"Potential customers looking for DJ and event services, and a small family-run business that needs an online presence.",
+      audienceEs:"Clientes potenciales que buscan servicios de DJ y eventos, y un pequeño negocio familiar que necesita presencia en línea.",
+      motivationEn:"I wanted to build something useful for a real small-business context and practice presenting an offer so visitors can understand it and get in touch.",
+      motivationEs:"Quería construir algo útil para un negocio real y practicar cómo presentar una oferta para que los visitantes la entiendan y puedan contactar.",
       kind:"individual"
     },
     {
@@ -50,6 +66,10 @@ window.PROJECTS = {
       stack:["JavaScript","TensorFlow.js","Teachable Machine","Camera API"],
       demo:"https://jeremy-torres2026-web.github.io/IDentify/my-model/",
       repo:"https://github.com/Jeremy-torres2026-web/IDentify",
+      audienceEn:"Learners exploring image classification and people evaluating a basic browser-based computer-vision demonstration.",
+      audienceEs:"Estudiantes que exploran clasificación de imágenes y personas que evalúan una demostración básica de visión por computadora en navegador.",
+      motivationEn:"I joined to learn how a trained model can be integrated into a web interface and to understand why a classification demo is not identity verification.",
+      motivationEs:"Participé para aprender cómo integrar un modelo entrenado en una interfaz web y comprender por qué una demo de clasificación no equivale a verificar identidades.",
       kind:"academic",
       note:"camera"
     }
@@ -61,6 +81,10 @@ window.PROJECTS = {
       es:"Resuelve una necesidad práctica de accesibilidad y control de entrada: operar el puntero mediante atajos de teclado cuando usar un ratón resulta incómodo. La desarrollé para explorar dispositivos de entrada de Linux y crear una utilidad que encaje con mi propio flujo de escritorio.",
       stack:["Python","Linux","systemd"],
       repo:"https://github.com/Jeremy-MegaJS/arch-keyboard-virtual-mouse"
+      audienceEn:"Linux desktop users who benefit from keyboard-driven pointer controls or want a customizable input workflow.",
+      audienceEs:"Usuarios de escritorio Linux que se benefician del control del puntero mediante teclado o desean un flujo de entrada personalizable.",
+      motivationEn:"I wanted a utility that solved a practical desktop interaction problem while teaching me more about Linux input devices.",
+      motivationEs:"Quería una utilidad que resolviera un problema práctico de interacción en el escritorio y me enseñara más sobre los dispositivos de entrada de Linux.",
     },
     {
       id:"warp-toggle-masque", title:"WARP Toggle — MASQUE",
@@ -68,6 +92,10 @@ window.PROJECTS = {
       es:"Reduce la fricción al controlar el cliente oficial de WARP desde KDE, haciendo más explícitas las acciones de conexión, desconexión y verificación de estado. La desarrollé para resolver un problema recurrente de mi flujo de escritorio y practicar automatización shell más segura.",
       stack:["Bash","KDE","WARP CLI","MASQUE"],
       repo:"https://github.com/Jeremy-MegaJS/warp-toggle-masque"
+      audienceEn:"Linux KDE users who want explicit control and status feedback for the official WARP client.",
+      audienceEs:"Usuarios de KDE en Linux que desean control explícito y retroalimentación de estado del cliente oficial de WARP.",
+      motivationEn:"I built it to streamline a repeated connection workflow and practice making shell automation safer and more predictable.",
+      motivationEs:"Lo desarrollé para simplificar un flujo de conexión repetitivo y practicar automatización shell más segura y predecible.",
     },
     {
       id:"car-dashboard", title:"Car Dashboard",
@@ -75,6 +103,10 @@ window.PROJECTS = {
       es:"Ejercicio de interfaz para practicar cómo un tablero orientado al conductor agrupa información importante del vehículo. Lo desarrollé como actividad colaborativa de aprendizaje, no como sistema automotriz conectado.",
       stack:["HTML","CSS","JavaScript"],
       repo:"https://github.com/Jeremy-torres2026-web/proyecto1-tablero"
+      audienceEn:"Learners exploring how driver-facing interfaces organize vehicle information; it is not connected to a real vehicle.",
+      audienceEs:"Estudiantes que exploran cómo las interfaces para conductores organizan información del vehículo; no está conectado a un vehículo real.",
+      motivationEn:"It was a collaborative class exercise to practice turning a real-world information layout into a browser interface.",
+      motivationEs:"Fue un ejercicio colaborativo de clase para practicar cómo convertir una distribución de información del mundo real en una interfaz de navegador.",
     },
     {
       id:"f1-team-profiles", title:"F1 Team Profiles",
@@ -82,6 +114,10 @@ window.PROJECTS = {
       es:"Facilita la consulta de información de equipos de Fórmula 1 mediante tarjetas visuales. Lo trabajé como ejercicio frontend colaborativo para practicar la estructura de contenido y su presentación adaptable; sus estadísticas son ilustrativas, no datos deportivos en vivo.",
       stack:["HTML","CSS","JavaScript"],
       repo:"https://github.com/Jeremy-torres2026-web/proyecto3-perfil"
+      audienceEn:"Formula 1 fans or learners who want team information presented in a scannable format; statistics are illustrative.",
+      audienceEs:"Aficionados de Fórmula 1 o estudiantes que desean información de equipos en un formato fácil de consultar; las estadísticas son ilustrativas.",
+      motivationEn:"I worked on it as a team exercise to practice responsive content presentation and reusable frontend layout patterns.",
+      motivationEs:"Lo trabajé como ejercicio en equipo para practicar presentación adaptable de contenido y patrones reutilizables de frontend.",
     }
   ]
 };

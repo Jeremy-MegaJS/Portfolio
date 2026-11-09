@@ -15,7 +15,7 @@
 
   function projectCard(project, index) {
     const t = translations[language];
-    const links = [];
+    const links = [`<a href="project.html?project=${encodeURIComponent(project.id)}">${escapeHtml(t.details)} <span>↗</span></a>`];
     if (project.demo) links.push(`<a href="${escapeHtml(project.demo)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t.demo)} <span>↗</span></a>`);
     if (project.extra) links.push(`<a href="${escapeHtml(project.extra)}" target="_blank" rel="noopener noreferrer">${escapeHtml(language === "es" ? "Reproductor en vivo" : "Live player")} <span>↗</span></a>`);
     if (project.repo) links.push(`<a href="${escapeHtml(project.repo)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t.source)} <span>↗</span></a>`);
@@ -93,7 +93,7 @@
         }
       });
     }, {threshold:0.12});
-    document.querySelectorAll(".reveal:not(.is-visible)").forEach(el => revealObserver.observe(el));
+    document.querySelectorAll(".reveal:not(.is-visible), .section-heading:not(.is-visible), .intro-content:not(.is-visible), .stack-group:not(.is-visible), .skill-detail:not(.is-visible), .education-card:not(.is-visible), .contact-inner:not(.is-visible)").forEach(el => { el.classList.add("reveal"); revealObserver.observe(el); });
   }
 
   if (languageSwitch) {
@@ -125,7 +125,7 @@
     }, {passive:true});
   }
 
-  const year = document.getElementById("year");
+  document.querySelectorAll(".skill-chip").forEach((chip, index) => chip.addEventListener("click", () => {\n    document.querySelectorAll(".skill-chip").forEach(item => item.classList.remove("is-active"));\n    chip.classList.add("is-active");\n    const title = document.getElementById("skillDetailTitle");\n    const description = document.getElementById("skillDetailText");\n    const kicker = document.querySelector(".skill-detail-kicker");\n    if (title) title.textContent = chip.dataset.skill || chip.textContent.trim();\n    if (description) description.textContent = chip.dataset[language] || "";\n    if (kicker) kicker.textContent = `${language === "es" ? "HERRAMIENTA SELECCIONADA" : "SELECTED TOOL"} / ${String(index + 1).padStart(2,"0")}`;\n  }));\n\n  const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
   applyLanguage(language);
 })();

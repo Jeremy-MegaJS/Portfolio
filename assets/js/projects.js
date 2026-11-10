@@ -17,10 +17,10 @@ window.PROJECTS = {
     {
       id:"parking-sv", category:"WEB / TEAM", visual:"parking",
       title:"ParkingSV",
-      en:"Explores how drivers could find parking options and how owners could present their spaces in one experience. I joined the project to work on a practical full-stack product challenge with a team, and to learn how frontend flows connect to authentication and relational data. It remains an academic prototype with demonstration data, not a live booking marketplace.",
-      es:"Explora cómo los conductores podrían encontrar opciones de estacionamiento y cómo los propietarios podrían presentar sus espacios en una misma experiencia. Participé para resolver un reto práctico full-stack en equipo y aprender cómo se conectan los flujos frontend con autenticación y datos relacionales. Sigue siendo un prototipo académico con datos de demostración, no un marketplace de reservas activo.",
+      en:"Explores how drivers could find parking options and how owners could present their spaces in one experience. I joined the project to work on a practical full-stack product challenge with a team, and to learn how frontend flows connect to authentication and relational data. It is an academic prototype using synthetic demonstration data. It does not provide real-time parking availability or confirmed reservations.",
+      es:"Explora cómo los conductores podrían encontrar opciones de estacionamiento y cómo los propietarios podrían presentar sus espacios en una misma experiencia. Participé para resolver un reto práctico full-stack en equipo y aprender cómo se conectan los flujos frontend con autenticación y datos relacionales. Es un prototipo académico que utiliza datos sintéticos de demostración. No ofrece disponibilidad de parqueos en tiempo real ni reservas confirmadas.",
       stack:["Next.js","React","TypeScript","Supabase","PostgreSQL","Vercel"],
-      demo:"https://parkingsv-web-git-main-parkingsv.vercel.app/",
+      demo:"https://parkingsv.vercel.app/",
       repo:"https://github.com/parkingSV26/parkingsv-web",
       audienceEn:"Drivers looking for parking options and owners who want to present their parking spaces.",
       audienceEs:"Conductores que buscan opciones de parqueo y propietarios que desean presentar sus espacios.",

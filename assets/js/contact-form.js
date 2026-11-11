@@ -55,7 +55,7 @@
     status.textContent = "";
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/parkingsv1@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/jeremy.torres.1.2026@gmail.com", {
         method: "POST",
         headers: { "Content-Type": "application/json", "Accept": "application/json" },
         body: JSON.stringify(Object.fromEntries(new FormData(form).entries()))

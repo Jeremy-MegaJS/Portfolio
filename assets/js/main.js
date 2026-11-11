@@ -101,6 +101,9 @@
       targets[item.group].insertAdjacentHTML("beforeend",'<article class="capability-card reveal" tabindex="0" aria-label="'+escapeHtml(item.name+" — "+item.description[language==="es"?1:0])+'"><div class="capability-card-top"><span class="capability-icon">'+icon(item.icon)+'</span><span class="capability-count">'+label+'</span></div><h4>'+escapeHtml(item.name)+'</h4><p>'+escapeHtml(item.description[language==="es"?1:0])+'</p><div class="capability-proof"><span style="--proof:'+Math.max(8,count/9*100)+'%"></span></div><small class="capability-projects">'+(language==="es"?"EVIDENCIA: ":"PROJECT EVIDENCE: ")+escapeHtml(evidence)+'</small></article>');
     }
   }
+  const localizedCategory = value => language === "es" ? ({
+    "WEB / INDIVIDUAL":"WEB / INDIVIDUAL","WEB / TEAM":"WEB / EQUIPO","AI / TEAM PROTOTYPE":"IA / PROTOTIPO EN EQUIPO","LINUX / INDIVIDUAL":"LINUX / INDIVIDUAL","SYSTEMS / INDIVIDUAL":"SISTEMAS / INDIVIDUAL"
+  }[value] || value) : value;
   function projectCard(project, index) {
     const t = translations[language];
     const links = [
@@ -146,6 +149,7 @@
     if(labGrid)labGrid.innerHTML=projects.lab.map(labCard).join("");
 
     try{localStorage.setItem("portfolio-language",language)}catch(_){}
+    window.dispatchEvent(new CustomEvent("portfolio:languagechange",{detail:{language}}));
     observeReveals();
   }
   let revealObserver;

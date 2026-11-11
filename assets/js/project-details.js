@@ -133,6 +133,8 @@
     const repo = project.repo ? '<a class="button button-ghost" href="'+escapeHTML(project.repo)+'" target="_blank" rel="noopener noreferrer">'+labels.repo+' ↗</a>' : "";
     const extra = project.extra ? '<a class="project-action action-demo" href="'+escapeHTML(project.extra)+'" target="_blank" rel="noopener noreferrer">'+labels.extra+' ↗</a>' : "";
     const number = String(projects.indexOf(project)+1).padStart(2,"0");
+    const gallerySection = '<section class="detail-section" id="projectGallery"><p class="section-index">04 / '+labels.gallery.toUpperCase()+'</p><div class="project-gallery-grid" id="projectGalleryGrid"><p class="detail-lead">'+escapeHTML(labels.galleryEmpty)+'</p></div></section>';
+
 
     root.innerHTML =
       '<a class="detail-back" href="index.html#work">'+labels.back+'</a>'+

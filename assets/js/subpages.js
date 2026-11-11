@@ -62,9 +62,10 @@
     });
     document.querySelectorAll("[data-en-href][data-es-href]").forEach(node => {
       const attr = node.tagName === "IFRAME" ? "src" : "href";
-      const target = language === "en" && englishPdfUrl ? englishPdfUrl : node.dataset[language + "Href"];
+      const target = language === "en" ? (englishPdfUrl || node.dataset.esHref) : node.dataset.esHref;
       node.setAttribute(attr, target);
     });
+    document.querySelectorAll("[data-en-title][data-es-title]").forEach(node => node.setAttribute("title", node.dataset[language + "Title"]));
     document.querySelectorAll("[aria-label]").forEach(node => {
       const original = node.getAttribute("data-original-aria") || node.getAttribute("aria-label");
       if (!node.hasAttribute("data-original-aria")) node.setAttribute("data-original-aria", original);

@@ -117,7 +117,10 @@
         const bytes = new Uint8Array(binary.length);
         for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
         englishPdfUrl = URL.createObjectURL(new Blob([bytes], { type: "application/pdf" }));
-        if (language === "en") document.querySelectorAll("[data-en-href][data-es-href]").forEach(node => node.setAttribute(node.tagName === "IFRAME" ? "src" : "href", englishPdfUrl));
+        if (language === "en") document.querySelectorAll("[data-en-href][data-es-href]").forEach(node => {
+          const fragment = node.tagName === "IFRAME" && node.dataset.enHref.includes("#") ? node.dataset.enHref.slice(node.dataset.enHref.indexOf("#")) : "";
+          node.setAttribute(node.tagName === "IFRAME" ? "src" : "href", englishPdfUrl + fragment);
+        });
       })
       .catch(error => console.error("Could not load the English CV PDF:", error));
   }

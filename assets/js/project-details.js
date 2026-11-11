@@ -120,11 +120,11 @@
     const purpose = get(project.motivationEn || "I worked on this project to explore a practical problem.", project.motivationEs || "Trabajé en este proyecto para explorar un problema práctico.");
     const timeline = es ? dossier.timelineEs : dossier.timeline;
     const labels = es ? {
-      back:"← Volver a proyectos",overview:"Contexto",audience:"A quién ayuda",purpose:"Por qué lo trabajé",contribution:"Mi contribución",team:"Equipo",
+      back:"← Volver a proyectos",overview:"Contexto",audience:"A quién ayuda",purpose:"Por qué lo trabajé",contribution:"Mi contribución",team:"Equipo",problem:"Problema y contexto",process:"Proceso",solution:"Solución",result:"Resultado y estado",
       stack:"Tecnologías utilizadas",timelineTitle:"Hitos y fechas",demo:"Abrir demostración",repo:"Ver repositorio",extra:"Reproductor público",scope:"Alcance y transparencia",
       contact:"Contactarme",gallery:"Galería del proyecto",galleryEmpty:"Todavía no hay fotografías. Agrega imágenes a la carpeta de este proyecto y actualiza gallery.json."
     } : {
-      back:"← Back to projects",overview:"Context",audience:"Who it helps",purpose:"Why I worked on it",contribution:"My contribution",team:"Team",
+      back:"← Back to projects",overview:"Context",audience:"Who it helps",purpose:"Why I worked on it",contribution:"My contribution",team:"Team",problem:"Problem & context",process:"Process",solution:"Solution",result:"Result & status",
       stack:"Technologies used",timelineTitle:"Milestones & dates",demo:"Open live demo",repo:"View source repository",extra:"Public player",scope:"Scope & transparency",
       contact:"Contact me",gallery:"Project gallery",galleryEmpty:"No project photos uploaded yet. Add images to this project folder and update gallery.json."
     };
@@ -152,6 +152,12 @@
           '<article><span class="detail-story-icon">◈</span><h2>'+labels.team+'</h2><p>'+escapeHTML(dossier.team[es ? 1 : 0])+'</p></article>'+
         '</div>'+
       '</section>'+
+      '<section class="detail-section"><p class="section-index">02 / '+(es?"CASO DE ESTUDIO":"CASE STUDY")+'</p><div class="detail-story-grid">'+
+        '<article><span class="detail-story-icon">01</span><h2>'+labels.problem+'</h2><p>'+escapeHTML(audience+" "+purpose)+'</p></article>'+
+        '<article><span class="detail-story-icon">02</span><h2>'+labels.process+'</h2><p>'+escapeHTML(dossier.contribution[es ? 1 : 0])+'</p></article>'+
+        '<article><span class="detail-story-icon">03</span><h2>'+labels.solution+'</h2><p>'+escapeHTML(project[es ? "es" : "en"])+'</p></article>'+
+        '<article><span class="detail-story-icon">04</span><h2>'+labels.result+'</h2><p>'+escapeHTML(timeline[timeline.length-1]?.[1] || (es?"Estado documentado en la descripción del proyecto.":"Status documented in the project description."))+'</p></article>'+
+      '</div></section>'+
       '<section class="detail-section"><p class="section-index">02 / '+labels.stack.toUpperCase()+'</p><div class="detail-stack">'+dossier.technologies.map((tech,i)=>'<span><b>'+String(i+1).padStart(2,"0")+'</b>'+escapeHTML(tech)+'</span>').join("")+'</div></section>'+
       '<section class="detail-section"><p class="section-index">03 / '+labels.timelineTitle.toUpperCase()+'</p><div class="detail-timeline">'+timeline.map((entry,i)=>'<article><span>'+String(i+1).padStart(2,"0")+'</span><div><h3>'+escapeHTML(entry[0])+'</h3><p>'+escapeHTML(entry[1])+'</p></div></article>').join("")+'</div></section>'+
       gallerySection+'<p class="detail-disclaimer"><strong>'+labels.scope+':</strong> '+escapeHTML(project[es ? "es" : "en"])+'</p>';

@@ -73,7 +73,7 @@
       const count=used.filter(id=>id!=="training").length;
       const label=count===1?(language==="es"?"1 proyecto":"1 project"):(language==="es"?count+" proyectos":count+" projects");
       const evidence=used.filter(id=>id!=="training").map(id=>projectTitles.get(id)).filter(Boolean).join(" · ") || (language==="es"?"Diploma de formación y práctica con microcontroladores":"Arduino training diploma and hands-on microcontroller practice");
-      targets[item.group].insertAdjacentHTML("beforeend",'<article class="capability-card reveal"><div class="capability-card-top"><span class="capability-icon">'+icon(item.icon)+'</span><span class="capability-count">'+label+'</span></div><h4>'+escapeHtml(item.name)+'</h4><p>'+escapeHtml(item.description[language==="es"?1:0])+'</p><div class="capability-proof"><span style="--proof:'+Math.max(8,count/9*100)+'%"></span></div><small class="capability-projects">'+(language==="es"?"EVIDENCIA: ":"PROJECT EVIDENCE: ")+escapeHtml(evidence)+'</small></article>');
+      targets[item.group].insertAdjacentHTML("beforeend",'<article class="capability-card reveal" tabindex="0" aria-label="'+escapeHtml(item.name+" — "+item.description[language==="es"?1:0])+'"><div class="capability-card-top"><span class="capability-icon">'+icon(item.icon)+'</span><span class="capability-count">'+label+'</span></div><h4>'+escapeHtml(item.name)+'</h4><p>'+escapeHtml(item.description[language==="es"?1:0])+'</p><div class="capability-proof"><span style="--proof:'+Math.max(8,count/9*100)+'%"></span></div><small class="capability-projects">'+(language==="es"?"EVIDENCIA: ":"PROJECT EVIDENCE: ")+escapeHtml(evidence)+'</small></article>');
     }
   }
   function projectCard(project, index) {

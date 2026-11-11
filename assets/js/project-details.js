@@ -160,6 +160,8 @@
 
     loadProjectGallery(project.id, es ? "Abrir imagen ampliada" : "Open full-size image");
     document.title = project.title + " — Jeremy Torres";
+    const descriptionMeta = document.querySelector('meta[name="description"]');
+    if (descriptionMeta) descriptionMeta.content = es ? "Descripción del proyecto, contribución, tecnologías, resultados y galería — Jeremy Torres." : "Project context, contribution, technologies, outcomes and gallery — Jeremy Torres.";
     document.documentElement.lang = language;
     languageButton?.querySelectorAll(".lang-option").forEach(option => option.classList.toggle("active", option.dataset.lang === language));
     if (languageButton) languageButton.setAttribute("aria-label", es ? "Cambiar idioma" : "Change language");

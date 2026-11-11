@@ -165,6 +165,16 @@
     if (languageButton) languageButton.setAttribute("aria-label", es ? "Cambiar idioma" : "Change language");
     const sectionIndex = document.querySelector(".detail-main > .section-index");
     if (sectionIndex) sectionIndex.innerHTML = (es ? "ESTUDIO DE CASO / " : "PROJECT CASE STUDY / ") + '<span id="detailNumber">' + number + '</span>';
+    document.querySelectorAll(".detail-nav a").forEach(anchor => {
+      const href = anchor.getAttribute("href") || "";
+      if (href === "about-me.html") anchor.textContent = es ? "Perfil" : "About";
+      if (href === "cv.html") anchor.textContent = "CV";
+      if (href === "volunteering.html") anchor.textContent = es ? "Voluntariado" : "Volunteering";
+    });
+    const brand = document.querySelector(".detail-page .brand");
+    if (brand) brand.setAttribute("aria-label", es ? "Jeremy Alexander Torres Mercado — inicio" : "Jeremy Alexander Torres Mercado — home");
+    const menuToggle = document.getElementById("menuToggle");
+    if (menuToggle) menuToggle.setAttribute("aria-label", es ? "Abrir navegación" : "Open navigation");
     const backLink = document.querySelector("[data-detail-i18n=backProjects]");
     if (backLink) backLink.textContent = labels.back.replace("← ","");
     const footerCopy = document.querySelector(".footer-inner > p");

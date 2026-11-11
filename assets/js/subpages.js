@@ -66,6 +66,7 @@
       node.setAttribute(attr, target);
     });
     document.querySelectorAll("[data-en-title][data-es-title]").forEach(node => node.setAttribute("title", node.dataset[language + "Title"]));
+    document.querySelectorAll("[data-en-alt][data-es-alt]").forEach(node => node.setAttribute("alt", node.dataset[language + "Alt"]));
     document.querySelectorAll("[data-en-download][data-es-download]").forEach(node => node.setAttribute("download", node.dataset[language + "Download"]));
     document.querySelectorAll("[aria-label]").forEach(node => {
       const original = node.getAttribute("data-original-aria") || node.getAttribute("aria-label");

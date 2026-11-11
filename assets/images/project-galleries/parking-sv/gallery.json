@@ -1,3 +1,29 @@
 {
-  "images": []
+  "images": [
+    {
+      "src": "Captura de pantalla 2026-11-10 215029.png",
+      "alt": "ParkingSV — application interface 1",
+      "caption": "ParkingSV — application interface 1"
+    },
+    {
+      "src": "Captura de pantalla 2026-11-10 215115.png",
+      "alt": "ParkingSV — application interface 2",
+      "caption": "ParkingSV — application interface 2"
+    },
+    {
+      "src": "Captura de pantalla 2026-11-10 215157.png",
+      "alt": "ParkingSV — application interface 3",
+      "caption": "ParkingSV — application interface 3"
+    },
+    {
+      "src": "Captura de pantalla 2026-11-10 215240.png",
+      "alt": "ParkingSV — application interface 4",
+      "caption": "ParkingSV — application interface 4"
+    },
+    {
+      "src": "Captura de pantalla 2026-11-10 215313.png",
+      "alt": "ParkingSV — application interface 5",
+      "caption": "ParkingSV — application interface 5"
+    }
+  ]
 }

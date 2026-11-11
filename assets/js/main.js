@@ -130,37 +130,7 @@
     revealObserver=new IntersectionObserver((entries,observer)=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("is-visible");observer.unobserve(entry.target)}}),{threshold:.12,rootMargin:"0px 0px -5% 0px"});
     targets.forEach(el=>{el.classList.add("reveal");revealObserver.observe(el)});
   }
-  function initScrollNarrative(){
-    const reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if(reduce){
-      document.querySelectorAll(".reveal").forEach(el=>el.classList.add("is-visible"));
-      return;
-    }
-    if(window.gsap && window.ScrollTrigger){
-      gsap.registerPlugin(ScrollTrigger);
-      gsap.utils.toArray(".section-heading, .intro-content, .project-card, .lab-card, .capability-card, .education-card, .contact-inner").forEach((el,i)=>{
-        gsap.fromTo(el,{y:48,opacity:0,filter:"blur(5px)"},{y:0,opacity:1,filter:"blur(0px)",duration:1.15,ease:"power3.out",scrollTrigger:{trigger:el,start:"top 89%",once:true},delay:(i%3)*.08});
-      });
-      gsap.utils.toArray(".story-panel").forEach((el,i)=>{
-        gsap.fromTo(el,{y:85,scale:.94,opacity:.36,rotateY:i%2?3:-3},{y:0,scale:1,opacity:1,rotateY:0,ease:"none",scrollTrigger:{trigger:el,start:"top 92%",end:"bottom 12%",scrub:1.8}});
-      });
-      const storyBar=document.querySelector("#storyProgress");
-      if(storyBar)gsap.fromTo(storyBar,{scaleX:0},{scaleX:1,ease:"none",scrollTrigger:{trigger:"#storySequence",start:"top 80%",end:"bottom 20%",scrub:1.2}});
-      gsap.utils.toArray(".project-card, .lab-card").forEach((el,i)=>{
-        gsap.fromTo(el,{y:60,opacity:0,scale:.965},{y:0,opacity:1,scale:1,duration:1.2,ease:"power3.out",scrollTrigger:{trigger:el,start:"top 90%",once:true},delay:(i%3)*.07});
-      });
-      gsap.utils.toArray(".detail-section").forEach((el,i)=>{
-        gsap.fromTo(el,{y:48,opacity:0},{y:0,opacity:1,duration:1.1,ease:"power3.out",scrollTrigger:{trigger:el,start:"top 86%",once:true},delay:(i%2)*.08});
-      });
-      gsap.to(".liquid-aura",{backgroundPosition:"100% 100%",ease:"none",scrollTrigger:{trigger:"body",start:"top top",end:"bottom bottom",scrub:2.4}});
-      gsap.utils.toArray(".project-preview").forEach((img,i)=>{
-        gsap.fromTo(img,{yPercent:4,scale:1.035},{yPercent:-4,scale:1,ease:"none",scrollTrigger:{trigger:img.closest(".project-card"),start:"top bottom",end:"bottom top",scrub:1.8}});
-      });
-      ScrollTrigger.refresh();
-    } else {
-      observeReveals();
-    }
-  }
+  function initScrollNarrative(){ observeReveals(); }
   if(languageSwitch)languageSwitch.addEventListener("click",()=>applyLanguage(language==="en"?"es":"en"));
   if(menuToggle&&nav){
     menuToggle.addEventListener("click",()=>{

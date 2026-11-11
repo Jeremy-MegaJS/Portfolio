@@ -1293,3 +1293,7 @@ html{scroll-padding-top:92px;scroll-behavior:smooth}body{overflow-x:clip;isolati
   .brand-name,.pulse-dot,.hero-visual::before,.hero-visual::after,.visual-orbit,.orbit-two{animation:none!important}
   .portrait-frame{transition:none}
 }
+
+/* Ensure orbital particles animate despite the site's global static-background reset */
+.hero-visual::before{animation:particleDrift 19s linear infinite!important}
+.hero-visual::after{animation:particleRing 32s linear infinite!important}

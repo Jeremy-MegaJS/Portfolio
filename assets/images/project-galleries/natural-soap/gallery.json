@@ -1,3 +1,19 @@
 {
-  "images": []
+  "images": [
+    {
+      "src": "Captura de pantalla 2026-11-10 214041.png",
+      "alt": "Natural Soap website — product presentation",
+      "caption": "Natural Soap website — product presentation"
+    },
+    {
+      "src": "Captura de pantalla 2026-11-10 214829.png",
+      "alt": "Natural Soap website — page layout",
+      "caption": "Natural Soap website — page layout"
+    },
+    {
+      "src": "Captura de pantalla 2026-11-10 214933.png",
+      "alt": "Natural Soap website — content section",
+      "caption": "Natural Soap website — content section"
+    }
+  ]
 }

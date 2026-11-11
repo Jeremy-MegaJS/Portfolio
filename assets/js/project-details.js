@@ -164,7 +164,8 @@
       '<section class="detail-section"><p class="section-index">03 / '+labels.timelineTitle.toUpperCase()+'</p><div class="detail-timeline">'+timeline.map((entry,i)=>'<article><span>'+String(i+1).padStart(2,"0")+'</span><div><h3>'+escapeHTML(entry[0])+'</h3><p>'+escapeHTML(entry[1])+'</p></div></article>').join("")+'</div></section>'+
       gallerySection+'<p class="detail-disclaimer"><strong>'+labels.scope+':</strong> '+escapeHTML(project[es ? "es" : "en"])+'</p>';
 
-    loadProjectGallery(project.id, labels.galleryEmpty, es ? "Abrir imagen ampliada" : "Open full-size image");\n    document.title = project.title + " — Jeremy Torres";
+    loadProjectGallery(project.id, labels.galleryEmpty, es ? "Abrir imagen ampliada" : "Open full-size image");
+    document.title = project.title + " — Jeremy Torres";
     document.documentElement.lang = language;
     languageButton?.querySelectorAll(".lang-option").forEach(option => option.classList.toggle("active", option.dataset.lang === language));
     if (languageButton) languageButton.setAttribute("aria-label", es ? "Cambiar idioma" : "Change language");

@@ -1309,3 +1309,24 @@ html{scroll-padding-top:92px;scroll-behavior:smooth}body{overflow-x:clip;isolati
   .floating-contact-main{max-width:calc(100vw - 16px)!important;padding-inline:10px!important;font-size:11px!important}
   .floating-contact-menu{width:min(240px,calc(100vw - 16px))!important;max-width:calc(100vw - 16px)!important}
 }
+
+/* Mobile: replace the floating Contact Me pill with a discreet next-step arrow. */
+.mobile-next-step{display:none}
+@media(max-width:680px){
+  .floating-contact{display:none!important}
+  .mobile-next-step{
+    display:grid;place-items:center;position:fixed;right:max(17px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom));z-index:95;
+    width:48px;height:48px;border-radius:50%;font-size:28px;font-weight:800;line-height:1;
+    color:#fff1d0;background:linear-gradient(145deg,rgba(255,35,54,.96),rgba(115,8,23,.96));
+    border:1px solid rgba(255,220,151,.9);
+    box-shadow:0 0 10px rgba(255,32,54,.8),0 0 24px rgba(255,32,54,.42),0 0 34px rgba(216,171,85,.28),inset 0 0 12px rgba(255,224,160,.18);
+    text-shadow:0 0 8px rgba(255,230,170,.95);
+    animation:mobileArrowGlow 2.2s ease-in-out infinite;
+  }
+  .mobile-next-step:active{transform:scale(.94)}
+}
+@keyframes mobileArrowGlow{
+  0%,100%{box-shadow:0 0 8px rgba(255,32,54,.68),0 0 18px rgba(255,32,54,.3),0 0 25px rgba(216,171,85,.2),inset 0 0 10px rgba(255,224,160,.16)}
+  50%{box-shadow:0 0 13px rgba(255,32,54,.95),0 0 29px rgba(255,32,54,.55),0 0 38px rgba(216,171,85,.42),inset 0 0 14px rgba(255,224,160,.25)}
+}
+@media(prefers-reduced-motion:reduce){.mobile-next-step{animation:none}}

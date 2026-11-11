@@ -31,3 +31,7 @@ jobs:
         run: node --check assets/js/contact-form.js
       - name: Check subpages.js
         run: node --check assets/js/subpages.js
+      - name: Check navigation.js
+        run: node --check assets/js/navigation.js
+      - name: Check ambient-pixels.js
+        run: node --check assets/js/ambient-pixels.js

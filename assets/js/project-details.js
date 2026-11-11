@@ -90,6 +90,25 @@
 
   const dossier = dossiers[id];
 
+
+  async function loadProjectGallery(projectId, emptyText, openText){
+    const grid=document.getElementById("projectGalleryGrid");
+    if(!grid)return;
+    try{
+      const response=await fetch("assets/images/project-galleries/"+encodeURIComponent(projectId)+"/gallery.json");
+      if(!response.ok)throw new Error("Gallery manifest unavailable");
+      const manifest=await response.json();
+      const images=Array.isArray(manifest.images)?manifest.images:[];
+      if(!images.length){grid.innerHTML='<p class="detail-lead">'+escapeHTML(emptyText)+'</p>';return}
+      grid.innerHTML=images.map((item,index)=>{
+        const src="assets/images/project-galleries/"+encodeURIComponent(projectId)+"/"+encodeURIComponent(item.src||"");
+        const alt=escapeHTML(item.alt||"Project image "+(index+1));
+        const caption=escapeHTML(item.caption||"");
+        return '<figure class="project-gallery-item"><a href="'+src+'" target="_blank" rel="noopener noreferrer" aria-label="'+escapeHTML(openText)+': '+alt+'"><img src="'+src+'" alt="'+alt+'" loading="lazy" decoding="async"></a>'+(caption?'<figcaption>'+caption+'</figcaption>':'')+'</figure>';
+      }).join("");
+    }catch(error){grid.innerHTML='<p class="detail-lead">'+escapeHTML(emptyText)+'</p>'}
+  }
+
   function render() {
     if (!project || !dossier) {
       root.innerHTML = '<p class="section-index">PROJECT NOT FOUND</p><h1>Project dossier unavailable.</h1><a class="button button-primary" href="index.html#work">Back to projects ↗</a>';
@@ -103,11 +122,11 @@
     const labels = es ? {
       back:"← Volver a proyectos",overview:"Contexto",audience:"A quién ayuda",purpose:"Por qué lo trabajé",contribution:"Mi contribución",team:"Equipo",
       stack:"Tecnologías utilizadas",timelineTitle:"Hitos y fechas",demo:"Abrir demostración",repo:"Ver repositorio",extra:"Reproductor público",scope:"Alcance y transparencia",
-      contact:"Contactarme"
+      contact:"Contactarme",gallery:"Galería del proyecto",galleryEmpty:"Todavía no hay fotografías. Agrega imágenes a la carpeta de este proyecto y actualiza gallery.json."
     } : {
       back:"← Back to projects",overview:"Context",audience:"Who it helps",purpose:"Why I worked on it",contribution:"My contribution",team:"Team",
       stack:"Technologies used",timelineTitle:"Milestones & dates",demo:"Open live demo",repo:"View source repository",extra:"Public player",scope:"Scope & transparency",
-      contact:"Contact me"
+      contact:"Contact me",gallery:"Project gallery",galleryEmpty:"No project photos uploaded yet. Add images to this project folder and update gallery.json."
     };
 
     const demo = project.demo ? '<a class="button button-primary" href="'+escapeHTML(project.demo)+'" target="_blank" rel="noopener noreferrer">'+labels.demo+' ↗</a>' : "";
@@ -135,9 +154,9 @@
       '</section>'+
       '<section class="detail-section"><p class="section-index">02 / '+labels.stack.toUpperCase()+'</p><div class="detail-stack">'+dossier.technologies.map((tech,i)=>'<span><b>'+String(i+1).padStart(2,"0")+'</b>'+escapeHTML(tech)+'</span>').join("")+'</div></section>'+
       '<section class="detail-section"><p class="section-index">03 / '+labels.timelineTitle.toUpperCase()+'</p><div class="detail-timeline">'+timeline.map((entry,i)=>'<article><span>'+String(i+1).padStart(2,"0")+'</span><div><h3>'+escapeHTML(entry[0])+'</h3><p>'+escapeHTML(entry[1])+'</p></div></article>').join("")+'</div></section>'+
-      '<p class="detail-disclaimer"><strong>'+labels.scope+':</strong> '+escapeHTML(project[es ? "es" : "en"])+'</p>';
+      gallerySection+'<p class="detail-disclaimer"><strong>'+labels.scope+':</strong> '+escapeHTML(project[es ? "es" : "en"])+'</p>';
 
-    document.title = project.title + " — Jeremy Torres";
+    loadProjectGallery(project.id, labels.galleryEmpty, es ? "Abrir imagen ampliada" : "Open full-size image");\n    document.title = project.title + " — Jeremy Torres";
     document.documentElement.lang = language;
     languageButton?.querySelectorAll(".lang-option").forEach(option => option.classList.toggle("active", option.dataset.lang === language));
     if (languageButton) languageButton.setAttribute("aria-label", es ? "Cambiar idioma" : "Change language");
@@ -149,7 +168,7 @@
     if (privacyLink) privacyLink.textContent = es ? "Privacidad y rendimiento" : "Privacy & performance";
   }
 
-  function initDetailMotion(){
+  function initDetailMotion(){\n    /* Static, accessible project detail pages: no parallax or animated background. */\n    return;\n
     if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
     if(window.gsap && window.ScrollTrigger){
       gsap.registerPlugin(ScrollTrigger);

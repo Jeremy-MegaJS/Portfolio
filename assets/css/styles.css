@@ -1011,3 +1011,8 @@ body::before,body::after,.hero::before,.hero-visual::before,.liquid-aura,.noise:
   animation:none!important;
   will-change:auto!important;
 }
+
+.volunteer-page{position:relative;isolation:isolate}
+.volunteer-page::before{content:"";position:absolute;inset:0 -6vw;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 18% 8%,rgba(123,64,176,.24),transparent 42%),radial-gradient(ellipse at 86% 38%,rgba(78,47,132,.18),transparent 38%),radial-gradient(1px 1px at 8% 12%,rgba(255,255,255,.85) 98%,transparent),radial-gradient(1px 1px at 72% 18%,rgba(255,255,255,.75) 98%,transparent),radial-gradient(1px 1px at 38% 76%,rgba(255,255,255,.6) 98%,transparent);background-size:auto,auto,210px 190px,260px 230px,310px 270px}
+.volunteer-page .page-card{background:rgba(23,16,38,.76);border-color:rgba(205,166,255,.2);backdrop-filter:blur(16px)}
+.volunteer-page .volunteer-photo{background:linear-gradient(135deg,rgba(89,53,128,.34),rgba(14,11,24,.92));border-color:rgba(205,166,255,.45)}

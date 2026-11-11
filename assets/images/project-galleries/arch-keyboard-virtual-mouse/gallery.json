@@ -1,3 +1,9 @@
 {
-  "images": [keyb_sp-cursor.jpg]
+  "images": [
+    {
+      "src": "keyb_sp-cursor.jpg",
+      "alt": "Arch Linux keyboard and virtual mouse utility",
+      "caption": "Arch Linux keyboard and virtual mouse utility"
+    }
+  ]
 }

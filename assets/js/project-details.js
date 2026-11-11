@@ -122,11 +122,11 @@
     const labels = es ? {
       back:"← Volver a proyectos",overview:"Contexto",audience:"A quién ayuda",purpose:"Por qué lo trabajé",contribution:"Mi contribución",team:"Equipo",problem:"Problema y contexto",process:"Proceso",solution:"Solución",result:"Resultado y estado",
       stack:"Tecnologías utilizadas",timelineTitle:"Hitos y fechas",demo:"Abrir demostración",repo:"Ver repositorio",extra:"Reproductor público",scope:"Alcance y transparencia",
-      contact:"Contactarme",gallery:"Galería del proyecto",galleryEmpty:"Todavía no hay fotografías. Agrega imágenes a la carpeta de este proyecto y actualiza gallery.json."
+      contact:"Contactarme",gallery:"Galería del proyecto",galleryEmpty:"No hay imágenes de galería disponibles para este proyecto."
     } : {
       back:"← Back to projects",overview:"Context",audience:"Who it helps",purpose:"Why I worked on it",contribution:"My contribution",team:"Team",problem:"Problem & context",process:"Process",solution:"Solution",result:"Result & status",
       stack:"Technologies used",timelineTitle:"Milestones & dates",demo:"Open live demo",repo:"View source repository",extra:"Public player",scope:"Scope & transparency",
-      contact:"Contact me",gallery:"Project gallery",galleryEmpty:"No project photos uploaded yet. Add images to this project folder and update gallery.json."
+      contact:"Contact me",gallery:"Project gallery",galleryEmpty:"No gallery images are available for this project."
     };
 
     const demo = project.demo ? '<a class="button button-primary" href="'+escapeHTML(project.demo)+'" target="_blank" rel="noopener noreferrer">'+labels.demo+' ↗</a>' : "";

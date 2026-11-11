@@ -51,8 +51,8 @@ The main pages are **index.html**, **about-me.html**, **cv.html**, **volunteerin
 - Responsive presentation for desktop, tablet and mobile.
 - English and Spanish content, with the selected language remembered in the browser.
 - Project-specific detail pages and direct links to live demonstrations and source repositories.
-- Lazy-loaded project artwork and lightweight visual effects.
-- Reduced-motion support for visitors who prefer fewer animations.
+- Lazy-loaded project artwork and a mostly static visual presentation.
+- Static ambient backgrounds and accessible navigation.
 - Keyboard-operable navigation and an accessible contact form with email notifications.
 
 ### Run locally

@@ -19,11 +19,15 @@ jobs:
         uses: actions/setup-node@v7
         with:
           node-version: 24
-      - name: Validate JavaScript syntax
-        run: |
-          node --check assets/js/main.js
-          node --check assets/js/project-details.js
-          node --check assets/js/projects.js
-          node --check assets/js/translations.js
-          node --check assets/js/contact-form.js
-          node --check assets/js/subpages.js
+      - name: Check main.js
+        run: node --check assets/js/main.js
+      - name: Check project-details.js
+        run: node --check assets/js/project-details.js
+      - name: Check projects.js
+        run: node --check assets/js/projects.js
+      - name: Check translations.js
+        run: node --check assets/js/translations.js
+      - name: Check contact-form.js
+        run: node --check assets/js/contact-form.js
+      - name: Check subpages.js
+        run: node --check assets/js/subpages.js

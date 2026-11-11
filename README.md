@@ -44,7 +44,7 @@ Project information is separated from the rendering logic:
 - **assets/js/particle-field.js** renders the ambient particle background.
 - **assets/js/contact-menu.js** manages the floating contact menu and its accessible interaction states.
 
-The main pages are **index.html**, **project.html** and **privacy.html**. Styles and project artwork are organized under **assets/css/** and **assets/images/**.
+The main pages are **index.html**, **about-me.html**, **cv.html**, **volunteering.html**, **project.html**, **credits.html** and **privacy.html**. Project image galleries are organized under **assets/images/project-galleries/**, with one folder and a `gallery.json` manifest per project. The CV PDF upload location is **assets/documents/jeremy-torres-cv.pdf**. Styles and project artwork are organized under **assets/css/** and **assets/images/**.
 
 ### Interface and accessibility
 

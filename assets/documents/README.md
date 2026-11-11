@@ -1,3 +1,8 @@
 # Curriculum vitae
 
-The public portfolio links to the complete PDF curriculum vitae stored in this directory. The document is available from the CV page in both browser preview and download format.
+The CV page serves two separate PDF files from this directory:
+
+- English: `Copia de Currículum Vitae Cv de Administración Simple Azul ingles.pdf`
+- Spanish: `Currículum Vitae Cv de Jeremy Torres.pdf`
+
+The language switch updates the PDF preview, open button, and download links together. Keep the filenames in sync with the references in `cv.html`.

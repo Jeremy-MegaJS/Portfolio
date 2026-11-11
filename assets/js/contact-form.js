@@ -4,21 +4,24 @@
 
   const area = form.querySelector("#contactArea");
   const reply = form.querySelector('input[name="_replyto"]');
-  const email = form.querySelector('input[name="email"]');
+  const email = form.querySelector("#contactEmail");
+  const contactMethod = form.querySelector("#contactMethod");
   const subject = form.querySelector('input[name="subject"]');
   const languageSwitch = document.getElementById("languageSwitch");
   const messages = {
     en: {
       sending: "Sending…",
-      success: "Message submitted successfully. Thank you. If you included contact details, I can reply to you.",
+      success: "Message submitted. Thank you. Your contact preference has been included.",
       error: "The message could not be submitted. Please try again or email me directly.",
-      required: "Please complete the required fields."
+      emailRequired: "Enter your email if you choose email contact.",
+      contactRequired: "Choose how you would like to be contacted."
     },
     es: {
       sending: "Enviando…",
-      success: "Mensaje enviado correctamente. Gracias. Si incluiste datos de contacto, podré responderte.",
+      success: "Mensaje enviado. Gracias. Se incluyó tu preferencia de contacto.",
       error: "No se pudo enviar el mensaje. Inténtalo de nuevo o escríbeme directamente.",
-      required: "Completa los campos obligatorios."
+      emailRequired: "Escribe tu correo si eliges que te contacte por email.",
+      contactRequired: "Indica cómo prefieres que te contacte."
     }
   };
   const getLang = () => document.documentElement.lang === "es" ? "es" : "en";
@@ -28,13 +31,22 @@
   status.setAttribute("aria-live", "polite");
   form.append(status);
 
+  const syncContactFields = () => {
+    const wantsEmail = contactMethod?.value === "Email";
+    if (email) {
+      email.required = wantsEmail;
+      email.setAttribute("aria-required", String(wantsEmail));
+    }
+  };
+  contactMethod?.addEventListener("change", syncContactFields);
+  syncContactFields();
+
   form.addEventListener("submit", async event => {
     event.preventDefault();
+    syncContactFields();
     if (!form.reportValidity()) return;
 
-    // Email is optional. Without it, the submission is received without a reply address.
     if (reply) reply.value = email?.value.trim() || "";
-
     const submit = form.querySelector('button[type="submit"]');
     const label = submit?.querySelector("span");
     const prior = label?.textContent || "";
@@ -43,7 +55,7 @@
     status.textContent = "";
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/jeremy.torres.1.2026@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/parkingsv1@gmail.com", {
         method: "POST",
         headers: { "Content-Type": "application/json", "Accept": "application/json" },
         body: JSON.stringify(Object.fromEntries(new FormData(form).entries()))
@@ -59,6 +71,7 @@
       status.textContent = messages[getLang()].success;
       form.reset();
       if (reply) reply.value = "";
+      syncContactFields();
     } catch (error) {
       status.textContent = messages[getLang()].error;
     } finally {

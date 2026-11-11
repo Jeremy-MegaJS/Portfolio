@@ -1,92 +1,159 @@
-# Jeremy Torres — Developer Portfolio
+# Jeremy Torres — Software Development Portfolio
 
-A bilingual personal portfolio presenting selected web, systems, automation, academic and hardware-related work.
+[English](#english) | [Español](#español)
 
-## Features
+<a id="english"></a>
 
-- Responsive layout for desktop, tablet and mobile.
-- English / Spanish language switch with remembered preference.
-- Selected web, systems, AI-prototype and hardware-related projects.
-- Separate section for technical utilities and academic exercises.
-- Reduced-motion support and lightweight scroll-reveal effects.
-- Privacy, external-services and performance information page.
-- No frontend framework, build step, contact form or analytics dependency.
+## English
 
-## Run locally
+A bilingual portfolio of software projects by **Jeremy Torres**, focused on web development, Linux desktop automation, interface engineering and applied programming. The site gives recruiters, developers and collaborators a direct way to explore project demonstrations, source code, technical decisions and the scope of each project.
 
-From the repository root:
+**Live portfolio:** https://jeremy-megajs.github.io/Portfolio/  
+**Source code:** https://github.com/Jeremy-MegaJS/Portfolio
 
-```bash
+### What the portfolio demonstrates
+
+- **Frontend engineering:** responsive layouts, semantic HTML, CSS architecture, JavaScript interactions and data-driven project views.
+- **Product communication:** project pages explain the problem, intended audience, implementation and current limitations.
+- **Systems work:** Linux utilities, shell automation and practical interaction with desktop services.
+- **Technical breadth:** collaborative full-stack work, browser-based machine-learning experiments and hardware-oriented learning.
+- **Professional documentation:** entries distinguish individual work, team contributions, academic prototypes and demonstrations.
+
+### Selected projects
+
+| Project | What it demonstrates |
+| --- | --- |
+| [Natural Soap](https://jeremy-megajs.github.io/natural-soap/) | A bilingual, multi-page product website with a catalogue and educational content. |
+| [ParkingSV](https://parkingsv.vercel.app/) | A collaborative parking-discovery and management web application. The portfolio describes my contribution and the prototype's current scope. |
+| [Radio Transmission Monitor](https://jeremy-megajs.github.io/monitoreo-transmission_demo/) | A static dashboard demonstration with simulated monitoring metrics and a separate public radio stream. |
+| [Discomóvil Extreme Galaxy](https://discomovilextremegalaxy.github.io/discomovilextremegalaxy.com/) | A responsive promotional website for a DJ and event-services business. |
+| [IDentify](https://jeremy-torres2026-web.github.io/IDentify/my-model/) | A collaborative browser-based image-classification prototype using TensorFlow.js and Teachable Machine. |
+
+The technical lab also includes Linux input-control automation, a Cloudflare WARP desktop utility and small frontend interface exercises.
+
+### Technical implementation
+
+The portfolio is a static website built with **HTML5, CSS3 and vanilla JavaScript**. It has no frontend framework, application server, database, build step or analytics dependency.
+
+Project information is separated from the rendering logic:
+
+- **assets/js/projects.js** contains descriptions, links, technologies and project classifications.
+- **assets/js/translations.js** contains the interface translations.
+- **assets/js/main.js** renders project cards, technology evidence and language selection.
+- **assets/js/project-details.js** builds each individual project detail view.
+- **assets/js/particle-field.js** renders the ambient particle background.
+- **assets/js/contact-menu.js** manages the floating contact menu and its accessible interaction states.
+
+The main pages are **index.html**, **project.html** and **privacy.html**. Styles and project artwork are organized under **assets/css/** and **assets/images/**.
+
+### Interface and accessibility
+
+- Responsive presentation for desktop, tablet and mobile.
+- English and Spanish content, with the selected language remembered in the browser.
+- Project-specific detail pages and direct links to live demonstrations and source repositories.
+- Lazy-loaded project artwork and lightweight visual effects.
+- Reduced-motion support for visitors who prefer fewer animations.
+- Keyboard-operable navigation and an accessible floating contact menu.
+
+### Run locally
+
+The site is static and can be served with any local HTTP server. With Python installed:
+
+~~~bash
 python -m http.server 8000
-```
+~~~
 
-Open `http://localhost:8000`.
+Open http://localhost:8000 in a browser.
 
-## Publish with GitHub Pages
+### Deployment
 
-1. Push the project files to the `main` branch.
-2. Open **Settings → Pages** in the repository.
-3. Under **Build and deployment → Source**, select **GitHub Actions**.
-4. The workflow in `.github/workflows/deploy-pages.yml` deploys the repository root automatically on every push to `main`.
-5. Check the **Actions** tab for the deployment result.
+The public portfolio is hosted on GitHub Pages. A GitHub Actions workflow validates the JavaScript source and deploys the site when changes are pushed to the publishing branch.
 
-The existing profile portrait is expected at:
+### Project attribution
 
-`assets/images/profile/yoprofesionalhappyfondonegro.jpg`
+The portfolio labels individual projects separately from collaborative work. ParkingSV and IDentify are team projects; academic prototypes and simulated demonstrations are identified as such. The descriptions do not present unfinished work or demo data as production functionality.
 
-Keep that file in place when copying the new portfolio files into the repository.
+### Contact
 
-## Accuracy notes
+**Jeremy Torres**  
+Email: jeremy.torres.1.2026@gmail.com  
+GitHub: https://github.com/Jeremy-MegaJS
 
-Project descriptions distinguish individual work from team projects and prototypes. ParkingSV and IDentify are presented as academic prototypes, and the Transmission Monitor dashboard is explicitly described as using simulated metrics. No unfinished projects or sensitive production configuration are included.
+---
 
-## Contact
-
-`jeremy.torres.1.2026@gmail.com`
-
+<a id="español"></a>
 
 ## Español
 
-Este repositorio contiene el portafolio personal bilingüe de Jeremy Torres. Presenta proyectos seleccionados de desarrollo web, sistemas, automatización, prototipos académicos y experimentos con hardware.
+Portafolio bilingüe de proyectos de software de **Jeremy Torres**, enfocado en desarrollo web, automatización de escritorio en Linux, ingeniería de interfaces y programación aplicada. El sitio permite que reclutadores, desarrolladores y colaboradores exploren demostraciones, código fuente, decisiones técnicas y el alcance real de cada proyecto.
 
-### Características
+**Portafolio:** https://jeremy-megajs.github.io/Portfolio/  
+**Código fuente:** https://github.com/Jeremy-MegaJS/Portfolio
+
+### Qué demuestra el portafolio
+
+- **Desarrollo frontend:** interfaces adaptables, HTML semántico, arquitectura CSS, interacciones JavaScript y vistas de proyectos basadas en datos.
+- **Comunicación de producto:** cada proyecto explica el problema que aborda, su público, su implementación y sus limitaciones actuales.
+- **Trabajo con sistemas:** utilidades para Linux, automatización con shell e integración práctica con servicios del escritorio.
+- **Amplitud técnica:** desarrollo full-stack colaborativo, experimentos de aprendizaje automático en navegador y aprendizaje orientado a hardware.
+- **Documentación profesional:** se distingue el trabajo individual de los proyectos en equipo, los prototipos académicos y las demostraciones.
+
+### Proyectos destacados
+
+| Proyecto | Qué demuestra |
+| --- | --- |
+| [Natural Soap](https://jeremy-megajs.github.io/natural-soap/) | Sitio web bilingüe de varias páginas, con catálogo de productos y contenido educativo. |
+| [ParkingSV](https://parkingsv.vercel.app/) | Aplicación web colaborativa para descubrir y gestionar opciones de estacionamiento. El portafolio especifica mi aporte y el alcance actual del prototipo. |
+| [Radio Transmission Monitor](https://jeremy-megajs.github.io/monitoreo-transmission_demo/) | Demostración de un panel estático con métricas simuladas y una señal pública de radio independiente. |
+| [Discomóvil Extreme Galaxy](https://discomovilextremegalaxy.github.io/discomovilextremegalaxy.com/) | Sitio promocional adaptable para un negocio de DJ y servicios para eventos. |
+| [IDentify](https://jeremy-torres2026-web.github.io/IDentify/my-model/) | Prototipo colaborativo de clasificación de imágenes en navegador con TensorFlow.js y Teachable Machine. |
+
+El laboratorio técnico también incluye automatización de dispositivos de entrada en Linux, una utilidad de escritorio para Cloudflare WARP y pequeños ejercicios de interfaces frontend.
+
+### Implementación técnica
+
+El portafolio es un sitio estático desarrollado con **HTML5, CSS3 y JavaScript puro**. No utiliza framework frontend, servidor de aplicación, base de datos, proceso de compilación ni dependencia de analítica.
+
+La información de los proyectos está separada de la lógica que la presenta:
+
+- **assets/js/projects.js** contiene descripciones, enlaces, tecnologías y clasificaciones.
+- **assets/js/translations.js** contiene las traducciones de la interfaz.
+- **assets/js/main.js** genera las tarjetas, la evidencia de tecnologías y el selector de idioma.
+- **assets/js/project-details.js** construye la vista individual de cada proyecto.
+- **assets/js/particle-field.js** dibuja el fondo ambiental de partículas.
+- **assets/js/contact-menu.js** controla el menú flotante de contacto y sus estados accesibles.
+
+Las páginas principales son **index.html**, **project.html** y **privacy.html**. Los estilos y recursos visuales están organizados en **assets/css/** y **assets/images/**.
+
+### Interfaz y accesibilidad
 
 - Diseño adaptable a computadoras, tabletas y teléfonos.
-- Selector de idioma inglés / español con preferencia guardada en el navegador.
-- Proyectos web, de sistemas, prototipos de IA y hardware.
-- Sección independiente para utilidades técnicas y ejercicios académicos.
+- Contenido en inglés y español con preferencia de idioma guardada en el navegador.
+- Páginas de detalle y enlaces directos a demostraciones y repositorios.
+- Carga diferida de imágenes y efectos visuales ligeros.
 - Compatibilidad con la preferencia de movimiento reducido.
-- Animaciones ligeras y página de privacidad, servicios externos y rendimiento.
-- Sin framework frontend, proceso de compilación, formulario de contacto ni dependencia de analítica.
+- Navegación operable con teclado y menú flotante de contacto accesible.
 
 ### Ejecución local
 
-Desde la raíz del repositorio:
+El sitio es estático y puede servirse con cualquier servidor HTTP local. Con Python instalado:
 
-```bash
+~~~bash
 python -m http.server 8000
-```
+~~~
 
-Abre `http://localhost:8000`.
+Abre http://localhost:8000 en el navegador.
 
-### Publicación con GitHub Pages
+### Publicación
 
-1. Sube los archivos del proyecto a la rama `main`.
-2. Abre **Settings → Pages** en el repositorio.
-3. En **Build and deployment → Source**, selecciona **GitHub Actions**.
-4. El flujo de trabajo en `.github/workflows/deploy-pages.yml` publica automáticamente la raíz del repositorio con cada push a `main`.
-5. Comprueba el resultado del despliegue en la pestaña **Actions**.
+El portafolio público está alojado en GitHub Pages. Un flujo de GitHub Actions valida el código JavaScript y publica el sitio cuando se envían cambios a la rama de publicación.
 
-La fotografía de perfil existente debe permanecer en:
+### Atribución de proyectos
 
-`assets/images/profile/yoprofesionalhappyfondonegro.jpg`
-
-No elimines ni muevas ese archivo al actualizar el portafolio.
-
-### Notas de precisión
-
-Las descripciones distinguen el trabajo individual de los proyectos en equipo y de los prototipos. ParkingSV e IDentify se presentan como prototipos académicos, y el panel de Transmission Monitor se identifica expresamente como una demostración con métricas simuladas. No se incluyen proyectos sin terminar ni configuraciones sensibles de producción.
+El portafolio distingue los proyectos individuales del trabajo colaborativo. ParkingSV e IDentify son proyectos en equipo; los prototipos académicos y las demostraciones con datos simulados se identifican como tales. Las descripciones no presentan proyectos inconclusos ni datos de demostración como funcionalidades de producción.
 
 ### Contacto
 
-`jeremy.torres.1.2026@gmail.com`
+**Jeremy Torres**  
+Correo: jeremy.torres.1.2026@gmail.com  
+GitHub: https://github.com/Jeremy-MegaJS

@@ -3,12 +3,16 @@
     {
       "src": "Captura de pantalla 2026-11-10 215445.png",
       "alt": "Radio FE — streaming and monitoring interface",
-      "caption": "Radio FE — streaming and monitoring interface"
+      "caption": "Radio FE — streaming and monitoring interface",
+      "altEs": "Radio FE — interfaz de transmisión y monitoreo",
+      "captionEs": "Radio FE — interfaz de transmisión y monitoreo"
     },
     {
       "src": "Captura de pantalla 2026-11-10 215728.png",
       "alt": "Radio FE — additional view of the streaming project",
-      "caption": "Radio FE — additional project view"
+      "caption": "Radio FE — additional project view",
+      "altEs": "Radio FE — vista adicional del proyecto de transmisión",
+      "captionEs": "Radio FE — vista adicional del proyecto"
     }
   ]
 }

@@ -1297,3 +1297,15 @@ html{scroll-padding-top:92px;scroll-behavior:smooth}body{overflow-x:clip;isolati
 /* Ensure orbital particles animate despite the site's global static-background reset */
 .hero-visual::before{animation:particleDrift 19s linear infinite!important}
 .hero-visual::after{animation:particleRing 32s linear infinite!important}
+
+/* Contact flow: reliable anchor and viewport-safe floating control */
+#contactFormAnchor{scroll-margin-top:96px}
+.floating-contact{position:fixed!important;right:max(12px,env(safe-area-inset-right))!important;left:auto!important;bottom:max(12px,env(safe-area-inset-bottom))!important;z-index:90!important;width:max-content!important;max-width:calc(100vw - 24px)!important;box-sizing:border-box!important}
+.floating-contact-main{display:flex!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important;width:max-content!important;max-width:calc(100vw - 24px)!important;min-width:0!important;white-space:nowrap!important;gap:8px!important;padding-inline:12px!important}
+.floating-contact-menu{box-sizing:border-box!important;width:min(260px,calc(100vw - 24px))!important;max-width:calc(100vw - 24px)!important;right:0!important;left:auto!important}
+.contact-form label input[type="email"]{min-width:0}
+@media(max-width:400px){
+  .floating-contact{right:max(8px,env(safe-area-inset-right))!important;max-width:calc(100vw - 16px)!important}
+  .floating-contact-main{max-width:calc(100vw - 16px)!important;padding-inline:10px!important;font-size:11px!important}
+  .floating-contact-menu{width:min(240px,calc(100vw - 16px))!important;max-width:calc(100vw - 16px)!important}
+}

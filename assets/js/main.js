@@ -28,6 +28,7 @@
       else if (language === "en") element.textContent = original;
     });
     document.querySelectorAll("[data-en-href][data-es-href]").forEach(element => element.setAttribute("href", element.dataset[language + "Href"]));
+    document.querySelectorAll("[data-en-value][data-es-value]").forEach(element => element.value = element.dataset[language + "Value"]);
     document.querySelectorAll("[placeholder]").forEach(element => {
       if (!element.dataset.placeholderEn) element.dataset.placeholderEn = element.getAttribute("placeholder");
       const map = {"Choose a contact preference":"Elige una preferencia de contacto","Choose an area":"Elige un área","Project inquiry":"Consulta sobre un proyecto","What are you trying to build or solve?":"¿Qué intentas construir o resolver?"};

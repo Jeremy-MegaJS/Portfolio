@@ -1,6 +1,6 @@
 window.TRANSLATIONS = {
   en: {
-    documentTitle:"Jeremy Torres — Developer Portfolio", privacyDocumentTitle:"Privacy & Performance — Jeremy Torres", metaDescription:"Jeremy Torres — software developer in training. Web development, Linux automation, systems and hardware projects.", privacyMetaDescription:"Privacy, external services and performance notes for Jeremy Torres’ portfolio website.", menuOpen:"Open navigation", languageSwitch:"Change language", portraitAlt:"Professional portrait of Jeremy Torres",
+    documentTitle:"Jeremy Torres — Developer Portfolio", privacyDocumentTitle:"Privacy & Performance — Jeremy Torres", metaDescription:"Jeremy Torres — software developer in training. Web development, Linux automation, systems and hardware projects.", privacyMetaDescription:"Privacy, external services and performance notes for Jeremy Torres’ portfolio website.", menuOpen:"Open navigation", languageSwitch:"Change language",storytellingLabel:"Project storytelling",emailTemplatesLabel:"Email templates", portraitAlt:"Professional portrait of Jeremy Torres",
     navAbout:"About",navWork:"Projects",navStack:"Stack",navContact:"Contact",
     heroEyebrow:"STUDENT · DEVELOPER IN TRAINING · EL SALVADOR",heroKicker:"BUILD / TEST / IMPROVE",
     heroTitleA:"I build useful things",heroTitleB:"across software, systems",heroTitleC:"and hardware.",
@@ -30,7 +30,7 @@ window.TRANSLATIONS = {
     legalContactTitle:"Contact",legalBack:"← Back to portfolio",featured:"FEATURED PROJECT",academic:"ACADEMIC / TEAM PROJECT",individual:"INDIVIDUAL PROJECT",demo:"Live demo",source:"Source code",pythonVersion:"Python version · separate codebase",reference:"Public reference",details:"Project details",simulated:"Simulated metrics",camera:"Camera permission required"
   },
   es: {
-    documentTitle:"Jeremy Torres — Portafolio de desarrollador", privacyDocumentTitle:"Privacidad y rendimiento — Jeremy Torres", metaDescription:"Jeremy Torres — desarrollador en formación. Desarrollo web, automatización en Linux, sistemas y proyectos de hardware.", privacyMetaDescription:"Información sobre privacidad, servicios externos y rendimiento del portafolio de Jeremy Torres.", menuOpen:"Abrir navegación", languageSwitch:"Cambiar idioma", portraitAlt:"Retrato profesional de Jeremy Torres",
+    documentTitle:"Jeremy Torres — Portafolio de desarrollador", privacyDocumentTitle:"Privacidad y rendimiento — Jeremy Torres", metaDescription:"Jeremy Torres — desarrollador en formación. Desarrollo web, automatización en Linux, sistemas y proyectos de hardware.", privacyMetaDescription:"Información sobre privacidad, servicios externos y rendimiento del portafolio de Jeremy Torres.", menuOpen:"Abrir navegación", languageSwitch:"Cambiar idioma",storytellingLabel:"Narrativa de proyectos",emailTemplatesLabel:"Plantillas de correo", portraitAlt:"Retrato profesional de Jeremy Torres",
     navAbout:"Perfil",navWork:"Proyectos",navStack:"Tecnologías",navContact:"Contacto",
     heroEyebrow:"ESTUDIANTE · DESARROLLADOR EN FORMACIÓN · EL SALVADOR",heroKicker:"CONSTRUIR / PROBAR / MEJORAR",
     heroTitleA:"Construyo soluciones útiles",heroTitleB:"entre software, sistemas",heroTitleC:"y hardware.",

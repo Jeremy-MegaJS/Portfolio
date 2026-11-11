@@ -931,3 +931,26 @@ body::before,.noise,.liquid-aura,.particle-field{
 
 /* Keep decorative background geometry static */
 .hero-visual::before,.visual-orbit,.orbit-two{animation:none!important}
+
+
+/* Contact section: actionable templates and accessible inquiry form */
+.contact-quick-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:34px 0 42px}
+.contact-quick-links .button{justify-content:space-between;text-align:left;min-height:58px;line-height:1.45;padding:12px 18px}
+.contact-divider{display:flex;align-items:center;gap:16px;margin:26px 0;color:#b7a8aa;font:9px var(--mono);letter-spacing:.14em}
+.contact-divider::before,.contact-divider::after{content:"";height:1px;background:rgba(255,255,255,.12);flex:1}
+.contact-form-heading{max-width:660px;margin-bottom:22px}
+.contact-form-heading h3{font-size:clamp(22px,3vw,30px);margin:0 0 8px;letter-spacing:-.04em}
+.contact-form-heading p{color:#b7afb1;font-size:13px;margin:0;line-height:1.8}
+.contact-form{max-width:850px;padding:clamp(18px,3vw,30px);border:1px solid rgba(255,255,255,.13);border-radius:8px;background:rgba(7,7,10,.76);backdrop-filter:blur(18px);box-shadow:0 24px 70px rgba(0,0,0,.24)}
+.contact-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.contact-form label{display:grid;gap:8px;color:#ded5d6;font-size:11px;font-weight:700}
+.contact-form input,.contact-form select,.contact-form textarea{width:100%;min-height:46px;padding:12px 13px;color:#f4eeee;background:#111014;border:1px solid rgba(255,255,255,.16);border-radius:4px;font:12px var(--sans);outline:none}
+.contact-form textarea{min-height:140px;resize:vertical;line-height:1.6}
+.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{border-color:rgba(199,166,106,.8);box-shadow:0 0 0 3px rgba(199,166,106,.12)}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:#82797b}
+.contact-form-full{grid-column:1/-1}
+.contact-submit{margin-top:20px;cursor:pointer}
+.contact-form-note{font-size:10px;line-height:1.7;color:#9f9698;max-width:660px;margin:14px 0 0}
+.contact-footer-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.contact-honeypot{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;opacity:0!important}
+@media(max-width:680px){.contact-quick-links{grid-template-columns:1fr}.contact-form-grid{grid-template-columns:1fr}.contact-form-full{grid-column:auto}.contact-form{padding:16px}.contact-footer-links{flex-direction:column;align-items:stretch}}

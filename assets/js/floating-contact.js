@@ -16,7 +16,7 @@
       <a href="mailto:jeremy.torres.1.2026@gmail.com">
         <span class="contact-menu-icon" aria-hidden="true">@</span><span data-contact-label="email">Email</span><span class="contact-menu-hint" aria-hidden="true">↗</span>
       </a>
-      <a href="index.html#contact">
+      <a href="index.html#contactFormAnchor">
         <span class="contact-menu-icon" aria-hidden="true">↗</span><span data-contact-label="form">Contact form</span><span class="contact-menu-hint" aria-hidden="true">↗</span>
       </a>
       <a href="cv.html">

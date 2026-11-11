@@ -210,18 +210,20 @@
         </div>
 
         <div class="contact-divider"><span data-i18n="contactOr">OR SEND A MESSAGE USING THE FORM</span></div>
-        <div class="contact-form-heading">
+        <div class="contact-form-heading" id="contactFormAnchor">
           <h3 data-i18n="contactFormTitle">Have another idea in mind?</h3>
           <p data-i18n="contactFormIntro">Using other programming tools or technologies? Tell me what you have in mind and how I can help.</p>
         </div>
         <form class="contact-form" id="contactForm" action="https://formsubmit.co/jeremy.torres.1.2026@gmail.com" method="POST">
           <input type="hidden" name="_subject" value="New portfolio contact — Jeremy Torres">
           <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_replyto" value="">
+          <input type="hidden" name="_url" value="https://jeremy-megajs.github.io/Portfolio/index.html#contactForm">
           <input type="hidden" name="_captcha" value="true">
           <input type="text" name="_honey" class="contact-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="contact-form-grid">
-            <label><span data-i18n="formName">Your name</span><input name="name" type="text" autocomplete="name" required maxlength="100" placeholder="Jane Doe"></label>
-            <label><span data-i18n="formEmail">Your email</span><input name="email" type="email" autocomplete="email" required maxlength="160" placeholder="jane@example.com"></label>
+            <label><span data-i18n="formName">Your name (optional)</span><input name="name" type="text" autocomplete="name" maxlength="100" placeholder="Jane Doe"></label>
+            <label><span data-i18n="formEmail">Your email (optional)</span><input name="email" type="email" autocomplete="email" maxlength="160" placeholder="jane@example.com"></label>
             <label><span data-i18n="formPhone">Phone or alternative contact (optional)</span><input name="phone" type="tel" autocomplete="tel" maxlength="40" placeholder="+1 555 000 0000"></label>
             <label><span data-i18n="formArea">What would you like to discuss?</span>
               <select name="area" id="contactArea" required>

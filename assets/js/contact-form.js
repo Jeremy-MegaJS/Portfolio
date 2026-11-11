@@ -83,7 +83,7 @@
   area?.addEventListener("change", () => {
     const value = area.value;
     if (value && subject && (!subject.value.trim() || subject.dataset.auto === "true")) {
-      subject.value = value + " inquiry";
+      subject.value = getLang() === "es" ? value + " — consulta" : value + " inquiry";
       subject.dataset.auto = "true";
     }
   });

@@ -11,21 +11,21 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
-<script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/ScrollTrigger.min.js"></script>
   <script defer src="assets/js/translations.js"></script>
   <script defer src="assets/js/projects.js"></script>
   <script defer src="assets/js/project-details.js"></script>
-<script defer src="assets/js/contact-menu.js"></script>
   <script defer src="assets/js/floating-contact.js"></script>
+  <script defer src="assets/js/navigation.js"></script>
 </head>
 <body class="detail-page">
 <header class="site-header">
     <a class="brand" href="index.html#home" aria-label="Jeremy Torres home"><span class="brand-mark">J<span>.</span></span><span class="brand-name">JEREMY<span>/</span>TORRES</span></a>
-    <nav class="main-nav detail-nav">
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button><nav class="main-nav detail-nav" id="mainNav">
       <a href="index.html#work" data-detail-i18n="backProjects">All projects</a><a href="about-me.html">About</a><a href="cv.html">CV</a><a href="volunteering.html">Volunteering</a>
       <button class="language-switch" id="detailLanguage" type="button" aria-label="Change language"><span class="lang-option active" data-lang="en">EN</span><span class="lang-divider">/</span><span class="lang-option" data-lang="es">ES</span></button>
     </nav>
   </header>
+  <div class="page-return-wrap"><a class="page-return" href="index.html#work"><span aria-hidden="true">←</span> Back to projects</a></div>
   <main id="detailMain" class="section-shell detail-main" aria-live="polite">
     <p class="section-index">PROJECT CASE STUDY / <span id="detailNumber">01</span></p>
     <p class="detail-loading">Loading project dossier…</p>

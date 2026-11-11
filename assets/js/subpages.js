@@ -47,6 +47,7 @@
     catch (_) { return "en"; }
   };
   let language = getLanguage();
+  let englishPdfUrl = null;
 
   function apply() {
     document.documentElement.lang = language;
@@ -61,7 +62,8 @@
     });
     document.querySelectorAll("[data-en-href][data-es-href]").forEach(node => {
       const attr = node.tagName === "IFRAME" ? "src" : "href";
-      node.setAttribute(attr, node.dataset[language + "Href"]);
+      const target = language === "en" && englishPdfUrl ? englishPdfUrl : node.dataset[language + "Href"];
+      node.setAttribute(attr, target);
     });
     document.querySelectorAll("[aria-label]").forEach(node => {
       const original = node.getAttribute("data-original-aria") || node.getAttribute("aria-label");
@@ -104,4 +106,16 @@
     if (event.key === "portfolio-language") { language = getLanguage(); apply(); }
   });
   apply();
+  if (document.querySelector('[data-en-href*="Jeremy-Torres-CV-English.pdf"]')) {
+    fetch("assets/documents/Jeremy-Torres-CV-English.pdf.b64")
+      .then(response => { if (!response.ok) throw new Error("English CV unavailable"); return response.text(); })
+      .then(encoded => {
+        const binary = atob(encoded.trim());
+        const bytes = new Uint8Array(binary.length);
+        for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+        englishPdfUrl = URL.createObjectURL(new Blob([bytes], { type: "application/pdf" }));
+        if (language === "en") document.querySelectorAll("[data-en-href][data-es-href]").forEach(node => node.setAttribute(node.tagName === "IFRAME" ? "src" : "href", englishPdfUrl));
+      })
+      .catch(error => console.error("Could not load the English CV PDF:", error));
+  }
 })();

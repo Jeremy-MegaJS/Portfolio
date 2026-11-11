@@ -1,1 +1,3 @@
-# Volunteering photos\n\nUpload the two approved photos here as `experience-01.webp` and `experience-02.webp`. Update the image `src` and descriptive `alt` text in `volunteering.html`. Confirm permission from everyone identifiable in a photo before publishing. Remove private or sensitive information from the image.
+# Community volunteering photographs
+
+The photographs displayed on the volunteering page were captured by Jeremy Torres and document community participation and service activities.

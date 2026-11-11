@@ -141,7 +141,7 @@
     const section = document.createElement("section");
     section.className = "detail-section case-study-breakdown";
     section.innerHTML =
-      '<p class="section-index">' + (language === "es" ? "04 / DESARROLLO DEL PROYECTO" : "04 / PROJECT BREAKDOWN") + '</p>' +
+      '<p class="section-index">' + (language === "es" ? "DESARROLLO DEL PROYECTO" : "PROJECT BREAKDOWN") + '</p>' +
       '<div class="case-study-grid">' +
       entries.map((entry, index) =>
         '<article class="case-study-card"><span class="case-study-number">' + String(index + 1).padStart(2, "0") +

@@ -168,18 +168,7 @@
     if (privacyLink) privacyLink.textContent = es ? "Privacidad y rendimiento" : "Privacy & performance";
   }
 
-  function initDetailMotion(){\n    /* Static, accessible project detail pages: no parallax or animated background. */\n    return;\n
-    if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
-    if(window.gsap && window.ScrollTrigger){
-      gsap.registerPlugin(ScrollTrigger);
-      gsap.fromTo(".detail-hero",{y:40,opacity:0},{y:0,opacity:1,duration:1.2,ease:"power3.out"});
-      gsap.utils.toArray(".detail-section, .detail-story-grid article, .detail-timeline article").forEach((el,i)=>{
-        gsap.fromTo(el,{y:38,opacity:0},{y:0,opacity:1,duration:1,ease:"power3.out",scrollTrigger:{trigger:el,start:"top 88%",once:true},delay:(i%3)*.06});
-      });
-      gsap.fromTo(".detail-preview",{scale:1.1,yPercent:4},{scale:1,yPercent:-3,ease:"none",scrollTrigger:{trigger:".detail-art",start:"top bottom",end:"bottom top",scrub:1.7}});
-      ScrollTrigger.refresh();
-    }
-  }
+  function initDetailMotion(){ /* Intentionally static: no parallax or animated background. */ }
 
   languageButton?.addEventListener("click", () => {
     language = language === "en" ? "es" : "en";

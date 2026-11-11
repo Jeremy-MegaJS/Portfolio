@@ -1,7 +1,5 @@
-# Profile photo
+# Portfolio portrait asset
 
-Upload your own professional portrait to this folder.
+This directory stores the portrait displayed in the portfolio's introductory profile area. The page references the image as a static asset, so it is served directly by the website rather than uploaded to a profile service.
 
-Recommended filename: `profile.jpg`.
-
-Keep the image optimized for web use. Do not upload a photo containing private documents, location clues, or other personal information.
+The portrait is part of the public portfolio presentation. The website does not use it for facial recognition, biometric analysis or identity verification.

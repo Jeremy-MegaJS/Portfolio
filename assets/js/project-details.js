@@ -102,8 +102,8 @@
       if(!images.length){grid.closest('#projectGallery')?.remove();return}
       grid.innerHTML=images.map((item,index)=>{
         const src="assets/images/project-galleries/"+encodeURIComponent(projectId)+"/"+encodeURIComponent(item.src||"");
-        const alt=escapeHTML(item.alt||"Project image "+(index+1));
-        const caption=escapeHTML(item.caption||"");
+        const alt=escapeHTML((es && item.altEs) ? item.altEs : (item.alt||"Project image "+(index+1)));
+        const caption=escapeHTML((es && item.captionEs) ? item.captionEs : (item.caption||""));
         return '<figure class="project-gallery-item"><a href="'+src+'" target="_blank" rel="noopener noreferrer" aria-label="'+escapeHTML(openText)+': '+alt+'"><img src="'+src+'" alt="'+alt+'" loading="lazy" decoding="async"></a>'+(caption?'<figcaption>'+caption+'</figcaption>':'')+'</figure>';
       }).join("");
     }catch(error){grid.closest('#projectGallery')?.remove()}
@@ -111,7 +111,7 @@
 
   function render() {
     if (!project || !dossier) {
-      root.innerHTML = '<p class="section-index">PROJECT NOT FOUND</p><h1>Project dossier unavailable.</h1><a class="button button-primary" href="index.html#work">Back to projects ↗</a>';
+      root.innerHTML = language === "es" ? '<p class="section-index">PROYECTO NO ENCONTRADO</p><h1>Expediente del proyecto no disponible.</h1><a class="button button-primary" href="index.html#work">Volver a proyectos ↗</a>' : '<p class="section-index">PROJECT NOT FOUND</p><h1>Project dossier unavailable.</h1><a class="button button-primary" href="index.html#work">Back to projects ↗</a>';
       return;
     }
     const es = language === "es";
@@ -119,6 +119,7 @@
     const audience = get(project.audienceEn || "People who may benefit from this project.", project.audienceEs || "Personas que pueden beneficiarse de este proyecto.");
     const purpose = get(project.motivationEn || "I worked on this project to explore a practical problem.", project.motivationEs || "Trabajé en este proyecto para explorar un problema práctico.");
     const timeline = es ? dossier.timelineEs : dossier.timeline;
+    const category = es ? ({ "WEB / TEAM":"WEB / EQUIPO", "WEB / INDIVIDUAL":"WEB / INDIVIDUAL", "AI / TEAM PROTOTYPE":"IA / PROTOTIPO EN EQUIPO", "LINUX / INDIVIDUAL":"LINUX / INDIVIDUAL", "SYSTEMS / INDIVIDUAL":"SISTEMAS / INDIVIDUAL" }[project.category] || project.category) : project.category;
     const labels = es ? {
       back:"← Volver a proyectos",overview:"Contexto",audience:"A quién ayuda",purpose:"Por qué lo trabajé",contribution:"Mi contribución",team:"Equipo",problem:"Problema y contexto",process:"Proceso",solution:"Solución",result:"Resultado y estado",
       stack:"Tecnologías utilizadas",timelineTitle:"Hitos y fechas",demo:"Abrir demostración",repo:"Ver repositorio",extra:"Reproductor público",scope:"Alcance y transparencia",
@@ -138,7 +139,7 @@
 
     root.innerHTML =
       '<div class="detail-hero"><div>'+
-        '<p class="detail-kicker">'+escapeHTML(project.category || (es ? "LABORATORIO TÉCNICO" : "TECHNICAL LAB"))+' / CASE '+number+'</p>'+
+        '<p class="detail-kicker">'+escapeHTML(category || (es ? "LABORATORIO TÉCNICO" : "TECHNICAL LAB"))+' / '+(es?"CASO ":"CASE ")+number+'</p>'+
         '<h1>'+escapeHTML(project.title)+'</h1>'+
         '<p class="detail-role">'+escapeHTML(dossier.role[es ? 1 : 0])+'</p>'+
         '<p class="detail-lead">'+escapeHTML(project[es ? "es" : "en"])+'</p>'+
@@ -162,6 +163,8 @@
     document.documentElement.lang = language;
     languageButton?.querySelectorAll(".lang-option").forEach(option => option.classList.toggle("active", option.dataset.lang === language));
     if (languageButton) languageButton.setAttribute("aria-label", es ? "Cambiar idioma" : "Change language");
+    const sectionIndex = document.querySelector(".detail-main > .section-index");
+    if (sectionIndex) sectionIndex.innerHTML = (es ? "ESTUDIO DE CASO / " : "PROJECT CASE STUDY / ") + '<span id="detailNumber">' + number + '</span>';
     const backLink = document.querySelector("[data-detail-i18n=backProjects]");
     if (backLink) backLink.textContent = labels.back.replace("← ","");
     const footerCopy = document.querySelector(".footer-inner > p");

@@ -214,7 +214,7 @@
           <h3 data-i18n="contactFormTitle">Have another idea in mind?</h3>
           <p data-i18n="contactFormIntro">Using other programming tools or technologies? Tell me what you have in mind and how I can help.</p>
         </div>
-        <form class="contact-form" id="contactForm" action="https://formsubmit.co/jeremy.torres.1.2026@gmail.com" method="POST">
+        <form class="contact-form" id="contactForm" action="https://formsubmit.co/parkingsv1@gmail.com" method="POST">
           <input type="hidden" name="_subject" value="New portfolio contact — Jeremy Torres">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_replyto" value="">
@@ -223,8 +223,9 @@
           <input type="text" name="_honey" class="contact-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="contact-form-grid">
             <label><span data-i18n="formName">Your name (optional)</span><input name="name" type="text" autocomplete="name" maxlength="100" placeholder="Jane Doe"></label>
-            <label><span data-i18n="formEmail">Your email (optional)</span><input name="email" type="email" autocomplete="email" maxlength="160" placeholder="jane@example.com"></label>
-            <label><span data-i18n="formPhone">Phone or alternative contact (optional)</span><input name="phone" type="tel" autocomplete="tel" maxlength="40" placeholder="+1 555 000 0000"></label>
+            <label><span data-i18n="formEmail">Your email (only if you choose email contact)</span><input name="email" id="contactEmail" type="email" autocomplete="email" maxlength="160" placeholder="jane@example.com"></label>
+            <label><span data-i18n="formPhone">Phone or alternative contact (optional)</span><input name="phone" type="tel" autocomplete="tel" maxlength="40" placeholder="+503 7000 0000"></label>
+            <label><span data-i18n="formContactMethod">How should I contact you?</span><select name="contact_method" id="contactMethod" required><option value="" data-i18n="formContactMethodPlaceholder">Choose a contact preference</option><option value="Email" data-i18n="formContactEmail">Email (provide it above)</option><option value="WhatsApp or phone" data-i18n="formContactPhone">WhatsApp or phone (include the number in your message)</option><option value="Social or professional account" data-i18n="formContactHandle">GitHub, Discord or another account (include your handle in the message)</option><option value="Anonymous / no reply needed" data-i18n="formContactAnonymous">Anonymous — no reply needed</option></select></label>
             <label><span data-i18n="formArea">What would you like to discuss?</span>
               <select name="area" id="contactArea" required>
                 <option value="" data-i18n="formAreaPlaceholder">Choose an area</option>
@@ -237,9 +238,9 @@
               </select>
             </label>
             <label class="contact-form-full"><span data-i18n="formSubject">Subject</span><input name="subject" type="text" required maxlength="140" placeholder="Project inquiry"></label>
-            <label class="contact-form-full"><span data-i18n="formMessage">Tell me about the project, goal, tools and timeline</span><textarea name="message" rows="6" required minlength="20" maxlength="5000" placeholder="What are you trying to build or solve?"></textarea></label>
+            <label class="contact-form-full"><span data-i18n="formMessage">Tell me about the project, goal, tools, timeline and your contact details if you want a reply</span><textarea name="message" rows="6" required minlength="20" maxlength="5000" placeholder="What are you trying to build or solve?"></textarea></label>
           </div>
-          <div class="contact-consent"><label><input type="checkbox" name="consent" required><span data-i18n="formConsent">I agree to send these details to Jeremy so he can respond to my inquiry.</span></label></div>
+          <div class="contact-consent"><label><input type="checkbox" name="consent" required><span data-i18n="formConsent">I agree to send this message to Jeremy. I have stated how I prefer to be contacted.</span></label></div>
           <button class="button button-primary contact-submit" type="submit"><span data-i18n="formSubmit">Send message</span> ↗</button>
           <p class="contact-form-note" data-i18n="formPrivacy">Your details will be used only to reply to your inquiry. Please do not include passwords or sensitive personal information.</p>
         </form>

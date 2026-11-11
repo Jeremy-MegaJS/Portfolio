@@ -954,3 +954,9 @@ body::before,.noise,.liquid-aura,.particle-field{
 .contact-footer-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
 .contact-honeypot{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;opacity:0!important}
 @media(max-width:680px){.contact-quick-links{grid-template-columns:1fr}.contact-form-grid{grid-template-columns:1fr}.contact-form-full{grid-column:auto}.contact-form{padding:16px}.contact-footer-links{flex-direction:column;align-items:stretch}}
+
+
+.contact-form-status{margin:14px 0 0;color:#e6c28a;font-size:12px;line-height:1.7}
+.contact-submit:disabled{opacity:.65;cursor:wait;transform:none}
+.contact-quick-links .button{min-width:0}
+@media(prefers-reduced-motion:reduce){.contact-form{backdrop-filter:none}}

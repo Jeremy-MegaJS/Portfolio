@@ -2,33 +2,28 @@
   if (document.querySelector(".floating-contact")) return;
 
   const copy = {
-    en: { button: "Contact me", email: "Email", github: "GitHub", form: "Contact form", cv: "View my CV", hint: "OPEN" },
-    es: { button: "Contáctame", email: "Correo electrónico", github: "GitHub", form: "Formulario de contacto", cv: "Ver mi CV", hint: "ABRIR" }
+    en: { button: "Contact me", email: "Email", github: "GitHub", form: "Contact form", cv: "View my CV", hint: "OPEN", arrow: "Go to next step and contact" },
+    es: { button: "Contáctame", email: "Correo electrónico", github: "GitHub", form: "Formulario de contacto", cv: "Ver mi CV", hint: "ABRIR", arrow: "Ir al siguiente paso y contactar" }
   };
   const wrap = document.createElement("aside");
   wrap.className = "floating-contact";
   wrap.setAttribute("aria-label", "Quick contact");
   wrap.innerHTML = `
     <div class="floating-contact-menu" id="floatingContactMenu" role="group" aria-label="Contact options" hidden>
-      <a href="https://github.com/Jeremy-MegaJS" target="_blank" rel="noopener noreferrer">
-        <span class="contact-menu-icon" aria-hidden="true">GH</span><span data-contact-label="github">GitHub</span><span class="contact-menu-hint" aria-hidden="true">↗</span>
-      </a>
-      <a href="mailto:jeremy.torres.1.2026@gmail.com">
-        <span class="contact-menu-icon" aria-hidden="true">@</span><span data-contact-label="email">Email</span><span class="contact-menu-hint" aria-hidden="true">↗</span>
-      </a>
-      <a href="index.html#contactFormAnchor">
-        <span class="contact-menu-icon" aria-hidden="true">↗</span><span data-contact-label="form">Contact form</span><span class="contact-menu-hint" aria-hidden="true">↗</span>
-      </a>
-      <a href="cv.html">
-        <span class="contact-menu-icon" aria-hidden="true">CV</span><span data-contact-label="cv">View my CV</span><span class="contact-menu-hint" aria-hidden="true">↗</span>
-      </a>
+      <a href="https://github.com/Jeremy-MegaJS" target="_blank" rel="noopener noreferrer"><span class="contact-menu-icon" aria-hidden="true">GH</span><span data-contact-label="github">GitHub</span><span class="contact-menu-hint" aria-hidden="true">↗</span></a>
+      <a href="mailto:jeremy.torres.1.2026@gmail.com"><span class="contact-menu-icon" aria-hidden="true">@</span><span data-contact-label="email">Email</span><span class="contact-menu-hint" aria-hidden="true">↗</span></a>
+      <a href="index.html#contactFormAnchor"><span class="contact-menu-icon" aria-hidden="true">↗</span><span data-contact-label="form">Contact form</span><span class="contact-menu-hint" aria-hidden="true">↗</span></a>
+      <a href="cv.html"><span class="contact-menu-icon" aria-hidden="true">CV</span><span data-contact-label="cv">View my CV</span><span class="contact-menu-hint" aria-hidden="true">↗</span></a>
     </div>
-    <button class="floating-contact-main" type="button" aria-expanded="false" aria-controls="floatingContactMenu">
-      <span class="floating-contact-symbol" aria-hidden="true">✦</span>
-      <span data-contact-label="button">Contact me</span>
-      <span class="contact-chevron" aria-hidden="true">⌄</span>
-    </button>`;
+    <button class="floating-contact-main" type="button" aria-expanded="false" aria-controls="floatingContactMenu"><span class="floating-contact-symbol" aria-hidden="true">✦</span><span data-contact-label="button">Contact me</span><span class="contact-chevron" aria-hidden="true">⌄</span></button>`;
   document.body.appendChild(wrap);
+
+  const mobileArrow = document.createElement("a");
+  mobileArrow.className = "mobile-next-step";
+  mobileArrow.href = "#contact";
+  mobileArrow.setAttribute("aria-label", copy.en.arrow);
+  mobileArrow.innerHTML = '<span aria-hidden="true">↘</span>';
+  document.body.appendChild(mobileArrow);
 
   const button = wrap.querySelector(".floating-contact-main");
   const menu = wrap.querySelector(".floating-contact-menu");
@@ -41,6 +36,7 @@
     });
     wrap.setAttribute("aria-label", language === "es" ? "Contacto rápido" : "Quick contact");
     menu.setAttribute("aria-label", language === "es" ? "Opciones de contacto" : "Contact options");
+    mobileArrow.setAttribute("aria-label", copy[language].arrow);
   };
   const openMenu = () => {
     window.clearTimeout(closeTimer);

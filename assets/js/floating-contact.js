@@ -63,5 +63,6 @@
   });
   menu.querySelectorAll("a").forEach(anchor => anchor.addEventListener("click", closeMenu));
   document.querySelectorAll("#pageLanguage, #languageSwitch").forEach(control => control.addEventListener("click", updateLanguage));
+  window.addEventListener("portfolio:languagechange", updateLanguage);
   updateLanguage();
 })();

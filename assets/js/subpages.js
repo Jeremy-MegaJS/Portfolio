@@ -59,7 +59,11 @@
       const translated = staticText[original];
       if (translated) node.textContent = language === "es" ? translated : original;
     });
-    document.querySelectorAll("[data-en-href][data-es-href]").forEach(node => {\n      const attr = node.tagName === "IFRAME" ? "src" : "href";\n      node.setAttribute(attr, node.dataset[language + "Href"]);\n    });\n    document.querySelectorAll("[aria-label]").forEach(node => {
+    document.querySelectorAll("[data-en-href][data-es-href]").forEach(node => {
+      const attr = node.tagName === "IFRAME" ? "src" : "href";
+      node.setAttribute(attr, node.dataset[language + "Href"]);
+    });
+    document.querySelectorAll("[aria-label]").forEach(node => {
       const original = node.getAttribute("data-original-aria") || node.getAttribute("aria-label");
       if (!node.hasAttribute("data-original-aria")) node.setAttribute("data-original-aria", original);
       const map = {"Open navigation":"Abrir navegación","Close navigation":"Cerrar navegación","Change language":"Cambiar idioma","Jeremy Alexander Torres Mercado — home":"Jeremy Alexander Torres Mercado — inicio"};

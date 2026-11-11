@@ -33,7 +33,7 @@ The technical lab also includes Linux input-control automation, a Cloudflare WAR
 
 ### Technical implementation
 
-The portfolio is a static website built with **HTML5, CSS3 and vanilla JavaScript**. It has no frontend framework, application server, database, build step or analytics dependency.
+The portfolio is a static website built with **HTML5, CSS3 and vanilla JavaScript**. It has no frontend framework, application server, database, build step or analytics dependency. The contact form uses FormSubmit as an external form processor and email-forwarding service.
 
 Project information is separated from the rendering logic:
 
@@ -53,7 +53,7 @@ The main pages are **index.html**, **project.html** and **privacy.html**. Styles
 - Project-specific detail pages and direct links to live demonstrations and source repositories.
 - Lazy-loaded project artwork and lightweight visual effects.
 - Reduced-motion support for visitors who prefer fewer animations.
-- Keyboard-operable navigation and an accessible floating contact menu.
+- Keyboard-operable navigation and an accessible contact form with email notifications.
 
 ### Run locally
 
@@ -112,7 +112,7 @@ El laboratorio técnico también incluye automatización de dispositivos de entr
 
 ### Implementación técnica
 
-El portafolio es un sitio estático desarrollado con **HTML5, CSS3 y JavaScript puro**. No utiliza framework frontend, servidor de aplicación, base de datos, proceso de compilación ni dependencia de analítica.
+El portafolio es un sitio estático desarrollado con **HTML5, CSS3 y JavaScript puro**. No utiliza framework frontend, servidor de aplicación, base de datos, proceso de compilación ni dependencia de analítica. El formulario utiliza FormSubmit como procesador externo y servicio de reenvío de correos.
 
 La información de los proyectos está separada de la lógica que la presenta:
 

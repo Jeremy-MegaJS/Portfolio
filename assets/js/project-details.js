@@ -102,8 +102,8 @@
       if(!images.length){grid.closest('#projectGallery')?.remove();return}
       grid.innerHTML=images.map((item,index)=>{
         const src="assets/images/project-galleries/"+encodeURIComponent(projectId)+"/"+encodeURIComponent(item.src||"");
-        const alt=escapeHTML((es && item.altEs) ? item.altEs : (item.alt||"Project image "+(index+1)));
-        const caption=escapeHTML((es && item.captionEs) ? item.captionEs : (item.caption||""));
+        const alt=escapeHTML((language === "es" && item.altEs) ? item.altEs : (item.alt||"Project image "+(index+1)));
+        const caption=escapeHTML((language === "es" && item.captionEs) ? item.captionEs : (item.caption||""));
         return '<figure class="project-gallery-item"><a href="'+src+'" target="_blank" rel="noopener noreferrer" aria-label="'+escapeHTML(openText)+': '+alt+'"><img src="'+src+'" alt="'+alt+'" loading="lazy" decoding="async"></a>'+(caption?'<figcaption>'+caption+'</figcaption>':'')+'</figure>';
       }).join("");
     }catch(error){grid.closest('#projectGallery')?.remove()}

@@ -15,7 +15,7 @@
     "Web development":"Desarrollo web","Systems & automation":"Sistemas y automatización",
     "Hardware & applied AI":"Hardware e IA aplicada","Product workflow":"Flujo de trabajo de producto",
     "Arduino & electronics":"Arduino y electrónica","View my CV ↗":"Ver mi CV ↗","Contact me":"Contáctame",
-    "Contact ↗":"Contacto ↗","Academic profile ↗":"Perfil académico ↗","Project portfolio ↗":"Portafolio de proyectos ↗",
+    "Contact ↗":"Contacto ↗","Academic profile ↗":"Perfil académico ↗","Project portfolio ↗":"Portafolio de proyectos ↗","Community involvement ↗":"Participación comunitaria ↗",
     "PROFESSIONAL PROFILE":"PERFIL PROFESIONAL","EDUCATION":"FORMACIÓN ACADÉMICA",
     "TECHNICAL & LEADERSHIP TRAINING":"FORMACIÓN TÉCNICA Y LIDERAZGO",
     "VERIFIED ACHIEVEMENTS":"LOGROS VERIFICABLES","ACADEMIC PERFORMANCE":"RENDIMIENTO ACADÉMICO",

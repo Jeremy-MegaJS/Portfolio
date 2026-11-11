@@ -19,16 +19,16 @@
       contribution:["Independent design and implementation of the website structure, responsive styling and language switching.","Diseño e implementación individual de la estructura web, estilos adaptables y selector de idioma."],
       team:["Individual project","Proyecto individual"],
       technologies:["HTML5","CSS3","JavaScript","GitHub Pages"],
-      timeline:[["Project context","A bilingual product website created to help a small natural-soap brand communicate its catalogue and educational information."],["Delivery record","No independently verified public delivery date is recorded."],["Scope","Static multi-page presentation, not an online store or order-management backend."]],
-      timelineEs:[["Contexto","Sitio web bilingüe creado para ayudar a una pequeña marca de jabones naturales a comunicar su catálogo e información educativa."],["Registro de entrega","No hay una fecha pública de entrega verificada de forma independiente."],["Alcance","Presentación estática de varias páginas; no es una tienda en línea ni un backend de gestión de pedidos."]]
+      timeline:[["Project context","A bilingual product website created to help a small natural-soap brand communicate its catalogue and educational information."],["Scope","Static multi-page presentation, not an online store or order-management backend."]],
+      timelineEs:[["Contexto","Sitio web bilingüe creado para ayudar a una pequeña marca de jabones naturales a comunicar su catálogo e información educativa."],["Alcance","Presentación estática de varias páginas; no es una tienda en línea ni un backend de gestión de pedidos."]]
     },
     "parking-sv": {
       role:["Collaborative academic full-stack prototype","Prototipo full-stack académico y colaborativo"],
       contribution:["My work focused on the JavaScript / TypeScript workstream: Next.js implementation, frontend integration, Supabase connectivity and deployment validation. Jossybeth also worked in this stream. Four other students worked on a separate Python stream.","Mi trabajo se concentró en la línea JavaScript / TypeScript: implementación con Next.js, integración frontend, conexión con Supabase y validación del despliegue. Jossybeth también trabajó en esta línea. Otros cuatro estudiantes desarrollaron una línea Python separada."],
       team:["Six students across two technical workstreams","Seis estudiantes en dos líneas técnicas"],
       technologies:["Next.js","React","TypeScript","Supabase","PostgreSQL","Tailwind CSS","Vercel"],
-      timeline:[["2025 · Expo de Logros ¡Supérate! ADOC","Presented in English as part of the student project exhibition; local press coverage was reported. "],["2026 · Expo Tech ¡Supérate! ADOC","The team qualified to participate and presented in English. The exact calendar date is not confirmed in the available project records. No award is claimed."],["Product status","Academic prototype with synthetic demonstration data. No commercial launch, real-time parking availability or confirmed reservations."]],
-      timelineEs:[["2025 · Expo de Logros ¡Supérate! ADOC","Presentado en inglés como parte de la exposición de proyectos estudiantiles; se reportó cobertura de prensa local. La fecha exacta no está confirmada en los registros disponibles del proyecto."],["2026 · Expo Tech ¡Supérate! ADOC","El equipo clasificó para participar y presentó en inglés. La fecha exacta no está confirmada en los registros disponibles del proyecto. No se reclama ningún premio."],["Estado del producto","Prototipo académico con datos sintéticos de demostración. Sin lanzamiento comercial, disponibilidad de parqueos en tiempo real ni reservas confirmadas."]]
+      timeline:[["2025 · Expo de Logros ¡Supérate! ADOC","Presented in English as part of the student project exhibition; local press coverage was reported. "],["2026 · Expo Tech ¡Supérate! ADOC","The team qualified to participate and presented in English. No award is claimed."],["Product status","Academic prototype with synthetic demonstration data. No commercial launch, real-time parking availability or confirmed reservations."]],
+      timelineEs:[["2025 · Expo de Logros ¡Supérate! ADOC","Presentado en inglés como parte de la exposición de proyectos estudiantiles; se reportó cobertura de prensa local. La fecha exacta no está confirmada en los registros disponibles del proyecto."],["2026 · Expo Tech ¡Supérate! ADOC","El equipo clasificó para participar y presentó en inglés. No se reclama ningún premio."],["Estado del producto","Prototipo académico con datos sintéticos de demostración. Sin lanzamiento comercial, disponibilidad de parqueos en tiempo real ni reservas confirmadas."]]
     },
     "radio-transmission": {
       role:["Web audio and infrastructure demonstration","Demostración de audio web e infraestructura"],
@@ -81,7 +81,7 @@
     "f1-team-profiles": {
       role:["Collaborative academic frontend exercise","Ejercicio frontend académico y colaborativo"],
       contribution:["Collaborative classroom frontend work. Team authorship is retained; this portfolio does not claim the project as an individual product.","Trabajo frontend colaborativo de clase. Se reconoce la autoría del equipo; este portafolio no presenta el proyecto como producto individual."],
-      team:["Collaborative classroom project; full contributor roster not confirmed","Proyecto colaborativo de clase; lista completa de integrantes no confirmada"],
+      team:["Collaborative classroom project","Proyecto colaborativo de clase"],
       technologies:["HTML","CSS","JavaScript"],
       timeline:[["Project status","Academic exercise using sample Formula 1 team information and statistics."]],
       timelineEs:[["Estado","Ejercicio académico con información y estadísticas de muestra de equipos de Fórmula 1."]]

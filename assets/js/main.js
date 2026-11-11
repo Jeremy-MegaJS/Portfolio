@@ -86,10 +86,10 @@
     if (project.repo) links.push('<a class="project-action action-code" href="'+escapeHtml(project.repo)+'" target="_blank" rel="noopener noreferrer">'+escapeHtml(t.source)+' <span>↗</span></a>');
     if (project.pythonRepo) links.push('<a class="project-action action-code" href="'+escapeHtml(project.pythonRepo)+'" target="_blank" rel="noopener noreferrer">'+escapeHtml(t.pythonVersion)+' <span>↗</span></a>');
     const note = project.note === "simulated" ? '<span class="project-note">'+escapeHtml(t.simulated)+'</span>' : project.note === "camera" ? '<span class="project-note">'+escapeHtml(t.camera)+'</span>' : "";
-    return '<article class="project-card reveal" style="--card-index:'+index+'"><div class="project-visual visual-'+escapeHtml(project.visual)+'"><span class="visual-label mono">'+escapeHtml(project.category)+'</span><span class="visual-code mono">'+String(index+1).padStart(2,"0")+' / 05</span><img class="project-preview" src="assets/images/projects/'+escapeHtml(project.id)+'.svg" alt="" loading="lazy" decoding="async"></div><div class="project-body"><div class="project-title-row"><h3>'+escapeHtml(project.title)+'</h3><span class="project-kind">'+escapeHtml(project.kind==="academic"?t.academic:t.individual)+'</span></div><p>'+escapeHtml(project[language])+'</p><div class="project-tags">'+project.stack.map(tag=>'<span>'+escapeHtml(tag)+'</span>').join("")+'</div>'+note+'<div class="project-links">'+links.join("")+'</div></div></article>';
+    return '<article class="project-card reveal" data-project-url="project.html?project='+encodeURIComponent(project.id)+'" tabindex="0" aria-label="Open project details for '+escapeHtml(project.title)+'" style="--card-index:'+index+'"><div class="project-visual visual-'+escapeHtml(project.visual)+'"><span class="visual-label mono">'+escapeHtml(project.category)+'</span><span class="visual-code mono">'+String(index+1).padStart(2,"0")+' / 05</span><img class="project-preview" src="assets/images/projects/'+escapeHtml(project.id)+'.svg" alt="" loading="lazy" decoding="async"></div><div class="project-body"><div class="project-title-row"><h3>'+escapeHtml(project.title)+'</h3><span class="project-kind">'+escapeHtml(project.kind==="academic"?t.academic:t.individual)+'</span></div><p>'+escapeHtml(project[language])+'</p><div class="project-tags">'+project.stack.map(tag=>'<span>'+escapeHtml(tag)+'</span>').join("")+'</div>'+note+'<div class="project-links">'+links.join("")+'</div></div></article>';
   }
   function labCard(project, index) {
-    return '<article class="lab-card reveal" style="--card-index:'+index+'"><div class="lab-preview"><img src="assets/images/projects/'+escapeHtml(project.id)+'.svg" alt="" loading="lazy" decoding="async"></div><span class="lab-card-index mono">LAB_'+String(index+1).padStart(2,"0")+'</span><h4>'+escapeHtml(project.title)+'</h4><p>'+escapeHtml(project[language])+'</p><div class="project-tags">'+project.stack.map(tag=>'<span>'+escapeHtml(tag)+'</span>').join("")+'</div><div class="lab-actions"><a class="project-action action-details" href="project.html?project='+encodeURIComponent(project.id)+'">'+escapeHtml(translations[language].details)+' <span>↗</span></a><a class="project-action action-code" href="'+escapeHtml(project.repo)+'" target="_blank" rel="noopener noreferrer">'+escapeHtml(translations[language].source)+' <span>↗</span></a></div></article>';
+    return '<article class="lab-card reveal" data-project-url="project.html?project='+encodeURIComponent(project.id)+'" tabindex="0" aria-label="Open project details for '+escapeHtml(project.title)+'" style="--card-index:'+index+'"><div class="lab-preview"><img src="assets/images/projects/'+escapeHtml(project.id)+'.svg" alt="" loading="lazy" decoding="async"></div><span class="lab-card-index mono">LAB_'+String(index+1).padStart(2,"0")+'</span><h4>'+escapeHtml(project.title)+'</h4><p>'+escapeHtml(project[language])+'</p><div class="project-tags">'+project.stack.map(tag=>'<span>'+escapeHtml(tag)+'</span>').join("")+'</div><div class="lab-actions"><a class="project-action action-details" href="project.html?project='+encodeURIComponent(project.id)+'">'+escapeHtml(translations[language].details)+' <span>↗</span></a><a class="project-action action-code" href="'+escapeHtml(project.repo)+'" target="_blank" rel="noopener noreferrer">'+escapeHtml(translations[language].source)+' <span>↗</span></a></div></article>';
   }
   function applyLanguage(nextLanguage) {
     language = nextLanguage === "es" ? "es" : "en";
@@ -132,14 +132,15 @@
   }
   function initScrollNarrative(){ observeReveals(); }
   if(languageSwitch)languageSwitch.addEventListener("click",()=>applyLanguage(language==="en"?"es":"en"));
-  if(menuToggle&&nav){
-    menuToggle.addEventListener("click",()=>{
-      const expanded=menuToggle.getAttribute("aria-expanded")==="true";
-      menuToggle.setAttribute("aria-expanded",String(!expanded));
-      nav.classList.toggle("is-open",!expanded);
-    });
-    nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{nav.classList.remove("is-open");menuToggle.setAttribute("aria-expanded","false")}));
-  }
+  document.addEventListener("click",event=>{
+    const card=event.target.closest(".project-card[data-project-url],.lab-card[data-project-url]");
+    if(!card||event.target.closest("a,button,input,select,textarea"))return;
+    window.location.href=card.dataset.projectUrl;
+  });
+  document.addEventListener("keydown",event=>{
+    const card=event.target.closest(".project-card[data-project-url],.lab-card[data-project-url]");
+    if(card&&event.target===card&&(event.key==="Enter"||event.key===" ")){event.preventDefault();window.location.href=card.dataset.projectUrl;}
+  });
   const progress=document.getElementById("scrollProgress");
   if(progress){let ticking=false;window.addEventListener("scroll",()=>{if(ticking)return;ticking=true;requestAnimationFrame(()=>{const total=document.documentElement.scrollHeight-innerHeight;progress.style.transform="scaleX("+(total>0?scrollY/total:0)+")";ticking=false})},{passive:true})}
   const year=document.getElementById("year");if(year)year.textContent=new Date().getFullYear();

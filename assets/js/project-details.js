@@ -27,7 +27,7 @@
       contribution:["My work focused on the JavaScript / TypeScript workstream: Next.js implementation, frontend integration, Supabase connectivity and deployment validation. Jossybeth also worked in this stream. Four other students worked on a separate Python stream.","Mi trabajo se concentró en la línea JavaScript / TypeScript: implementación con Next.js, integración frontend, conexión con Supabase y validación del despliegue. Jossybeth también trabajó en esta línea. Otros cuatro estudiantes desarrollaron una línea Python separada."],
       team:["Six students across two technical workstreams","Seis estudiantes en dos líneas técnicas"],
       technologies:["Next.js","React","TypeScript","Supabase","PostgreSQL","Tailwind CSS","Vercel"],
-      timeline:[["2025 · Expo de Logros ¡Supérate! ADOC","Presented in English as part of the student project exhibition; local press coverage was reported. The exact calendar date is not confirmed in the available project records."],["2026 · Expo Tech ¡Supérate! ADOC","The team qualified to participate and presented in English. The exact calendar date is not confirmed in the available project records. No award is claimed."],["Product status","Academic prototype with synthetic demonstration data. No commercial launch, real-time parking availability or confirmed reservations."]],
+      timeline:[["2025 · Expo de Logros ¡Supérate! ADOC","Presented in English as part of the student project exhibition; local press coverage was reported. "],["2026 · Expo Tech ¡Supérate! ADOC","The team qualified to participate and presented in English. The exact calendar date is not confirmed in the available project records. No award is claimed."],["Product status","Academic prototype with synthetic demonstration data. No commercial launch, real-time parking availability or confirmed reservations."]],
       timelineEs:[["2025 · Expo de Logros ¡Supérate! ADOC","Presentado en inglés como parte de la exposición de proyectos estudiantiles; se reportó cobertura de prensa local. La fecha exacta no está confirmada en los registros disponibles del proyecto."],["2026 · Expo Tech ¡Supérate! ADOC","El equipo clasificó para participar y presentó en inglés. La fecha exacta no está confirmada en los registros disponibles del proyecto. No se reclama ningún premio."],["Estado del producto","Prototipo académico con datos sintéticos de demostración. Sin lanzamiento comercial, disponibilidad de parqueos en tiempo real ni reservas confirmadas."]]
     },
     "radio-transmission": {
@@ -49,49 +49,49 @@
     "identify": {
       role:["Collaborative educational AI prototype","Prototipo educativo colaborativo de IA"],
       contribution:["Collaborative frontend and model-integration work. The project is presented as a learning prototype, not a dependable identity-verification or access-control product.","Trabajo colaborativo de frontend e integración del modelo. El proyecto se presenta como prototipo de aprendizaje, no como producto fiable de verificación de identidad o control de acceso."],
-      team:["Collaborative academic prototype; contributor roster not verified here","Prototipo académico colaborativo; lista de integrantes no verificada aquí"],
+      team:["Collaborative academic prototype","Prototipo académico colaborativo"],
       technologies:["JavaScript","TensorFlow.js","Teachable Machine","Camera API"],
-      timeline:[["Prototype scope","Browser camera access and client-side model inference are used for demonstration."],["Safety and accuracy boundary","Classification output is not proof of identity and must not be used for access decisions."],["Team and date","The portfolio does not currently hold a verified roster of contributors or a confirmed presentation date."]],
-      timelineEs:[["Alcance del prototipo","Se utiliza acceso a la cámara del navegador e inferencia del modelo en el cliente con fines demostrativos."],["Límite de seguridad y precisión","El resultado de clasificación no demuestra identidad y no debe utilizarse para decisiones de acceso."],["Equipo y fecha","El portafolio no dispone actualmente de una lista verificada de colaboradores ni de una fecha confirmada de presentación."]]
+      timeline:[["Prototype scope","Browser camera access and client-side model inference are used for demonstration."],["Safety and accuracy boundary","Classification output is not proof of identity and must not be used for access decisions."],],
+      timelineEs:[["Alcance del prototipo","Se utiliza acceso a la cámara del navegador e inferencia del modelo en el cliente con fines demostrativos."],["Límite de seguridad y precisión","El resultado de clasificación no demuestra identidad y no debe utilizarse para decisiones de acceso."],]
     },
     "arch-keyboard-virtual-mouse": {
       role:["Linux accessibility and input utility","Utilidad Linux de accesibilidad y entrada"],
       contribution:["Individual technical utility: implementation, Linux integration and repository documentation.","Utilidad técnica individual: implementación, integración con Linux y documentación del repositorio."],
       team:["Individual project","Proyecto individual"],
       technologies:["Python","Linux","evdev","uinput","keyd","systemd"],
-      timeline:[["Project status","Public source repository. No confirmed public release date or external event is recorded."],["Technical scope","Keyboard input mapping, virtual input devices and service-level integration."]],
-      timelineEs:[["Estado","Repositorio de código público. No se registra una fecha de lanzamiento público ni un evento externo confirmado."],["Alcance técnico","Asignación de entradas del teclado, dispositivos de entrada virtuales e integración a nivel de servicio."]]
+      timeline:[["Project status","Open-source Linux utility for keyboard-driven pointer control."],["Technical scope","Keyboard input mapping, virtual input devices and service-level integration."]],
+      timelineEs:[["Estado","Utilidad Linux de código abierto para controlar el puntero mediante el teclado."],["Alcance técnico","Asignación de entradas del teclado, dispositivos de entrada virtuales e integración a nivel de servicio."]]
     },
     "warp-toggle-masque": {
       role:["Linux desktop utility","Utilidad para escritorio Linux"],
       contribution:["Individual implementation of shell automation and desktop integration, with emphasis on predictable state changes and safe restoration of network settings.","Implementación individual de automatización shell e integración con el escritorio, con énfasis en cambios de estado predecibles y restauración segura de ajustes de red."],
       team:["Individual project","Proyecto individual"],
       technologies:["Bash","KDE Plasma","WARP CLI","MASQUE"],
-      timeline:[["Project status","Public utility repository. No confirmed release date or public event is recorded."],["Operational boundary","This is a local control utility, not a VPN service or a replacement for the official WARP client."]],
-      timelineEs:[["Estado","Repositorio público de utilidad. No se registra una fecha de lanzamiento ni un evento público confirmado."],["Límite operativo","Es una utilidad de control local, no un servicio VPN ni un reemplazo del cliente oficial de WARP."]]
+      timeline:[["Project status","Linux desktop utility for managing the official WARP client connection."],["Operational boundary","This is a local control utility, not a VPN service or a replacement for the official WARP client."]],
+      timelineEs:[["Estado","Utilidad de escritorio Linux para gestionar la conexión del cliente oficial de WARP."],["Límite operativo","Es una utilidad de control local, no un servicio VPN ni un reemplazo del cliente oficial de WARP."]]
     },
     "car-dashboard": {
       role:["Collaborative academic frontend exercise","Ejercicio frontend académico y colaborativo"],
       contribution:["Collaborative classroom exercise. The portfolio does not claim sole authorship or a production-ready automotive interface.","Ejercicio colaborativo de clase. El portafolio no reclama autoría exclusiva ni presenta la interfaz como producto automotriz listo para producción."],
-      team:["Collaborative classroom project; full contributor roster not confirmed","Proyecto colaborativo de clase; lista completa de integrantes no confirmada"],
+      team:["Collaborative classroom project","Proyecto colaborativo de clase"],
       technologies:["HTML","CSS","JavaScript","DOM"],
-      timeline:[["Project status","Academic exercise. No confirmed public event or exact delivery date is recorded."],["Scope","A learning interface simulation; not connected to a vehicle or real telemetry."]],
-      timelineEs:[["Estado","Ejercicio académico. No se registra un evento público ni una fecha exacta de entrega confirmados."],["Alcance","Simulación de interfaz de aprendizaje; no está conectada a un vehículo ni a telemetría real."]]
+      timeline:[["Project status","Academic interface exercise focused on organizing vehicle information."],["Scope","A learning interface simulation; not connected to a vehicle or real telemetry."]],
+      timelineEs:[["Estado","Ejercicio académico de interfaz enfocado en organizar información de un vehículo."],["Alcance","Simulación de interfaz de aprendizaje; no está conectada a un vehículo ni a telemetría real."]]
     },
     "f1-team-profiles": {
       role:["Collaborative academic frontend exercise","Ejercicio frontend académico y colaborativo"],
       contribution:["Collaborative classroom frontend work. Team authorship is retained; this portfolio does not claim the project as an individual product.","Trabajo frontend colaborativo de clase. Se reconoce la autoría del equipo; este portafolio no presenta el proyecto como producto individual."],
       team:["Collaborative classroom project; full contributor roster not confirmed","Proyecto colaborativo de clase; lista completa de integrantes no confirmada"],
       technologies:["HTML","CSS","JavaScript"],
-      timeline:[["Project status","Academic exercise. Statistics are sample content, not a live sports data feed."],["Dates and team","No confirmed exact delivery date or complete contributor roster is recorded here."]],
-      timelineEs:[["Estado","Ejercicio académico. Las estadísticas son contenido de ejemplo, no un feed de datos deportivos en vivo."],["Fechas y equipo","Aquí no se registra una fecha exacta de entrega ni una lista completa de integrantes confirmadas."]]
+      timeline:[["Project status","Academic exercise using sample Formula 1 team information and statistics."]],
+      timelineEs:[["Estado","Ejercicio académico con información y estadísticas de muestra de equipos de Fórmula 1."]]
     }
   };
 
   const dossier = dossiers[id];
 
 
-  async function loadProjectGallery(projectId, emptyText, openText){
+  async function loadProjectGallery(projectId, openText){
     const grid=document.getElementById("projectGalleryGrid");
     if(!grid)return;
     try{
@@ -99,14 +99,14 @@
       if(!response.ok)throw new Error("Gallery manifest unavailable");
       const manifest=await response.json();
       const images=Array.isArray(manifest.images)?manifest.images:[];
-      if(!images.length){grid.innerHTML='<p class="detail-lead">'+escapeHTML(emptyText)+'</p>';return}
+      if(!images.length){grid.closest('#projectGallery')?.remove();return}
       grid.innerHTML=images.map((item,index)=>{
         const src="assets/images/project-galleries/"+encodeURIComponent(projectId)+"/"+encodeURIComponent(item.src||"");
         const alt=escapeHTML(item.alt||"Project image "+(index+1));
         const caption=escapeHTML(item.caption||"");
         return '<figure class="project-gallery-item"><a href="'+src+'" target="_blank" rel="noopener noreferrer" aria-label="'+escapeHTML(openText)+': '+alt+'"><img src="'+src+'" alt="'+alt+'" loading="lazy" decoding="async"></a>'+(caption?'<figcaption>'+caption+'</figcaption>':'')+'</figure>';
       }).join("");
-    }catch(error){grid.innerHTML='<p class="detail-lead">'+escapeHTML(emptyText)+'</p>'}
+    }catch(error){grid.closest('#projectGallery')?.remove()}
   }
 
   function render() {
@@ -122,18 +122,18 @@
     const labels = es ? {
       back:"← Volver a proyectos",overview:"Contexto",audience:"A quién ayuda",purpose:"Por qué lo trabajé",contribution:"Mi contribución",team:"Equipo",problem:"Problema y contexto",process:"Proceso",solution:"Solución",result:"Resultado y estado",
       stack:"Tecnologías utilizadas",timelineTitle:"Hitos y fechas",demo:"Abrir demostración",repo:"Ver repositorio",extra:"Reproductor público",scope:"Alcance y transparencia",
-      contact:"Contactarme",gallery:"Galería del proyecto",galleryEmpty:"No hay imágenes de galería disponibles para este proyecto."
+      contact:"Contactarme",gallery:"Galería del proyecto"
     } : {
       back:"← Back to projects",overview:"Context",audience:"Who it helps",purpose:"Why I worked on it",contribution:"My contribution",team:"Team",problem:"Problem & context",process:"Process",solution:"Solution",result:"Result & status",
       stack:"Technologies used",timelineTitle:"Milestones & dates",demo:"Open live demo",repo:"View source repository",extra:"Public player",scope:"Scope & transparency",
-      contact:"Contact me",gallery:"Project gallery",galleryEmpty:"No gallery images are available for this project."
+      contact:"Contact me",gallery:"Project gallery"
     };
 
     const demo = project.demo ? '<a class="button button-primary" href="'+escapeHTML(project.demo)+'" target="_blank" rel="noopener noreferrer">'+labels.demo+' ↗</a>' : "";
     const repo = project.repo ? '<a class="button button-ghost" href="'+escapeHTML(project.repo)+'" target="_blank" rel="noopener noreferrer">'+labels.repo+' ↗</a>' : "";
     const extra = project.extra ? '<a class="project-action action-demo" href="'+escapeHTML(project.extra)+'" target="_blank" rel="noopener noreferrer">'+labels.extra+' ↗</a>' : "";
     const number = String(projects.indexOf(project)+1).padStart(2,"0");
-    const gallerySection = '<section class="detail-section" id="projectGallery"><p class="section-index">04 / '+labels.gallery.toUpperCase()+'</p><div class="project-gallery-grid" id="projectGalleryGrid"><p class="detail-lead">'+escapeHTML(labels.galleryEmpty)+'</p></div></section>';
+    const gallerySection = '<section class="detail-section" id="projectGallery"><p class="section-index">04 / '+labels.gallery.toUpperCase()+'</p><div class="project-gallery-grid" id="projectGalleryGrid"></div></section>';
 
 
     root.innerHTML =
@@ -164,7 +164,7 @@
       '<section class="detail-section"><p class="section-index">03 / '+labels.timelineTitle.toUpperCase()+'</p><div class="detail-timeline">'+timeline.map((entry,i)=>'<article><span>'+String(i+1).padStart(2,"0")+'</span><div><h3>'+escapeHTML(entry[0])+'</h3><p>'+escapeHTML(entry[1])+'</p></div></article>').join("")+'</div></section>'+
       gallerySection+'<p class="detail-disclaimer"><strong>'+labels.scope+':</strong> '+escapeHTML(project[es ? "es" : "en"])+'</p>';
 
-    loadProjectGallery(project.id, labels.galleryEmpty, es ? "Abrir imagen ampliada" : "Open full-size image");
+    loadProjectGallery(project.id, es ? "Abrir imagen ampliada" : "Open full-size image");
     document.title = project.title + " — Jeremy Torres";
     document.documentElement.lang = language;
     languageButton?.querySelectorAll(".lang-option").forEach(option => option.classList.toggle("active", option.dataset.lang === language));

@@ -19,32 +19,32 @@
       contribution:["Independent design and implementation of the website structure, responsive styling and language switching.","Diseño e implementación individual de la estructura web, estilos adaptables y selector de idioma."],
       team:["Individual project","Proyecto individual"],
       technologies:["HTML5","CSS3","JavaScript","GitHub Pages"],
-      timeline:[["Project context","A bilingual product website created to help a small natural-soap brand communicate its catalogue and educational information."],["Scope","Static multi-page presentation, not an online store or order-management backend."]],
-      timelineEs:[["Contexto","Sitio web bilingüe creado para ayudar a una pequeña marca de jabones naturales a comunicar su catálogo e información educativa."],["Alcance","Presentación estática de varias páginas; no es una tienda en línea ni un backend de gestión de pedidos."]]
+      timeline:[["Project context","Students developing a natural-soap venture asked me to create a website to present their products and explain their catalogue."],["Scope","Bilingual static multi-page presentation; not an online store or order-management backend."]],
+      timelineEs:[["Contexto","Unas estudiantes que desarrollaban un emprendimiento de jabones naturales me pidieron crear un sitio para presentar sus productos y catálogo."],["Alcance","Presentación estática bilingüe de varias páginas; no es una tienda en línea ni un backend de gestión de pedidos."]]
     },
     "parking-sv": {
       role:["Collaborative academic full-stack prototype","Prototipo full-stack académico y colaborativo"],
       contribution:["My work focused on the JavaScript / TypeScript workstream: Next.js implementation, frontend integration, Supabase connectivity and deployment validation. Jossybeth also worked in this stream. Four other students worked on a separate Python stream.","Mi trabajo se concentró en la línea JavaScript / TypeScript: implementación con Next.js, integración frontend, conexión con Supabase y validación del despliegue. Jossybeth también trabajó en esta línea. Otros cuatro estudiantes desarrollaron una línea Python separada."],
       team:["Six students across two technical workstreams","Seis estudiantes en dos líneas técnicas"],
       technologies:["Next.js","React","TypeScript","Supabase","PostgreSQL","Tailwind CSS","Vercel"],
-      timeline:[["2025 · Expo de Logros ¡Supérate! ADOC","Presented in English as part of the student project exhibition; local press coverage was reported. "],["2026 · Expo Tech ¡Supérate! ADOC","The team qualified to participate and presented in English. No award is claimed."],["Product status","Academic prototype with synthetic demonstration data. No commercial launch, real-time parking availability or confirmed reservations."]],
-      timelineEs:[["2025 · Expo de Logros ¡Supérate! ADOC","Presentado en inglés como parte de la exposición de proyectos estudiantiles; se reportó cobertura de prensa local. La fecha exacta no está confirmada en los registros disponibles del proyecto."],["2026 · Expo Tech ¡Supérate! ADOC","El equipo clasificó para participar y presentó en inglés. No se reclama ningún premio."],["Estado del producto","Prototipo académico con datos sintéticos de demostración. Sin lanzamiento comercial, disponibilidad de parqueos en tiempo real ni reservas confirmadas."]]
+      timeline:[["2025 · Expo de Logros ¡Supérate! ADOC","A separate student exhibition milestone: our team presented ParkingSV in English, sharing the project with visitors and evaluators. Local press coverage was also reported."],["2026 · Expo Tech ¡Supérate! ADOC","A distinct follow-up event the next year: the team qualified for Expo Tech and presented ParkingSV in English. This is a participation milestone, not an award claim."],["Product status","Academic prototype with synthetic demonstration data. No commercial launch, real-time parking availability or confirmed reservations."]],
+      timelineEs:[["2025 · Expo de Logros ¡Supérate! ADOC","Hito independiente de exposición estudiantil: el equipo presentó ParkingSV en inglés ante visitantes y evaluadores. También se reportó cobertura de prensa local."],["2026 · Expo Tech ¡Supérate! ADOC","Evento distinto realizado al año siguiente: el equipo clasificó para Expo Tech y presentó ParkingSV en inglés. Es un hito de participación, no una afirmación de premio."],["Estado del producto","Prototipo académico con datos sintéticos de demostración. Sin lanzamiento comercial, disponibilidad de parqueos en tiempo real ni reservas confirmadas."]]
     },
     "radio-transmission": {
       role:["Web audio and infrastructure demonstration","Demostración de audio web e infraestructura"],
       contribution:["Work covered the browser player and technical exploration around Linux server administration, remote access, reverse proxy configuration and streaming software.","El trabajo abarcó el reproductor web y exploración técnica de administración de servidores Linux, acceso remoto, configuración de proxy inverso y software de streaming."],
       team:["Individual web demo; wider operational context involved external systems","Demo web individual; el contexto operativo amplio involucró sistemas externos"],
       technologies:["HTML5","CSS3","JavaScript","Ubuntu","SSH","Nginx","DuckDNS","Omnia"],
-      timeline:[["Public player","The public player connects visitors to a radio stream."],["Monitoring demo","The separate monitoring demo is a sanitized static presentation with simulated data."],["Operational boundary","No production server address, credentials, private telemetry or sensitive configuration is published here."]],
-      timelineEs:[["Reproductor público","El reproductor público conecta a los visitantes con una señal de radio."],["Demo de monitoreo","La demo de monitoreo separada es una presentación estática saneada con datos simulados."],["Límite operativo","Aquí no se publica dirección de servidor de producción, credenciales, telemetría privada ni configuración sensible."]]
+      timeline:[["Why the church requested help","An evangelical church asked me to improve access to its online radio stream because professional retransmission fees had become difficult to sustain and previous web players were not listener-friendly."],["Public player","I helped provide a simpler web experience for listeners to access the church’s stream."],["Separate monitoring demo","The public dashboard is a sanitized demonstration with simulated metrics. The production radio and monitoring endpoints, infrastructure and private telemetry remain private and are not published here."]],
+      timelineEs:[["Por qué la iglesia pidió ayuda","Una iglesia evangélica me pidió mejorar el acceso a su transmisión de radio por internet, porque las tarifas de retransmisión profesional se habían vuelto difíciles de sostener y los reproductores web anteriores no eran amigables para los oyentes."],["Reproductor público","Ayudé a ofrecer una experiencia web más sencilla para que los oyentes accedieran a la señal de la iglesia."],["Demo de monitoreo separada","El panel público es una demostración saneada con métricas simuladas. Los endpoints de producción de la radio y el monitoreo, la infraestructura y la telemetría privada no se publican."]]
     },
     "discomovil": {
       role:["Independent promotional website","Sitio promocional individual"],
       contribution:["Independent website design and implementation, including responsive sections and visual effects adapted to different screens.","Diseño e implementación individual del sitio, incluidas secciones adaptables y efectos visuales ajustados a distintas pantallas."],
       team:["Individual project","Proyecto individual"],
       technologies:["HTML5","CSS3","JavaScript","Intersection Observer"],
-      timeline:[["Project context","Built for a real family business; no independently confirmed launch or event date is published in this portfolio."],["Scope","Promotional website. It is not an event-booking or payment platform."]],
-      timelineEs:[["Contexto","Desarrollado para un negocio familiar real; este portafolio no publica una fecha de lanzamiento o evento confirmada de forma independiente."],["Alcance","Sitio promocional. No es una plataforma de reservas ni de pagos para eventos."]]
+      timeline:[["Project context","Built for my father’s family business, Discomóvil Extreme Galaxy, to make its DJ and event services easier to share with potential customers."],["Scope","Promotional website for a real family business; it is not an event-booking or payment platform."]],
+      timelineEs:[["Contexto","Desarrollado para el negocio familiar de mi padre, Discomóvil Extreme Galaxy, para facilitar que sus servicios de DJ y eventos se compartan con posibles clientes."],["Alcance","Sitio promocional para un negocio familiar real; no es una plataforma de reservas ni de pagos para eventos."]]
     },
     "identify": {
       role:["Collaborative educational AI prototype","Prototipo educativo colaborativo de IA"],
@@ -59,16 +59,16 @@
       contribution:["Individual technical utility: implementation, Linux integration and repository documentation.","Utilidad técnica individual: implementación, integración con Linux y documentación del repositorio."],
       team:["Individual project","Proyecto individual"],
       technologies:["Python","Linux","evdev","uinput","keyd","systemd"],
-      timeline:[["Project status","Open-source Linux utility for keyboard-driven pointer control."],["Technical scope","Keyboard input mapping, virtual input devices and service-level integration."]],
-      timelineEs:[["Estado","Utilidad Linux de código abierto para controlar el puntero mediante el teclado."],["Alcance técnico","Asignación de entradas del teclado, dispositivos de entrada virtuales e integración a nivel de servicio."]]
+      timeline:[["Why I built it","A personal Arch Linux utility adapted to my laptop and preferred workflow, making pointer actions available through keyboard shortcuts when a mouse is inconvenient."],["Who may reuse it","The documented approach can also help other early Arch Linux users customize input and desktop comfort."]],
+      timelineEs:[["Por qué la desarrollé","Utilidad personal para Arch Linux, adaptada a mi laptop y a mi flujo de trabajo, que permite ejecutar acciones del puntero con atajos de teclado cuando usar un mouse resulta incómodo."],["A quién puede servirle","El enfoque documentado también puede ayudar a otros usuarios que comienzan con Arch Linux a personalizar la entrada y la comodidad del escritorio."]]
     },
     "warp-toggle-masque": {
       role:["Linux desktop utility","Utilidad para escritorio Linux"],
       contribution:["Individual implementation of shell automation and desktop integration, with emphasis on predictable state changes and safe restoration of network settings.","Implementación individual de automatización shell e integración con el escritorio, con énfasis en cambios de estado predecibles y restauración segura de ajustes de red."],
       team:["Individual project","Proyecto individual"],
       technologies:["Bash","KDE Plasma","WARP CLI","MASQUE"],
-      timeline:[["Project status","Linux desktop utility for managing the official WARP client connection."],["Operational boundary","This is a local control utility, not a VPN service or a replacement for the official WARP client."]],
-      timelineEs:[["Estado","Utilidad de escritorio Linux para gestionar la conexión del cliente oficial de WARP."],["Límite operativo","Es una utilidad de control local, no un servicio VPN ni un reemplazo del cliente oficial de WARP."]]
+      timeline:[["Why I built it","A personal Arch Linux/KDE utility adapted to my laptop and network preferences, making the official WARP client easier to connect, disconnect and inspect."],["Operational boundary","It is a local convenience and control tool for my desktop workflow, not a VPN service or a replacement for the official WARP client."]],
+      timelineEs:[["Por qué la desarrollé","Utilidad personal para Arch Linux/KDE, adaptada a mi laptop y preferencias de red, que facilita conectar, desconectar y consultar el cliente oficial de WARP."],["Límite operativo","Es una herramienta local de comodidad y control para mi flujo de escritorio, no un servicio VPN ni un reemplazo del cliente oficial de WARP."]]
     },
     "car-dashboard": {
       role:["Collaborative academic frontend exercise","Ejercicio frontend académico y colaborativo"],
@@ -137,7 +137,6 @@
 
 
     root.innerHTML =
-      '<a class="detail-back" href="index.html#work">'+labels.back+'</a>'+
       '<div class="detail-hero"><div>'+
         '<p class="detail-kicker">'+escapeHTML(project.category || (es ? "LABORATORIO TÉCNICO" : "TECHNICAL LAB"))+' / CASE '+number+'</p>'+
         '<h1>'+escapeHTML(project.title)+'</h1>'+
@@ -154,15 +153,9 @@
           '<article><span class="detail-story-icon">◈</span><h2>'+labels.team+'</h2><p>'+escapeHTML(dossier.team[es ? 1 : 0])+'</p></article>'+
         '</div>'+
       '</section>'+
-      '<section class="detail-section"><p class="section-index">02 / '+(es?"CASO DE ESTUDIO":"CASE STUDY")+'</p><div class="detail-story-grid">'+
-        '<article><span class="detail-story-icon">01</span><h2>'+labels.problem+'</h2><p>'+escapeHTML(audience+" "+purpose)+'</p></article>'+
-        '<article><span class="detail-story-icon">02</span><h2>'+labels.process+'</h2><p>'+escapeHTML(dossier.contribution[es ? 1 : 0])+'</p></article>'+
-        '<article><span class="detail-story-icon">03</span><h2>'+labels.solution+'</h2><p>'+escapeHTML(project[es ? "es" : "en"])+'</p></article>'+
-        '<article><span class="detail-story-icon">04</span><h2>'+labels.result+'</h2><p>'+escapeHTML(timeline[timeline.length-1]?.[1] || (es?"Estado documentado en la descripción del proyecto.":"Status documented in the project description."))+'</p></article>'+
-      '</div></section>'+
       '<section class="detail-section"><p class="section-index">02 / '+labels.stack.toUpperCase()+'</p><div class="detail-stack">'+dossier.technologies.map((tech,i)=>'<span><b>'+String(i+1).padStart(2,"0")+'</b>'+escapeHTML(tech)+'</span>').join("")+'</div></section>'+
       '<section class="detail-section"><p class="section-index">03 / '+labels.timelineTitle.toUpperCase()+'</p><div class="detail-timeline">'+timeline.map((entry,i)=>'<article><span>'+String(i+1).padStart(2,"0")+'</span><div><h3>'+escapeHTML(entry[0])+'</h3><p>'+escapeHTML(entry[1])+'</p></div></article>').join("")+'</div></section>'+
-      gallerySection+'<p class="detail-disclaimer"><strong>'+labels.scope+':</strong> '+escapeHTML(project[es ? "es" : "en"])+'</p>';
+      gallerySection;
 
     loadProjectGallery(project.id, es ? "Abrir imagen ampliada" : "Open full-size image");
     document.title = project.title + " — Jeremy Torres";

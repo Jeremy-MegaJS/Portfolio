@@ -25,5 +25,5 @@ jobs:
           node --check assets/js/project-details.js
           node --check assets/js/projects.js
           node --check assets/js/translations.js
-          node --check assets/js/particle-field.js
-          node --check assets/js/contact-menu.js
+          node --check assets/js/contact-form.js
+          node --check assets/js/subpages.js

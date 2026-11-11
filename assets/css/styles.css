@@ -1003,3 +1003,11 @@ body::before,.noise,.liquid-aura,.particle-field{
 .project-gallery-item img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
 .project-gallery-item figcaption{padding:10px 12px;color:#c5babc;font-size:12px}
 @media(max-width:600px){.project-gallery-grid{grid-template-columns:1fr}}
+
+
+/* Keep ambient page backgrounds static across all main and detail layouts */
+body{animation:none!important;background-size:auto!important}
+body::before,body::after,.hero::before,.hero-visual::before,.liquid-aura,.noise::after,.story-panel::after,.visual-orbit,.orbit-two{
+  animation:none!important;
+  will-change:auto!important;
+}

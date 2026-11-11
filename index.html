@@ -202,17 +202,50 @@
         <p class="contact-overline" data-i18n="contactOverline">HAVE A PROJECT OR OPPORTUNITY?</p>
         <h2 data-i18n="contactTitle">Let's build<br><em>something useful.</em></h2>
         <p class="contact-copy" data-i18n="contactCopy">Open to learning opportunities, internships and collaborations where I can contribute, grow and solve real problems.</p>
-        <div class="contact-actions">
-          <a class="button button-primary" href="mailto:jeremy.torres.1.2026@gmail.com?subject=Portfolio%20inquiry%20%E2%80%94%20Web%20development&body=Hi%20Jeremy%2C%0A%0AI%20would%20like%20to%20discuss%20a%20web%20development%20project.%0A%0AProject%3A%0AGoal%3A%0ATimeline%3A%0A%0AThanks.">Web development <span aria-hidden="true">↗</span></a>
-          <a class="button button-primary" href="mailto:jeremy.torres.1.2026@gmail.com?subject=Portfolio%20inquiry%20%E2%80%94%20Linux%20and%20automation&body=Hi%20Jeremy%2C%0A%0AI%20would%20like%20to%20discuss%20a%20Linux%20or%20automation%20task.%0A%0AEnvironment%3A%0AProblem%3A%0AExpected%20result%3A%0A%0AThanks.">Linux & automation <span aria-hidden="true">↗</span></a>
-          <a class="button button-primary" href="mailto:jeremy.torres.1.2026@gmail.com?subject=Portfolio%20inquiry%20%E2%80%94%20Arduino%20and%20hardware&body=Hi%20Jeremy%2C%0A%0AI%20would%20like%20to%20discuss%20an%20Arduino%20or%20hardware%20project.%0A%0AComponents%3A%0AGoal%3A%0AConstraints%3A%0A%0AThanks.">Arduino & hardware <span aria-hidden="true">↗</span></a>
-          <a class="button button-primary" href="mailto:jeremy.torres.1.2026@gmail.com?subject=Portfolio%20inquiry%20%E2%80%94%20Technical%20collaboration&body=Hi%20Jeremy%2C%0A%0AI%20would%20like%20to%20discuss%20a%20technical%20collaboration.%0A%0AContext%3A%0AWhat%20I%20need%3A%0A%0AThanks.">Technical collaboration <span aria-hidden="true">↗</span></a>
-          <a class="button button-ghost" href="mailto:jeremy.torres.1.2026@gmail.com">Email · jeremy.torres.1.2026@gmail.com <span aria-hidden="true">↗</span></a>
+
+        <div class="contact-quick-links" aria-label="Email templates">
+          <a class="button button-primary" href="mailto:jeremy.torres.1.2026@gmail.com?subject=Web%20development%20inquiry&body=Hi%20Jeremy%2C%0A%0AI%27d%20like%20to%20discuss%20a%20web%20development%20project.%0A%0AProject%3A%0AGoal%3A%0ATimeline%3A%0A%0AMy%20name%3A%0AMy%20contact%3A%0A%0AThanks."><span data-i18n="contactWebButton">Email me about web development</span> ↗</a>
+          <a class="button button-primary" href="mailto:jeremy.torres.1.2026@gmail.com?subject=Linux%20and%20automation%20inquiry&body=Hi%20Jeremy%2C%0A%0AI%27d%20like%20to%20discuss%20a%20Linux%20or%20automation%20project.%0A%0AEnvironment%3A%0AProblem%3A%0AExpected%20result%3A%0A%0AMy%20name%3A%0AMy%20contact%3A%0A%0AThanks."><span data-i18n="contactLinuxButton">Email me about Linux & automation</span> ↗</a>
+          <a class="button button-primary" href="mailto:jeremy.torres.1.2026@gmail.com?subject=Arduino%20and%20hardware%20inquiry&body=Hi%20Jeremy%2C%0A%0AI%27d%20like%20to%20discuss%20an%20Arduino%20or%20hardware%20project.%0A%0AComponents%3A%0AGoal%3A%0AConstraints%3A%0A%0AMy%20name%3A%0AMy%20contact%3A%0A%0AThanks."><span data-i18n="contactHardwareButton">Email me about Arduino & hardware</span> ↗</a>
+          <a class="button button-primary" href="mailto:jeremy.torres.1.2026@gmail.com?subject=Technical%20collaboration%20inquiry&body=Hi%20Jeremy%2C%0A%0AI%27d%20like%20to%20discuss%20a%20technical%20collaboration.%0A%0AContext%3A%0AWhat%20I%20need%3A%0A%0AMy%20name%3A%0AMy%20contact%3A%0A%0AThanks."><span data-i18n="contactCollabButton">Email me about a technical collaboration</span> ↗</a>
+        </div>
+
+        <div class="contact-divider"><span data-i18n="contactOr">OR SEND A MESSAGE USING THE FORM</span></div>
+        <div class="contact-form-heading">
+          <h3 data-i18n="contactFormTitle">Have another idea in mind?</h3>
+          <p data-i18n="contactFormIntro">Using other programming tools or technologies? Tell me what you have in mind and how I can help.</p>
+        </div>
+        <form class="contact-form" id="contactForm" action="https://formsubmit.co/jeremy.torres.1.2026@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New portfolio contact — Jeremy Torres">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="true">
+          <input type="text" name="_honey" class="contact-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="contact-form-grid">
+            <label><span data-i18n="formName">Your name</span><input name="name" type="text" autocomplete="name" required maxlength="100" placeholder="Jane Doe"></label>
+            <label><span data-i18n="formEmail">Your email</span><input name="email" type="email" autocomplete="email" required maxlength="160" placeholder="jane@example.com"></label>
+            <label><span data-i18n="formPhone">Phone or alternative contact (optional)</span><input name="phone" type="tel" autocomplete="tel" maxlength="40" placeholder="+1 555 000 0000"></label>
+            <label><span data-i18n="formArea">What would you like to discuss?</span>
+              <select name="area" id="contactArea" required>
+                <option value="" data-i18n="formAreaPlaceholder">Choose an area</option>
+                <option value="Web development" data-i18n="formWeb">Web development</option>
+                <option value="Linux and automation" data-i18n="formLinux">Linux & automation</option>
+                <option value="Arduino and hardware" data-i18n="formHardware">Arduino & hardware</option>
+                <option value="Technical collaboration" data-i18n="formCollab">Technical collaboration</option>
+                <option value="Other tools and technologies" data-i18n="formOther">Other tools and technologies</option>
+              </select>
+            </label>
+            <label class="contact-form-full"><span data-i18n="formSubject">Subject</span><input name="subject" type="text" required maxlength="140" placeholder="Project inquiry"></label>
+            <label class="contact-form-full"><span data-i18n="formMessage">Tell me about the project, goal, tools and timeline</span><textarea name="message" rows="6" required minlength="20" maxlength="5000" placeholder="What are you trying to build or solve?"></textarea></label>
+          </div>
+          <button class="button button-primary contact-submit" type="submit"><span data-i18n="formSubmit">Send message</span> ↗</button>
+          <p class="contact-form-note" data-i18n="formPrivacy">Your details will be used only to reply to your inquiry. Please do not include passwords or sensitive personal information.</p>
+        </form>
+        <div class="contact-footer-links">
+          <a class="button button-ghost" href="mailto:jeremy.torres.1.2026@gmail.com" data-i18n="contactDirectEmail">Or email me directly</a>
           <a class="button button-ghost" href="https://github.com/Jeremy-MegaJS" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
         </div>
       </div>
-    </section>
-  </main>  <footer class="site-footer">
+    </section>  </main>  <footer class="site-footer">
     <div class="section-shell footer-inner">
       <a class="brand" href="#home"><span class="brand-mark">J<span>.</span></span><span class="brand-name">JEREMY<span>/</span>TORRES</span></a>
       <p data-i18n="footerLine">Built with intent. Kept lightweight.</p>

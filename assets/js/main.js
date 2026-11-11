@@ -13,6 +13,31 @@
   })[char]);
 
   const allProjects = [...projects.featured, ...projects.lab];
+  const staticText = {
+    "Skip to content":"Saltar al contenido","View my CV ↗":"Ver mi CV ↗","Home":"Inicio","About me":"Sobre mí","About":"Perfil","Volunteering":"Voluntariado","Projects":"Proyectos","Contact":"Contacto","Image credits":"Créditos de imágenes","Privacy":"Privacidad","Privacy & performance":"Privacidad y rendimiento","Built with intent. Kept lightweight.":"Hecho con intención. Diseñado para ser ligero.","Open project details for":"Abrir detalles del proyecto","PROJECT EVIDENCE: ":"EVIDENCIA DEL PROYECTO: ",
+    "Jane Doe":"Jane Doe","jane@example.com":"jane@example.com","+503 7000 0000":"+503 7000 0000","Project inquiry":"Consulta sobre un proyecto","What are you trying to build or solve?":"¿Qué intentas construir o resolver?",
+    "Email templates":"Plantillas de correo","Quick contact":"Contacto rápido","Contact me":"Contáctame","Image credits":"Créditos de imágenes"
+  };
+  const staticOriginals = new WeakMap();
+  const translateStatic = () => {
+    document.querySelectorAll("body *").forEach(element => {
+      if (element.children.length) return;
+      if (!staticOriginals.has(element)) staticOriginals.set(element, element.textContent);
+      const original = staticOriginals.get(element);
+      if (language === "es" && Object.prototype.hasOwnProperty.call(staticText, original.trim())) element.textContent = staticText[original.trim()];
+      else if (language === "en") element.textContent = original;
+    });
+    document.querySelectorAll("[placeholder]").forEach(element => {
+      if (!element.dataset.placeholderEn) element.dataset.placeholderEn = element.getAttribute("placeholder");
+      const map = {"Choose a contact preference":"Elige una preferencia de contacto","Choose an area":"Elige un área","Project inquiry":"Consulta sobre un proyecto","What are you trying to build or solve?":"¿Qué intentas construir o resolver?"};
+      element.setAttribute("placeholder", language === "es" ? (map[element.dataset.placeholderEn] || element.dataset.placeholderEn) : element.dataset.placeholderEn);
+    });
+    const ogTitle=document.querySelector('meta[property="og:title"]');
+    const ogDescription=document.querySelector('meta[property="og:description"]');
+    if(ogTitle)ogTitle.content=language==="es"?"Jeremy Torres — Portafolio de desarrollador":"Jeremy Torres — Developer Portfolio";
+    if(ogDescription)ogDescription.content=language==="es"?"Software, sistemas y hardware. Proyectos seleccionados, trabajo técnico y contacto.":"Software, systems and hardware. Selected projects, technical work and contact.";
+    if(menuToggle)menuToggle.setAttribute("aria-label",language==="es"?"Abrir navegación":"Open navigation");
+  };
   const icon = (name) => {
     const paths = {
       html:'<path d="m6 3 1.4 15L12 20l4.6-2L18 3z"/><path d="M9 7h6M9.5 11h5M10 15h4"/>',
@@ -86,7 +111,7 @@
     if (project.repo) links.push('<a class="project-action action-code" href="'+escapeHtml(project.repo)+'" target="_blank" rel="noopener noreferrer">'+escapeHtml(t.source)+' <span>↗</span></a>');
     if (project.pythonRepo) links.push('<a class="project-action action-code" href="'+escapeHtml(project.pythonRepo)+'" target="_blank" rel="noopener noreferrer">'+escapeHtml(t.pythonVersion)+' <span>↗</span></a>');
     const note = project.note === "simulated" ? '<span class="project-note">'+escapeHtml(t.simulated)+'</span>' : project.note === "camera" ? '<span class="project-note">'+escapeHtml(t.camera)+'</span>' : "";
-    return '<article class="project-card reveal" data-project-url="project.html?project='+encodeURIComponent(project.id)+'" tabindex="0" aria-label="Open project details for '+escapeHtml(project.title)+'" style="--card-index:'+index+'"><div class="project-visual visual-'+escapeHtml(project.visual)+'"><span class="visual-label mono">'+escapeHtml(project.category)+'</span><span class="visual-code mono">'+String(index+1).padStart(2,"0")+' / 05</span><img class="project-preview" src="assets/images/projects/'+escapeHtml(project.id)+'.svg" alt="" loading="lazy" decoding="async"></div><div class="project-body"><div class="project-title-row"><h3>'+escapeHtml(project.title)+'</h3><span class="project-kind">'+escapeHtml(project.kind==="academic"?t.academic:t.individual)+'</span></div><p>'+escapeHtml(project[language])+'</p><div class="project-tags">'+project.stack.map(tag=>'<span>'+escapeHtml(tag)+'</span>').join("")+'</div>'+note+'<div class="project-links">'+links.join("")+'</div></div></article>';
+    return '<article class="project-card reveal" data-project-url="project.html?project='+encodeURIComponent(project.id)+'" tabindex="0" aria-label="'+(language==="es"?"Abrir detalles del proyecto: ":"Open project details for ")+escapeHtml(project.title)+'" style="--card-index:'+index+'"><div class="project-visual visual-'+escapeHtml(project.visual)+'"><span class="visual-label mono">'+escapeHtml(project.category)+'</span><span class="visual-code mono">'+String(index+1).padStart(2,"0")+' / 05</span><img class="project-preview" src="assets/images/projects/'+escapeHtml(project.id)+'.svg" alt="" loading="lazy" decoding="async"></div><div class="project-body"><div class="project-title-row"><h3>'+escapeHtml(project.title)+'</h3><span class="project-kind">'+escapeHtml(project.kind==="academic"?t.academic:t.individual)+'</span></div><p>'+escapeHtml(project[language])+'</p><div class="project-tags">'+project.stack.map(tag=>'<span>'+escapeHtml(tag)+'</span>').join("")+'</div>'+note+'<div class="project-links">'+links.join("")+'</div></div></article>';
   }
   function labCard(project, index) {
     return '<article class="lab-card reveal" data-project-url="project.html?project='+encodeURIComponent(project.id)+'" tabindex="0" aria-label="Open project details for '+escapeHtml(project.title)+'" style="--card-index:'+index+'"><div class="lab-preview"><img src="assets/images/projects/'+escapeHtml(project.id)+'.svg" alt="" loading="lazy" decoding="async"></div><span class="lab-card-index mono">LAB_'+String(index+1).padStart(2,"0")+'</span><h4>'+escapeHtml(project.title)+'</h4><p>'+escapeHtml(project[language])+'</p><div class="project-tags">'+project.stack.map(tag=>'<span>'+escapeHtml(tag)+'</span>').join("")+'</div><div class="lab-actions"><a class="project-action action-details" href="project.html?project='+encodeURIComponent(project.id)+'">'+escapeHtml(translations[language].details)+' <span>↗</span></a><a class="project-action action-code" href="'+escapeHtml(project.repo)+'" target="_blank" rel="noopener noreferrer">'+escapeHtml(translations[language].source)+' <span>↗</span></a></div></article>';
@@ -111,6 +136,7 @@
       if(value!==undefined)element.setAttribute("content",value);
     });
     document.querySelectorAll(".lang-option").forEach(el=>el.classList.toggle("active",el.dataset.lang===language));
+    translateStatic();
     const projectGrid=document.getElementById("projectGrid"),labGrid=document.getElementById("labGrid");
     if(projectGrid)projectGrid.innerHTML=projects.featured.map(projectCard).join("");
     const langCore=document.getElementById("coreCapabilities"),langApplied=document.getElementById("appliedCapabilities");
